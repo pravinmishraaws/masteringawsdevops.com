@@ -1,0 +1,242 @@
+ body {
+      font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+overflow-x: hidden;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+/* Navigation Section Styles */
+nav {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black; /* Set background color to black */
+    color: cyan; /* Set text color to cyan */
+    padding: 10px 20px; /* Adjust padding for better spacing */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav a {
+    color: cyan; /* Set text color to cyan */
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px;
+    display: block;
+    position: relative;
+}
+
+.logo-container img {
+    max-height: 60px; /* Set max-height to reduce logo size */
+    transition: transform 0.3s;
+}
+
+.logo-container:hover img {
+    transform: scale(1.1);
+}
+
+nav a {
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: black; /* Set text color to cyan on hover */
+    background-color: cyan;
+    animation: glow 1s infinite alternate;
+    font-weight: bold;
+}
+
+nav li:hover a {
+    color: black; /* Set text color to cyan on hover */
+    background-color: cyan;
+font-weight: bold;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px 2px cyan;
+    }
+    100% {
+        box-shadow: 0 0 20px 5px cyan;
+    }
+}
+
+/* Sidebar Section Styles */
+.sidebar {
+  width: calc(110% - 10px); /* Adjust the width of the sidebar */
+  margin-left: 20px; /* Add margin to separate main section and sidebar */
+}
+
+.sidebar-box {
+  background-color:#ffffff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.sidebar h4 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #007bff; /* Blue heading color */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  display: block;
+  color: #333; /* Text color for links */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.sidebar a:hover {
+  color: #007bff; /* Hover color for links */
+}
+
+
+    .main-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    article {
+      width: 65%;
+      max-width: 10000px;
+      margin: 0 auto;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #007bff;
+      font-size: 3em;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      font-style: italic;
+      color: #555;
+      text-align: left;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+
+
+        code {
+            font-family: 'Courier New', monospace;
+            background-color: black;
+            color: cyan;
+            padding: 2px 4px;
+            border-radius: 4px;
+	font-weight: bold
+        }
+
+
+    /* Social Media Icons */
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .social-icon {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background-color: #007bff;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      font-size: 1.5em;
+      color: #fff;
+      transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+    }
+
+    .social-icon:hover {
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
+      transform: scale(1.2);
+    }
+
+    .read-more {
+      display: inline-block;
+      padding: 8px 16px;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #007bff;
+      border: 2px solid #007bff;
+      border-radius: 5px;
+      transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+    }
+
+    .read-more:hover {
+      box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
+      transform: scale(1.05);
+      background-color: #0056b3;
+    }
+
+   
+   footer {
+      text-align: center;
+      padding: 20px;
+      background-color: black;
+      color: cyan;
+      margin-top: 50px;
+      width: 100%;
+    }

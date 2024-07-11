@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="f.png" type="image/x-icon">
+  <title>Mastering AWS DevOps</title>
+</head>
+
+<body>
+
+  <!-- Navigation Section -->
+  <nav>
+    <div class="logo-container">
+      <a href=" https://masteringawsdevops.com"><img src="images/logo1.png" alt="AWS DevOps Mastery Logo"></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#buy-book">Get my Book</a></li>
+      <li><a href="#about-me">About me</a></li>
+      <!-- <li><a href="#trainings">Training</a></li>
+      <li><a href="#testimonials">Testimonials</a></li> -->
+      <li><a href="Blogs.html">Blogs</a></li>
+      <li><a href="#sm">Connect With Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Title Section -->
+  <header class="title-section">
+    <div class="title-content">
+      <h1>Mastering AWS DevOps</h1>
+      <h2>Empower Your Career Journey with AWS DevOps Mastery</h2>
+    </div>
+  </header>
+
+  <!-- Feature Section -->
+  <section id="features" class="feature-section">
+    <h2>Key Features</h2>
+    <div class="feature">
+      <blockquote>
+        Mastery AWS DevOps will transform your career
+      </blockquote>
+      <cite>- </cite>
+    </div>
+    <!-- Add more features as needed -->
+    <div class="feature-cards">
+      <!-- Feature Card 1 -->
+      <div class="feature-card" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <img src="images/f1.png" alt="Blog 1" class="blog-image" loading="lazy" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <div class="blog-info">
+          <h3 class="feature-title">Perfect for Beginners</h3>
+          <p class="feature-description">
+            Unlock the power of AWS DevOps, even if you're just starting. This book provides a beginner-friendly approach to AWS services and DevOps methodologies, guiding you step by step.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature Card 2 -->
+      <div class="feature-card" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <img src="images/f2.png" alt="Blog 2" class="blog-image" loading="lazy" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <div class="blog-info">
+          <h3 class="feature-title">Essential for IT Professionals</h3>
+          <p class="feature-description">
+            Stay ahead in your IT career with advanced AWS DevOps knowledge. This book offers deep insights, best practices, and expert tips for professionals aiming to master the intricacies of cloud operations and DevOps workflows.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature Card 3 -->
+      <div class="feature-card" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <img src="images/f3.png" alt="Blog 3" class="blog-image" loading="lazy" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <div class="blog-info">
+          <h3 class="feature-title">Real-world Scenarios</h3>
+          <p class="feature-description">
+            Dive into real-world scenarios and case studies that illustrate how AWS DevOps principles are applied in practical situations. Learn from actual implementations, troubleshoot common challenges, and gain insights into best practices that work in real, dynamic environments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Section -->
+  <section id="buy-book" class="buy-book-section">
+    <h2>Elevate your AWS skills with my book</h2>
+    <div class="book-info">
+      <img src="images/buybook.png" alt="Book Cover" loading="lazy">
+      <div class="description">
+        <h2>Prepare for an immersive journey into cloud computing mastery with the ultimate guide to AWS DevOps.</h2>
+        <p>"Mastering AWS DevOps" is your go-to resource, offering a comprehensive exploration of DevOps—from fundamental basics to advanced techniques. Whether you're a cloud computing beginner, developer, IT professional, or business owner, this book provides the essential skills and knowledge to leverage the full power of AWS DevOps.</p>
+        <a href="#" class="buy-now-button">Coming Soon</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="profile-image" class="about-me-section">
+    <div class="about-me-content">
+      <img src="images/About me.png" alt="Profile Image" class="profile-image" loading="lazy">
+      <div class="description">
+        <h2>About Me</h2>
+        <p>
+          <strong>PRAVIN MISHRA</strong>
+          <strong><em>AWS Finland Lead Architect</em></strong><br>
+
+        </p>
+        <p>
+          I've trained over 10,000+ Students around the world. I am an AWS Trainer and Instructor, AWS Community Builder, and Google Cloud Certified Trainer. Presently, I am the Lead Architect, AWS at Capgemini Finland.
+          In my 13+ years of work experience, I’ve experienced the most common challenges, hiccups, and missing pieces that many people struggle with when it comes to starting a career in AWS.
+          I’ve condensed my decade-long experience into all my training programs with a strong community to support you through the entire process.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<!-- Training Section -->
+  <section id="trainings" class="trainings-section">
+    <div class="training-header">
+      <h2>Popular Courses</h2>
+      <p>Upskill With AWS Cloud Training</p>
+    </div>
+
+    <div class="training-cards">
+      <!-- Training Card 1 -->
+      <div class="training-card" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <img src="trainingimages/acp.png" alt="Training 1" class="training-image" loading="lazy" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <div class="training-info">
+          <h3>AWS Cloud Practioner</h3>
+          <p>Dive deep into the fundamentals of AWS, setting the groundwork for your cloud journey.</p>
+          <a href="training1.html" class="read-more" onmouseover="addGlowEffectButton(this)" onmouseout="removeGlowEffectButton(this)">Know More</a>
+        </div>
+      </div>
+
+      <!-- Training Card 2 -->
+      <div class="training-card" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <img src="trainingimages/ate.png" alt="Training 2" class="training-image" loading="lazy" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <div class="training-info">
+          <h3>AWS Technical Essentials</h3>
+          <p>Equip yourself with the technical knowledge and tools essential for navigating the AWS landscape.</p>
+          <a href="training2.html" class="read-more" onmouseover="addGlowEffectButton(this)" onmouseout="removeGlowEffectButton(this)">Know More</a>
+        </div>
+      </div>
+
+      <!-- Training Card 3 -->
+      <div class="training-card" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <img src="trainingimages/aoa.png" alt="Training 3" class="training-image" loading="lazy" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <div class="training-info">
+          <h3>Architecting on AWS</h3>
+          <p>Master the art of designing robust & efficient infrastructures on AWS, ensuring optimum performance and security.</p>
+          <a href="training3.html" class="read-more" onmouseover="addGlowEffectButton(this)" onmouseout="removeGlowEffectButton(this)">Know More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section id="testimonials" class="testimonial-section">
+    <h2>Hear from Our Customers</h2>
+    <div class="testimonial">
+      <blockquote>
+        Explore testimonials from individuals who found value in 'Mastering AWS DevOps'
+      </blockquote>
+    </div>
+    <!-- Add more testimonials as needed -->
+    <div class="testimonial-cards">
+      <!-- Testimonial Card 1 -->
+      <div class="testimonial-card" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <img src="images/t1.png" alt="Blog 1" class="blog-image" loading="lazy" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <div class="blog-info">
+          <h2>John Snow</h2>
+          <p>"Unlocking AWS DevOps Mastery has transformed the way our team approaches cloud computing. The book's practical insights and hands-on techniques are invaluable for anyone navigating the complexities of AWS DevOps."</p>
+        </div>
+      </div>
+
+      <!-- Testimonial Card 2 -->
+      <div class="testimonial-card" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <img src="images/t2.jpg" alt="Blog 2" class="blog-image" loading="lazy" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <div class="blog-info">
+          <h2>Jane Smith</h2>
+          <p>"As an IT professional, I'm always on the lookout for resources that bridge the gap between theory and real-world application. This book not only delivers on that front but does so with clarity and depth. A must-read for those serious about mastering AWS DevOps."</p>
+        </div>
+      </div>
+
+      <!-- Testimonial Card 3 -->
+      <div class="testimonial-card" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <img src="images/t3.jpg" alt="Blog 3" class="blog-image" loading="lazy" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <div class="blog-info">
+          <h2>Roberta Johnson</h2>
+          <p>"Having read numerous books on AWS and DevOps, I can confidently say that this stands out. The content is well-structured, and the hands-on examples make complex concepts accessible. This is an essential guide for anyone aiming to excel in AWS DevOps."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blogs" class="blogs-section">
+    <div class="blog-header">
+      <h2>Latest Blogs</h2>
+      <p>Stay updated with our latest insights and tutorials.</p>
+    </div>
+
+    <div class="blog-cards">
+      <!-- Blog Card 1 -->
+      <div class="blog-card" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <img src="blogimages/Linux.png" alt="Blog 1" class="blog-image" loading="lazy" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <div class="blog-info">
+          <h3>Navigating The Linux File System</h3>
+          <p>Linux is a powerful operating system, but its file system can be daunting for beginners. This blog post provides a short and easy-to-follow guide to navigating the Linux file system, including absolute and relative paths, the cd command, and other useful tips.</p>
+          <a href="Navigating-The-Linux-File-System.html" class="read-more" onmouseover="addGlowEffectButton(this)" onmouseout="removeGlowEffectButton(this)">Read More</a>
+        </div>
+      </div>
+
+      <!-- Blog Card 2 -->
+      <div class="blog-card" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <img src="blogimages/1b2.png" alt="Blog 2" class="blog-image" loading="lazy" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <div class="blog-info">
+          <h3>Managing Files and Directories</h3>
+          <p>Embark on a Linux command-line adventure! Our comprehensive guide introduces essential commands for cloud engineers, from 'touch' to 'grep.' Master file manipulation, search techniques, and more.</p>
+          <a href="Managing-Files-and-Directories.html" class="read-more" onmouseover="addGlowEffectButton(this)" onmouseout="removeGlowEffectButton(this)">Read More</a>
+        </div>
+      </div>
+
+      <!-- Blog Card 3 -->
+      <div class="blog-card" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <img src="blogimages/b3.png" alt="Blog 3" class="blog-image" loading="lazy" onmouseover="addGlowEffect(this)" onmouseout="removeGlowEffect(this)">
+        <div class="blog-info">
+          <h3>Linux Commands for Cloud Engineers</h3>
+          <p>Unlock the secrets of Linux command-line mastery! Dive into sudo, package management, and file permissions with this comprehensive guide. Elevate your Linux skills effortlessly.</p>
+          <a href="Linux-Commands-for-Cloud-Engineers.html" class="read-more" onmouseover="addGlowEffectButton(this)" onmouseout="removeGlowEffectButton(this)">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media Links Section -->
+  <section id="sm" class="social-media-section">
+    <h2>Connect With Us</h2>
+    <div class="social-links">
+      <a href="https://www.youtube.com/c/TheCloudAdvisory" target="_blank">
+        <img src="images/yt.png" alt="YouTube" class="social-icon">
+      </a>
+      <a href="https://www.facebook.com/awspravinmishra" target="_blank">
+        <img src="images/fb.png" alt="Facebook" class="social-icon">
+      </a>
+      <a href="https://www.linkedin.com/in/pravin-mishra-aws-trainer/" target="_blank">
+        <img src="images/in.png" alt="LinkedIn" class="social-icon">
+      </a>
+      <a href="https://www.instagram.com/awspravinmishra/" target="_blank">
+        <img src="images/ig.png" alt="Instagram" class="social-icon">
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    Copyright 2024 Pravin Mishra
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get all anchor links with the 'nav-link' class
+      const scrollLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+      // Add a click event listener to each link
+      scrollLinks.forEach(link => {
+        link.addEventListener('click', e => {
+          // Prevent the default behavior of the link
+          e.preventDefault();
+
+          // Get the target element's id from the href attribute
+          const targetId = link.getAttribute('href').substring(1);
+
+          // Find the target element
+          const targetElement = document.getElementById(targetId);
+
+          // Scroll smoothly to the target element
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

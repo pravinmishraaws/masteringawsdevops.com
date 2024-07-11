@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/blogstyles.css">
+<link rel="icon" href="f.png" type="image/x-icon">
+  <title>The Ultimate Guide to Creating Your Own AWS Account</title>
+ <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=653115d82ee074001200f239&product=inline-share-buttons&source=platform" async="async"></script>
+</head>
+<body>
+  <header>
+<!-- Navigation Section -->
+  <nav>
+    <div class="logo-container">
+            <a href=" https://masteringawsdevops.com"><img src="images/logo1.png" alt="Mastering AWS DevOps"></a>
+    </div>
+    <ul class="nav-links">
+	<li><a href="index.html">Home</a></li>
+  	<li><a href="Blogs.html">Book Hands-on</a></li>
+
+    </ul>
+  </nav>
+  </header>
+
+
+  <div class="main-container">
+    <article>
+    <h1>Creating a CodeCommit Repository
+</h1>
+<h2>Introduction:</h2>
+
+<p><strong>Ever wished you could undo mistakes in real life?</strong></p>
+
+<p><strong>Ever wished for a tool to correct the past mistakes or incidents?</strong></p>
+
+<p>You may not get a tool in real life, however this is very much possible in the world of software.</p>
+
+<p>When it comes to working on software development projects, especially in a team setting, we often have to collaborate and work together with the team members.</p>
+
+<p>As many brains are involved, you need to have a mechanism to keep the things organised and smoothly running.</p>
+
+<p>So here comes the AWS CodeCommit tool, to take care of all the source code-related management in a software development project.</p>
+
+<h2>Use of AWS CodeCommit</h2>
+
+<p><strong>Here’s how it will help you with your source code management task:</strong></p>
+
+<ol>
+  <li><strong>Version Control:</strong><br>
+  In any software project, you'll be writing and modifying code files. With time, your code evolves. But what if you want to go back to a previous version? Or if something goes wrong, how do you fix it? A CodeCommit repository allows you to track changes over time, maintain different versions of your code, and easily revert back to a previous state if needed. This is crucial for preventing accidental code breakages and for understanding how your code has changed over time.</li>
+
+  <li><strong>Collaboration:</strong><br>
+  Software projects are rarely done alone. You'll be working with a team of developers, each contributing their part. CodeCommit provides a central place where everyone can upload their code changes. This eliminates the need to send files back and forth via email or other methods, preventing version conflicts and ensuring everyone's work is combined in a structured manner.</li>
+
+  <li><strong>Code Reviews:</strong><br>
+  In a professional setting, code quality is essential. CodeCommit integrates with tools that enable code reviews. Team members can suggest changes, point out potential issues, and ensure that the code follows best practices. This leads to higher-quality code and a chance to learn from more experienced developers.</li>
+
+  <li><strong>Backup and Recovery:</strong><br>
+  Let’s say your local computer crashes or you accidentally delete an important file. If your code is stored only on your computer, it could be lost forever. CodeCommit stores your code securely in the cloud, acting as a backup. You can always retrieve your code, even if your local copy is lost.</li>
+
+  <li><strong>Remote Access:</strong><br>
+  In today's global world, teams might be spread across different locations. CodeCommit allows developers to access the code repository from anywhere with an internet connection. This is particularly important if your team is working remotely or collaborates with people in different time zones.</li>
+
+  <li><strong>Learning Industry Tools:</strong><br>
+  Familiarity with tools like CodeCommit gives you an edge in the job market. Many companies use version control systems like this, and having experience with such tools demonstrates your ability to work collaboratively in a professional software development environment.</li>
+</ol>
+
+<p>So why delay, let quickly go to the AWS management console and create an AWS CodeCommit repository and look out for all the related features to manage our source code.</p>
+
+<h2>Creating an AWS CodeCommit Repository</h2>
+
+<p>Creating an AWS CodeCommit repository involves several steps. CodeCommit is a fully managed source control service that makes it easy for teams to host secure and scalable Git repositories.</p>
+
+<p><strong>Let’s go to the AWS Management console.</strong></p>
+
+<ol>
+  <li><strong>Open AWS CodeCommit Console:</strong><br>
+  Type ‘CodeCommit’ in the search bar. Click on the ‘CodeCommit’ option. You can see the AWS CodeCommit console.</li>
+</ol>
+</div>
+<img src="blogimages/1b9.png" alt="Blog Post Image">
+<div>
+  <p><strong>There is a navigation panel on the left side that includes options to navigate to various AWS developer tools like CodeCommit, CodeArtifact, CodeBuild, CodeDeploy, and CodePipeline.</strong></p>
+
+  <h2>2. Create Repository</h2>
+
+  <p>On the main console, click on the ‘Create repository’ button.</p>
+
+  <p>In the ‘Repository settings’, give a ‘Repository name’. Let me give it a name ‘MyProjectRepo’. Add a description and a tag to this resource. By adding a description to a repository, you specify the purpose and function of the repository. This helps the other team members to collaborate, manage, and organise better.</p>
+
+  <p>By adding tags while creating a resource in AWS, we can organise, manage, and track our resources within our AWS account more easily. Tags are key-value pairs that we can attach to our resources to provide metadata, which can be used for cost allocation, resource management, and other purposes.</p>
+
+  <p>Tags are like labels that help you organise and keep track of your resources. For example, you can add a tag that says "Department: Marketing" or "Project: Website Redesign". This can help you see how much each department or project is spending on AWS resources and make sure you're using them efficiently. Tags can also help you automate certain tasks or generate reports that give you insights into your AWS usage and costs.</p>
+</div>
+
+<img src="blogimages/2b9.png" alt="Blog Post Image">
+<p> If your repository contains Java or Python code, and you want to have CodeGuru Reviewer analyse that code, enable this checkbox.</p>
+<img src="blogimages/3b9.png" alt="Blog Post Image">
+<div>
+  <p><strong>Let me quickly explain to you what CodeGuru is and what it is used for?</strong></p>
+
+  <p><strong>CodeGuru</strong> is an AWS tool that helps developers write better source code by identifying issues and recommending improvements. It uses machine learning to analyze your code and suggest optimizations that can improve its performance, security, and efficiency. CodeGuru provides a feature called <strong>CodeGuru Reviewer</strong>. It helps you catch bugs and security issues before they become problems.</p>
+
+  <p>Thus, CodeGuru can save developers time and help them write more reliable and efficient code. That’s why in case when we use Java or Python code, we will enable CodeGuru Reviewer to help us find the bugs.</p>
+
+  <p>For now, I do not require this, so I will disable this tool.</p>
+
+  <p>Click on the ‘Create’ button.</p>
+</div>
+
+<img src="blogimages/4b9.png" alt="Blog Post Image">
+<div>
+  <h2>3. Add Files to Repository</h2>
+
+  <p>Now let’s add files to our repository.</p>
+
+  <p>We have to add source code files to this repository. We can do this with any of the 3 methods.</p>
+
+  <p><strong>a. Create a File</strong></p>
+
+  <p>Click on ‘Create file’. You will write your file contents here, a branch is automatically created for you. This branch is called "main," and it becomes the main/default branch for your repository. So any files you create in the console will be added to this branch.</p>
+</div>
+
+
+<img src="blogimages/5b9.png" alt="Blog Post Image">
+<div>
+  <p><strong>b. Upload a File</strong></p>
+
+  <p>Then the second method is uploading a file from our local computer using the CodeCommit console.</p>
+
+  <p>If you have a file on your computer that you want to add to your repository, you can upload it through the CodeCommit website. Just like before, if this is the first file you're adding to the repository through the console, a branch called "main" is created for you, and it becomes the default branch for your repository.</p>
+
+  <p><strong>c. Using Git Client</strong></p>
+
+  <p>Then the third method is using a Git Client.</p>
+
+  <p>Git is a tool that helps to manage versions of files. You will use a Git client, i.e., Git terminal, to clone your CodeCommit repository on your computer. Once you have the repository on your computer, you can add, commit, and push files to the CodeCommit repository. When you do this, a branch is automatically created for you, and it becomes the default branch for your repository. The name of the branch is usually chosen by your Git client, but it's a good idea to configure it to use "main" as the name for the initial branch.</p>
+</div>
+
+<img src="blogimages/6b9.png" alt="Blog Post Image">
+<p>Now let’s upload a file from my local computer using the first method.
+
+I have a sample source code in my Github account.</p>
+<img src="blogimages/7b9.png" alt="Blog Post Image">
+<div>
+  <p><strong>I will download it first to my local computer.</strong></p>
+
+  <p>Click on ‘Choose file’.</p>
+
+  <p>Select any one file from the downloaded repository and upload it to CodeCommit repository.</p>
+</div>
+
+<img src="blogimages/8b9.png" alt="Blog Post Image">
+<p>Enter details in the ‘Commit changes to main’ section.</p>
+<img src="blogimages/9b9.png" alt="Blog Post Image">
+<div>
+  <p>Then click on ‘Commit changes’.</p>
+
+  <p>Upload a second file in the main branch in the same manner.</p>
+
+  <p>So now I have two files in the repository.</p>
+</div>
+
+<img src="blogimages/10b9.png" alt="Blog Post Image">
+<div>
+  <h2>4. Browse Contents of Your Repository</h2>
+
+  <p>Now click on the repository ‘MyProjectRepo’ to see the contents of the repository. You can see that these two files belong to the default branch of your repository. If you want to see a different branch or check the code at a specific tag, you can select the branch or tag from here.</p>
+</div>
+
+<img src="blogimages/11b9.png" alt="Blog Post Image">
+<p>To view the contents of the file click on the file.</p>
+<img src="blogimages/12b9.png" alt="Blog Post Image">
+<p>To browse the commit history, click on the ‘Commit’ button. The latest commit is at the top of the list.</p>
+<img src="blogimages/13b9.png" alt="Blog Post Image">
+<p>To view differences between any two commits, click on the ‘Compare commit’ tab. </p>
+<img src="blogimages/14b9.png" alt="Blog Post Image">
+<p>Then we can also see a graphical representation of all the commits, click on ‘Commit visualizer’. To see more details of any particular commit, click on this black dot.</p>
+<img src="blogimages/15b9.png" alt="Blog Post Image">
+<div>
+  <h2>5. Create and Collaborate on Pull Request</h2>
+
+  <p>When you work in a team for any repository, you can collaborate with other team members on code and review changes. You can create a pull request so that other users can review and comment on your code changes in a branch.</p>
+
+  <p>A pull request is a request to merge changes made in one branch of a code repository with another branch. Pull requests provide a way for developers to collaborate on code changes and ensure that code changes are reviewed and tested before they are merged into the main branch.</p>
+
+  <p>When a developer creates a pull request, they can specify the source branch (the branch with the changes to be merged) and the target branch (the branch where the changes will be merged).</p>
+
+  <p>Once a pull request is created, reviewers can leave comments on the changes, request additional changes, or approve the changes. Once all reviewers have approved the changes, the pull request can be merged into the target branch.</p>
+
+  <p>So let’s make some changes in our first file. We will first create a new branch, make changes in that branch and then try to merge these changes into the main branch.</p>
+
+  <p>So go to ‘Branches’ on the left navigation panel.</p>
+
+  <p>Click on the main branch name and then click on the ‘Create branch’ button.</p>
+</div>
+
+<img src="blogimages/16b9.png" alt="Blog Post Image">
+<div>
+  <p>Give a name to this new branch as ‘new_feature’ and select the branch from which it has to create this new branch. In this case, it is the main branch, and then click on ‘Create branch’.</p>
+</div>
+
+<img src="blogimages/17b9.png" alt="Blog Post Image">
+<div>
+  <p>So here we can see the list of main branches and sub-branches.</p>
+
+  <p>Now we will make changes in this new branch.</p>
+
+  <p>Click on the new branch ‘new_feature’.</p>
+</div>
+
+<img src="blogimages/18b9.png" alt="Blog Post Image">
+<img src="blogimages/19b9.png" alt="Blog Post Image">
+<img src="blogimages/20b9.png" alt="Blog Post Image">
+<div>
+  <p>Open the file of this ‘new_feature’ branch. Click on the ‘Edit’ button.</p>
+
+  <p>Make some changes to this file.</p>
+</div>
+
+<img src="blogimages/21b9.png" alt="Blog Post Image">
+<div>
+  <p>Then commit changes to this new branch and click on ‘Commit changes’.</p>
+</div>
+
+<img src="blogimages/22b9.png" alt="Blog Post Image">
+<div>
+  <p>Go to the ‘Repositories’ console. Click on the ‘MyProjectRepo’ repository. Click on ‘Create pull request’.</p>
+</div>
+
+<img src="blogimages/23b9.png" alt="Blog Post Image">
+<div>
+  <p>In the 'Create pull request' section, in 'Source', choose the branch that contains the changes you want reviewed. In 'Destination', choose the branch where you want the reviewed code to be merged when the pull request is closed.</p>
+</div>
+
+<img src="blogimages/24b9.png" alt="Blog Post Image">
+<div>
+  <p>Click on ‘Compare’.</p>
+</div>
+
+<img src="blogimages/25b9.png" alt="Blog Post Image">
+<div>
+  <p>In this image, you can see the differences in the two files are highlighted. So the green highlighted text is what we want to have in the main branch. So click on ‘Create pull request’.</p>
+
+  <p>Before that, give a title to this pull request. Let me name it as ‘New Pull request’.</p>
+
+  <p>As we see there are no merge conflicts, let’s go ahead and click on the ‘Merge’ button.</p>
+</div>
+
+<img src="blogimages/26b9.png" alt="Blog Post Image">
+
+<img src="blogimages/27b9.png" alt="Blog Post Image">
+<p>There are 3 types of merge strategy, we will go with fast forward merge. Let me quickly explain to you these 3 merge strategies.</p>
+<img src="blogimages/28b9.png" alt="Blog Post Image">
+<div>
+  <p><strong>What are merge strategies?</strong> Merge strategies decide how changes are combined when merging a branch or pull request into another branch.</p>
+
+  <p><strong>1. Fast Forward Merge:</strong><br>
+    A fast-forward merge is a type of merge operation in Git that happens when the branch being merged has no new changes since the branch it is being merged into was created. The changes in the branch being merged are already present in the branch it is being merged into. It's like a fast-forward in time where the changes are seamlessly incorporated.</p>
+
+  <p><strong>2. Squash and Merge:</strong><br>
+    Squash and merge combine multiple individual commits into one, simplifying the project history. It's useful when you want to keep the history clean and easy to follow. However, it may make it harder to track down specific changes later on.</p>
+
+  <p><strong>3. 3-Way Merge:</strong><br>
+    A 3-way merge is a way to combine changes from two different branches of code. Git looks at three versions of the file: the original, your changes, and your teammate's changes. It automatically combines changes unless there are conflicts, where it might need your input to decide which changes to keep. It's useful when changes overlap or conflict.</p>
+
+  <p>Click on the ‘Merge pull request’ button.</p>
+
+  <p>You can see the pull request status has changed from open to merged (green highlight).</p>
+</div>
+
+<img src="blogimages/29b9.png" alt="Blog Post Image">
+<div>
+  <p>Now go to your repository and check the number of branches. The new_feature branch has disappeared while the main branch still remains. Remember we checked the checkbox that asked, whether we want to delete the source branch after merging?</p>
+</div>
+
+<img src="blogimages/30b9.png" alt="Blog Post Image">
+<div>
+  <p>Now open the first file and check if the new changes are merged or not?</p>
+</div>
+
+<img src="blogimages/31b9.png" alt="Blog Post Image">
+
+<div>
+  <p>Yes, the changes are visible in the main branch.</p>
+  <p>Thus, we see that by creating branches and pull requests, how software developers can achieve collaborative development.</p>
+  <p><strong>Conclusion</strong></p>
+  <p>In the ever-evolving landscape of software development, the need for efficient collaboration and seamless code management is paramount. AWS CodeCommit is a dynamic assistant that empowers developers to work together harmoniously while maintaining the integrity of their source code.</p>
+  <p>In this blog, we learned how to create a repository, add files and make changes to those files. The concepts of pull request and branch help us to make the software development process more efficient. Remember, CodeCommit is your ally, your companion, and your guide in the exciting world of software development.</p>
+</div>
+
+      <!-- Add more content here -->
+
+      <p><i>Share this post:</i></p>
+      <div class="social-icons">
+      <div class="sharethis-inline-share-buttons"></div>
+    </div>
+
+      <div>
+	<a href="Blogs.html" class="read-more">Back</a>
+      </div>
+    </article>
+
+    <!-- Sidebar Section -->
+    <object type="text/html" data="sidebar.html" width="300" height="1000">
+
+      <!-- Add more sidebar content as needed -->
+
+    </div>
+  </div>
+
+  <footer>
+   &copy; Copyright 2023 Pravin Mishra
+  </footer>
+
+</body>
+</html>
+

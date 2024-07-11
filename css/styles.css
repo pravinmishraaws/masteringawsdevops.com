@@ -1,0 +1,771 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+overflow-x: hidden;
+min-height: 100vh;
+width: 100 vw;
+}
+
+body {
+  font-family: 'Lato';
+  line-height: 1.6;
+min-height: 100vh;
+width: 100 vw;
+overflow-x: hidden;
+}
+
+/* Navigation Section Styles */
+nav {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black; /* Set background color to black */
+    color: cyan; /* Set text color to cyan */
+    padding: 10px 20px; /* Adjust padding for better spacing */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav a {
+    color: cyan; /* Set text color to cyan */
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px;
+    display: block;
+    position: relative;
+}
+
+.logo-container img {
+    max-height: 60px; /* Set max-height to reduce logo size */
+    transition: transform 0.3s;
+}
+
+.logo-container:hover img {
+    transform: scale(1.1);
+}
+
+nav a {
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: black; /* Set text color to cyan on hover */
+    background-color: cyan;
+    animation: glow 1s infinite alternate;
+    font-weight: bold;
+}
+
+nav li:hover a {
+    color: black; /* Set text color to cyan on hover */
+    background-color: cyan;
+font-weight: bold;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px 2px cyan;
+    }
+    100% {
+        box-shadow: 0 0 20px 5px cyan;
+    }
+}
+
+/* Title Section Styles */
+.title-section {
+  background: url('images/background5.png') center/cover;
+  color: #ggg;
+display: flex;
+flex-direction: column;
+align-items: right-center;
+justify-content: center;
+height: 10vh;  
+text-align: center;
+  padding: 80px 20px;
+}
+
+.title-content h1 {
+  font-size: 5em;
+  margin-bottom: 10px;
+font-weight: 700;
+}
+
+.title-section h2 {
+  font-size: 2em; /* Adjust the font size as needed */
+  margin-bottom: 10px; /* Add some spacing between the title and social icons */
+}
+
+.title-content p {
+  font-size: 1.2em;
+}
+
+/* Feature Section Styles */
+.feature-section {
+background-color: #f5f5f5;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.feature-section h2 {
+  font-size: 2em; /* Adjust the font size as needed */
+  margin-bottom: 10px; /* Add some spacing between the title and social icons */
+}
+
+.feature blockquote {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+.feature cite {
+  font-style: italic;
+  color: #777;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feature-card {
+  width: calc(33.3333% - 1cm);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-card:hover {
+  background-color: #87CEEB;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.feature-card img {
+ width: auto;
+  height: 300px; /* Set a fixed height for the images */
+  border: 3px solid #87CEEB;
+  border-radius: 10px;
+  margin: 0 auto;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+.feature-info h2 {
+  font-size: 1.5em;
+  margin-top: 10px;
+  color: #333;
+text-align: center;
+}
+
+.feature-info p {
+  color: #666;
+}
+
+
+/* About Me Section Styles */
+/* Add some space between image and description */
+.about-me-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    margin-top: 20px;
+background: linear-gradient(to right, #4e54c8, #8f94fb);
+  color: #fff;
+padding: 60px 20px;
+}
+
+.about-me-section h2 {
+  font-size: 2em; /* Adjust the font size as needed */
+  margin-bottom: 20px; /* Add some spacing between the title and social icons */
+}
+
+.profile-image {
+    max-width: 500px;
+    border-radius: 50%;
+    margin-right: 20px; /* Add some space to the right of the image */
+border: 5px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+/* Style for the description */
+.description p {
+font-size: 1.3em;
+    text-align: left; /* Align text to the left */
+}
+
+/* Style for the additional information */
+.description p strong {
+    display: block; /* Ensure line break after the strong tag */
+    font-weight: bold;
+    margin-top: 10px; /* Add some space above the name */
+}
+
+.description p em {
+    font-style: italic;
+}
+
+/* Blog Section Styles */
+.blogs-section {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.blogs-section h2 {
+  font-size: 2em; /* Adjust the font size as needed */
+  margin-bottom: 20px; /* Add some spacing between the title and social icons */
+}
+
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.blog-cards {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping to prevent overflow */
+  gap: 20px; /* Adds space between cards */
+  justify-content: space-between;
+}
+
+.blog-card {
+  flex: 1 1 calc(33.3333% - 20px); /* Ensures three cards per row with space */
+  box-sizing: border-box; /* Ensures padding and border are included in the width and height */
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+  margin: 10px 0; /* Adds vertical spacing between rows */
+}
+
+.blog-card:hover {
+  background-color: #87CEEB; /* Light blue color for hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.blog-card img {
+  width: auto;
+  height: 200px; /* Set a fixed height for the images */
+  border: 3px solid #87CEEB;
+  border-radius: 10px;
+  margin: 0 auto;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+.blog-info {
+  text-align: center; /* Center align heading and subheading */
+}
+
+.blog-info h3 {
+  font-size: 1.5em;
+  margin-top: 10px;
+  color: #333;
+}
+
+.blog-info p {
+  color: #666;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #4CAF50; /* Updated to a vibrant green */
+  border: 2px solid #4CAF50; /* Updated to a vibrant green */
+  border-radius: 5px;
+  transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+}
+
+.read-more:hover {
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.8); /* Green glow effect */
+  transform: scale(1.05);
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Training Section Styles */
+.trainings-section {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.trainings-section h2 {
+  font-size: 2em; /* Adjust the font size as needed */
+  margin-bottom: 20px; /* Add some spacing between the title and social icons */
+}
+
+
+.training-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.training-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.training-card {
+  width: calc(33.3333% - 1cm);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+}
+
+.training-card:hover {
+  background-color: #87CEEB; /* Light blue color for hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.training-card img {
+  width: auto;
+  height: 200px; /* Set a fixed height for the images */
+  border: 3px solid #87CEEB;
+  border-radius: 10px;
+  margin: 0 auto;
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+.training-info {
+  text-align: center; /* Center align heading and subheading */
+}
+
+.training-info h3 {
+  font-size: 1.5em;
+  margin-top: 10px;
+  color: #333;
+}
+
+.training-info p {
+  color: #666;
+}
+
+.read-more {
+    display: inline-block;
+  padding: 10px 16px; /* Adjusted padding */
+  margin: 10px 0; /* Added margin */
+  text-decoration: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+  transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+  box-sizing: border-box; /* Ensure consistent box-sizing */
+}
+
+.read-more:hover {
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.8); /* Green glow effect */
+  transform: scale(1.05);
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
+
+/* Testimonial Section Styles */
+.testimonial-section {
+background-color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonial-section h2 {
+  font-size: 2em; /* Adjust the font size as needed */
+  margin-bottom: 10px; /* Add some spacing between the title and social icons */
+  color: #333;
+}
+
+.testimonial blockquote {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+.testimonial cite {
+  font-style: italic;
+  color: #777;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.testimonial-card {
+  width: calc(33.3333% - 1cm);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonial-card:hover {
+  background-color: #87CEEB;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.testimonial-card img {
+  width: 30%;
+  border: 3px solid #87CEEB;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.testimonial-info h2 {
+  font-size: 1.5em;
+  margin-top: 10px;
+  color: #333;
+text-align: center;
+}
+
+.testimonial-info p {
+  color: #666;
+}
+
+
+/* Book Section Styles */
+
+.buy-book-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.buy-book-section h2 {
+  font-size: 2em; /* Adjust the font size as needed */
+  margin-bottom: 20px; /* Add some spacing between the title and social icons */
+  color: #333;
+}
+
+/* Center the book info horizontally */
+.book-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adjust the gap between image and description */
+}
+
+/* Style for the book cover image */
+.book-info img {
+  max-width: 100%; /* Ensure the image doesn't exceed its container */
+    max-height: 500px; /* Set a maximum height for the image */
+    border: 3px solid #87CEEB;
+    border-radius: 10px;
+}
+
+/* Center the description text */
+.description {
+  max-width: 600px; /* Adjust the maximum width as needed */
+  text-align: left; /* Align text to the left */
+}
+
+
+.book-info p {
+  color: #666;
+  font-size: 1.2em;
+  max-width: 1800px; /* Adjust the maximum width as needed */
+  margin: 0 auto 30px;
+  line-height: 1.6; /* Adjust the line height for better readability */
+}
+
+.buy-now-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #87CEEB;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.buy-now-button:hover {
+  background-color: #007bff;
+}
+
+
+/* Social Media Links Section Styles */
+
+
+.social-media-section h2 {
+  font-size: 2em; /* Adjust the font size as needed */
+  margin-bottom: 20px; /* Add some spacing between the title and social icons */
+}
+
+.social-media-section {
+  background-color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  display: inline-block;
+  width: 80px; /* Adjust the width as needed */
+  height: 80px; /* Adjust the height as needed */
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 80px; /* Adjust line-height for vertical alignment */
+  font-size: 1.5em;
+  color: #007bff;
+  transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* White glow effect for visibility */
+  transform: scale(1.2);
+}
+
+/* Adjust the background colors for each social media icon */
+.social-icon[src*="youtube"] {
+  background-color: #ff0000; /* Red for YouTube */
+}
+
+.social-icon[src*="facebook"] {
+  background-color: #3b5998; /* Facebook blue */
+}
+
+.social-icon[src*="linkedin"] {
+  background-color: #0077b5; /* LinkedIn blue */
+}
+
+.social-icon[src*="instagram"] {
+  background-color: #e4405f; /* Instagram pink */
+}
+
+/* Footer Section Styles */
+footer {
+    background-color: black; /* Set background color to black */
+    color: cyan; /* Set text color to cyan */
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: cyan; /* Set text color to cyan */
+    font-size: 1em; /* Set font size */
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: cyan; /* Set text color to cyan on hover */
+    font-weight: bold;
+}
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+  /* Navigation Styles for Mobile */
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  nav li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .logo-container img {
+    max-height: 40px;
+  }
+
+  /* Hamburger Icon Styles */
+  #hamburger-icon {
+    display: block;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: cyan;
+  }
+
+  /* Hide the regular navigation links on mobile */
+  nav ul {
+    display: none;
+  }
+
+  /* Show the navigation links when the hamburger icon is clicked */
+  #hamburger-icon:checked + ul {
+    display: flex;
+  }
+
+  /* Style for the overlay background when mobile navigation is active */
+  #hamburger-icon + ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  nav a {
+    color: #fff;
+    font-size: 1.5em;
+    padding: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+
+  nav a:hover {
+    color: cyan;
+  }
+
+  /* Title Section Styles for Mobile */
+  .title-section {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .title-content h1 {
+    font-size: 3em;
+  }
+
+  .title-content p {
+    font-size: 1em;
+  }
+
+  /* Feature Section Styles for Mobile */
+  .feature-section {
+    padding: 40px 20px;
+  }
+
+  .feature-cards {
+    flex-direction: column;
+  }
+
+  .feature-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* About Me Section Styles for Mobile */
+  .about-me-content {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .profile-image {
+      max-width: 100%;
+  max-height: 200px; /* Adjust the maximum height as needed */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 0;
+  border: 5px solid #fff;
+  overflow: hidden;
+  margin-bottom: 20px;
+  }
+
+  /* Blogs Section Styles for Mobile */
+  .blogs-section {
+    padding: 40px 20px;
+  }
+
+  .blog-cards {
+    flex-direction: column;
+  }
+
+  .blog-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Book Section Styles for Mobile */
+  .buy-book-section {
+    padding: 40px 20px;
+  }
+
+  .book-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .book-info img {
+    max-width: 100%;
+    max-height: auto;
+  }
+
+  .description {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  /* Testimonial Section Styles for Mobile */
+  .testimonial-section {
+    padding: 40px 20px;
+  }
+
+  .testimonial-cards {
+    flex-direction: column;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

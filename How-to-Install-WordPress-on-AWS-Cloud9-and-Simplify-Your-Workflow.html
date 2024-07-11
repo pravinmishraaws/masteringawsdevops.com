@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/blogstyles.css">
+<link rel="icon" href="f.png" type="image/x-icon">
+  <title>How to Install WordPress on AWS Cloud9 and Simplify Your Workflow?</title>
+ <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=653115d82ee074001200f239&product=inline-share-buttons&source=platform" async="async"></script>
+</head>
+<body>
+  <header>
+<!-- Navigation Section -->
+  <nav>
+    <div class="logo-container">
+            <a href=" https://masteringawsdevops.com"><img src="images/logo1.png" alt="Mastering AWS DevOps"></a>
+    </div>
+    <ul class="nav-links">
+	<li><a href="index.html">Home</a></li>
+  	<li><a href="Blogs.html">Book Hands-on</a></li>
+
+    </ul>
+  </nav>
+  </header>
+
+
+  <div class="main-container">
+    <article>
+    <h1>How to Install WordPress on AWS Cloud9 and Simplify Your Workflow?</h1>
+<h2>Introduction:</h2>
+
+<p>Hi guys, let me start today’s blog with a story of two friends. These two friends are using non-Linux laptops for their tasks.</p>
+
+<p>Let’s listen through their conversation.</p>
+
+<p><i>Person A:</i> Hey, have you ever thought about trying out Linux on your laptop?</p>
+
+<p><i>Person B:</i> Yeah, I've heard a bit about it, but I'm not sure where to start. Isn't Linux a whole different operating system?</p>
+
+<p><i>Person A:</i> It is! But guess what? You can actually use Linux without changing anything on your laptop. I've been exploring it on <b>Amazon Web Services (AWS)</b>.</p>
+
+<p><i>Person B:</i> Really? How does that work?</p>
+
+<p><i>Person A:</i> Well, AWS lets you create virtual machines in the cloud, and you can run Linux on those. It's like having a Linux computer that you access through the internet.</p>
+
+<p><i>Person B:</i> That sounds interesting, but I'm not very tech-savvy. Is it complicated to set up?</p>
+
+<p><i>Person A:</i> Not at all! It's pretty straightforward. First, you create an AWS account if you don't have one already. Then you use the <b>AWS Management Console</b> to set up what they call an "<i>instance</i>" – that's the virtual machine running Linux.</p>
+
+<p><i>Person B:</i> But I'm on Windows. Can I still do this?</p>
+
+<p><i>Person A:</i> Absolutely! That's the cool part. Even if you're on Windows, you can create and use a Linux instance on AWS. You just need an internet connection.</p>
+
+<p><i>Person B:</i> Got it. So, how do we get started?</p>
+
+<p>So guys, in this blog we leverage this feature to convert our non-Linux system into a Linux System. We will create a Linux environment and host a website on it.</p>
+
+<p>So let's move ahead without much delay.</p>
+<h2>The Demonstration</h2>
+
+<p>In this blog, we will set up and use WordPress on the <b>AWS Cloud9</b> environment. We all know that WordPress is a popular tool to create websites and manage their content.</p>
+
+<p>We will need to have a few prerequisites fulfilled before starting this demo.</p>
+
+<h2>Prerequisites</h2>
+
+<p><b>1. The first requirement is to have an <i>AWS Cloud9 EC2</i> development environment.</b></p>
+
+<p>Let’s see how we set this up.</p>
+
+<p>Go to the <b>AWS Cloud9 console</b>. Click on the ‘<i>Create Environment</i>’ button.</p>
+<img src="blogimages/1b4.png" alt="Blog Post Image">
+<p>We will create a Cloud9 environment with <b>Amazon Linux 2 AMI</b>. This setting launches an <i>EC2 instance</i> with the Linux operating system in <b>AWS Cloud</b>. We will access this EC2 instance as our Linux virtual computer through Cloud9’s environment using the Cloud9’s terminal.</p>
+
+<p>Now, let’s give the details to create a Cloud9 environment.</p>
+
+<p>Give a name and description to the Cloud9 environment. Choose ‘<i>New EC2 instance</i>’ option. This will create a new EC2 instance that the Cloud9 will use for this demo. When I say EC2 instance, this is the virtual machine in the cloud that we can access through our local machine.</p>
+
+<p>The 2nd option is ‘<i>Existing compute</i>’ here you will give the name of the existing EC2 instance that you want to use for your project. You have to give some details about this EC2 instance such as login name, EC2 instance’s public IP address, and port number through which the connection is to be set up.</p>
+
+<p>For this demo…I will choose ‘<i>New EC2 instance</i>’</p>
+<img src="blogimages/2b4.png" alt="Blog Post Image">
+<p>As I am creating a new EC2 instance, I have to choose an instance type. Through instance type, I have the options to choose the RAM size and virtual CPU capacity. Here, <i>v</i> in <i>vCPU</i> stands for virtual CPU. For this demo, I will keep the default settings as <b>t2.micro</b> which is <b>free-tier eligible</b>.</p>
+
+<p>In case you use the RAM and CPU with higher capacities, you may end up with additional charges. So if you are a beginner, make sure you use the free-tier eligible instance type.</p>
+
+<p>Then we have to choose the environment platform that my EC2 instance has to use. I will go with <b>Amazon Linux 2</b>. So it doesn't really matter which operating system your local machine is running on, the virtual machine that is allotted to you will have Amazon Linux 2 operating system for your use.</p>
+<img src="blogimages/3b4.png" alt="Blog Post Image">
+
+<p>Then I will set the timeout to <b>30 minutes (default)</b>. This means that if the Cloud9 environment is not used for 30 minutes, the Cloud9 will go into auto-hibernate mode and help me avoid extra charges that may have incurred in case I had kept the Cloud9 environment idle without using it.</p>
+
+<p>In ‘<i>Network settings</i>’, we have two options on how to connect to the Cloud9 environment.</p>
+
+<p>These options help control how the Cloud9 environment connects to the internet and other computers. It's like adjusting the settings on your phone or computer to connect to different networks.</p>
+
+<p><b>AWS Systems Manager (SSM)</b> is a tool that helps manage and configure the Cloud9 instance. It provides a secure way to connect to the Cloud9 instance without needing to directly expose it to the internet.</p>
+
+<p><b>Secure Shell (SSH)</b> is a way to securely access and control computers remotely. In the case of Cloud9, SSH is used to connect to the underlying computer that powers the Cloud9 environment.</p>
+
+<p>I will keep this setting default for this demo.</p>
+<img src="blogimages/4b4.png" alt="Blog Post Image">
+<p>In <i>VPC settings</i>, we can see the default VPC and subnet being used for our Cloud9 environment. AWS creates a default VPC and subnet for us to use with our Cloud9 environment. Cloud9 uses this VPC to communicate with the newly created EC2 instance.</p>
+
+<p>In case you want to use your own VPC and subnet, you can select them from the dropdown list.</p>
+<img src="blogimages/5b4.png" alt="Blog Post Image">
+<p>Next is ‘<i>tags</i>’. In AWS, tags are a way to label and organise your AWS resources. Now when I say AWS resources…resources such as EC2 instance, Cloud9 environment, database, or storage that we create in the cloud. If we give proper names to these resources, it is easy for us to organise, search and manage our AWS resources.</p>
+
+<p>These tags are given in <i>key-value pairs</i> format.</p>
+
+<p>Let me give a tag to this Cloud9 environment.</p>
+
+<p><b>Key</b> - Environment, <b>value</b> - Wordpress</p>
+
+<p>Do not use the word ‘<i>name</i>’ for the key, as it is reserved for EC2 instance tagging.</p>
+
+<p>This tag is attached to my Cloud9 environment that I am creating. Also, it is propagated to the underlying resources that are being used by this environment such as EC2 instance and any other resource I will be creating later in this demo.</p>
+
+<p>We can see here a few IAM roles are created automatically to ensure that Cloud9 is able to communicate with few other AWS services while working on my project.</p>
+<img src="blogimages/6b4.png" alt="Blog Post Image">
+<p>Let's go ahead and click on the ‘<i>Create</i>’ button.</p>
+
+<p>In case you see a red flag, do check settings of your web browser, your AWS access permissions, the instance, or the associated network.</p>
+
+<p>If everything goes well, your environment is created and you will see a green bar at the top.</p>
+
+<p>Select on the new environment and choose <i>Open in Cloud9</i> to launch the IDE.</p>
+<img src="blogimages/7b4.png" alt="Blog Post Image">
+
+<p>The environment is set up.</p>
+
+<p>Let's go to the <b>AWS Cloud9 IDE</b> terminal window.</p>
+<img src="blogimages/8b4.png" alt="Blog Post Image">
+<p>So this is the first prerequisite of having an <b>AWS Cloud9 EC2</b> development environment.</p>
+
+<p>The second prerequisite is to have an updated EC2 instance with all the latest software packages. You can go to the EC2 console to see if a new EC2 instance is launched or not after the Cloud9 environment is created.</p>
+
+<p>We will check for this prerequisite by using a few commands as follows.</p>
+
+<pre><code>$ sudo yum update -y</code></pre>
+
+<p>This command helps your computer stay up-to-date with the newest software. The "<code>sudo</code>" part gives you special permission to make changes, "<code>yum</code>" is the package manager that manages software, "<code>update</code>" means getting the latest versions, and "<code>-y</code>" means saying "yes" to all the updates without asking.</p>
+<img src="blogimages/9b4.png" alt="Blog Post Image">
+<p>All right, so we are done with the prerequisites. Let’s kick off with the main agenda of this blog.</p>
+
+<h2>Steps to follow</h2>
+
+<p>To install WordPress on Cloud9's EC2 instance environment, we will have to follow the below steps.</p>
+
+<p><b>1. Install and configure a database.</b> We will use <b>MariaDB</b> server for this demo. When you install WordPress, it needs a place to store all the content you create and manage. This is where MariaDB comes in. It helps WordPress organize and store everything efficiently, so when people visit your website, it can quickly retrieve the right information and display it properly.</p>
+
+<p><b>2. Install and configure WordPress.</b> Once we install the WordPress software package, we will edit the <i>wordpress.conf</i> file to make the necessary changes to suit our website. The <i>wordpress.conf</i> file is typically used to configure settings related to the web server (like Apache or Nginx) for your WordPress site.</p>
+
+<p><b>3. Configure Apache web server.</b> Now that we have a WordPress website, it should be made available to users. A web server is required for this to happen. A web server is essential because it connects websites to users. When you visit a website, your device sends a request to a web server asking for the web page's content (text, images, videos, etc.). The web server then processes the request and sends back the requested content to your device, allowing you to view the webpage.</p>
+
+<p><b>4. Preview the website.</b> Once we are done with all the above steps, we will check if the website is running or not.</p>
+
+<p>Excited! I am sure, you are!</p>
+
+<p>Let’s get in action, guys.</p>
+
+<h2>A. Install and Configure a Database</h2>
+
+<p>So our first step is to install and configure a database.</p>
+
+<p>In the Cloud9 window terminal type the following command.</p>
+
+<pre><code>$ sudo yum install -y mariadb-server</code></pre>
+
+<p>This command helps your computer (in this case, our Linux EC2 instance which is launched while creating the Cloud9 environment) get and install the "<b>mariadb-server</b>" program. It's like telling your computer to fetch a tool it needs and set it up for you automatically. The "<code>sudo</code>" part gives you special permission, "<code>yum</code>" is the tool that manages software, "<code>install</code>" means getting it, and "<code>-y</code>" means saying "yes" to all the installation steps without asking.</p>
+
+<pre><code>$ sudo systemctl start mariadb</code></pre>
+
+<p>This command tells your computer (in this case, our Linux EC2 instance which is launched while creating the Cloud9 environment) to start the "<b>mariadb</b>" program. It's like flipping a switch to turn on the program and make it run. The "<code>sudo</code>" part gives you permission, "<code>systemctl</code>" is the tool to manage programs, "<code>start</code>" means turning it on, and "<code>mariadb</code>" is the name of the program you want to start.</p>
+
+<img src="blogimages/10b4.png" alt="Blog Post Image">
+<p>All right, so we are done with the prerequisites. Let’s kick off with the main agenda of this blog.</p>
+
+<h2>Steps to follow</h2>
+
+<p>To install WordPress on Cloud9's EC2 instance environment, we will have to follow the below steps.</p>
+
+<p><b>1. Install and configure a database.</b> We will use <b>MariaDB</b> server for this demo. When you install WordPress, it needs a place to store all the content you create and manage. This is where MariaDB comes in. It helps WordPress organize and store everything efficiently, so when people visit your website, it can quickly retrieve the right information and display it properly.</p>
+
+<p><b>2. Install and configure WordPress.</b> Once we install the WordPress software package, we will edit the <i>wordpress.conf</i> file to make the necessary changes to suit our website. The <i>wordpress.conf</i> file is typically used to configure settings related to the web server (like Apache or Nginx) for your WordPress site.</p>
+
+<p><b>3. Configure Apache web server.</b> Now that we have a WordPress website, it should be made available to users. A web server is required for this to happen. A web server is essential because it connects websites to users. When you visit a website, your device sends a request to a web server asking for the web page's content (text, images, videos, etc.). The web server then processes the request and sends back the requested content to your device, allowing you to view the webpage.</p>
+
+<p><b>4. Preview the website.</b> Once we are done with all the above steps, we will check if the website is running or not.</p>
+
+<p>Excited! I am sure, you are!</p>
+
+<p>Let’s get in action, guys.</p>
+
+<h2>A. Install and Configure a Database</h2>
+
+<p>So our first step is to install and configure a database.</p>
+
+<p>In the Cloud9 window terminal type the following command.</p>
+
+<pre><code>$ sudo yum install -y mariadb-server</code></pre>
+
+<p>This command helps your computer (in this case, our Linux EC2 instance which is launched while creating the Cloud9 environment) get and install the "<b>mariadb-server</b>" program. It's like telling your computer to fetch a tool it needs and set it up for you automatically. The "<code>sudo</code>" part gives you special permission, "<code>yum</code>" is the tool that manages software, "<code>install</code>" means getting it, and "<code>-y</code>" means saying "yes" to all the installation steps without asking.</p>
+
+<pre><code>$ sudo systemctl start mariadb</code></pre>
+
+<p>This command tells your computer (in this case, our Linux EC2 instance which is launched while creating the Cloud9 environment) to start the "<b>mariadb</b>" program. It's like flipping a switch to turn on the program and make it run. The "<code>sudo</code>" part gives you permission, "<code>systemctl</code>" is the tool to manage programs, "<code>start</code>" means turning it on, and "<code>mariadb</code>" is the name of the program you want to start.</p>
+
+<img src="blogimages/11b4.png" alt="Blog Post Image">
+<img src="blogimages/12b4.png" alt="Blog Post Image">
+<img src="blogimages/13b4.png" alt="Blog Post Image">
+<img src="blogimages/14b4.png" alt="Blog Post Image">
+<p>Now we will create a database to store the information that we generate from the WordPress website. We will use the MariaDB client. First start with the following command.</p>
+
+<pre><code>$ sudo mysql -u root -p</code></pre>
+
+<p>This command lets you talk to ‘MySQL’ program. It's like having a conversation with a database. The "<code>sudo</code>" part gives you permission to do this, "<code>mysql</code>" is the name of the database program, "<code>-u root</code>" means you're using a user named "root" which is a powerful user, and "<code>-p</code>" means you'll need to type in a secret password to start talking to the database.</p>
+
+<img src="blogimages/15b4.png" alt="Blog Post Image">
+<p>Now you will enter into the MariaDB client terminal.</p>
+
+<pre><code>MariaDB [(none)]> create database wordpress_test;</code></pre>
+
+<p>This line is like telling the computer (in this case our Linux EC2 instance which is launched while creating the Cloud9 environment) to make a new storage space for our database named "<b>wordpress_test</b>."</p>
+
+<p>Then</p>
+
+<p><pre><code>MariaDB [(none)]> grant all privileges on wordpress_test.* </p>to wordpress_user@localhost identified by 'YourSecurePassword';</code></pre>
+
+<p>In this line we are saying that we want to let a user named "<b>wordpress_user</b>" have special powers over the database "<b>wordpress_test</b>."</p>
+
+<p>Let me split the whole line and explain separately.</p>
+
+<p><b>grant all privileges:</b> This part means we are giving the user full access to do various things with the "<b>wordpress_test</b>" database.</p>
+
+<p><b>on wordpress_test.*:</b> This means we are saying that the user can do these things on everything within the "<b>wordpress_test</b>" database.</p>
+
+<p><b>to wordpress_user@localhost:</b> Here, we are specifying that this permission is for the user "<b>wordpress_user</b>," and they can only use it when they're connecting from the same computer ("<b>localhost</b>").</p>
+
+<p><b>identified by 'YourSecurePassword':</b> This is where we are setting up a secret password for the user. It's like locking the database with a password, so only the user with this password can access it.</p>
+
+<p>So, in simpler terms, this line is allowing a user to fully manage the database, and we are giving them a password to securely access it from the same computer.</p>
+
+<p>Now to log out of the MariaDB client, we will simply type ‘<code>exit</code>’ command.</p>
+
+<p>So here we are done with our first step.</p>
+
+<h2>B. Install and configure WordPress</h2>
+
+<p>The second step is to install and configure WordPress.</p>
+
+<p>Let me check the current working directory of my Cloud9 window terminal using the command ‘<code>pwd</code>’</p>
+
+<pre><code>$ pwd</code></pre>
+
+<p>It is /home/ec2-user/environment.</p>
+
+<p>So from here we will start our second step.</p>
+
+<p>In this ‘environment’ directory we will create two new directories called ‘<b>config</b>’ and ‘<b>wordpress</b>’.</p>
+
+<pre><code>$ mkdir config wordpress</code></pre>
+
+<p>Then we will create a file with the name <b>wordpress.conf</b> in the ‘<b>config</b>’ directory. We will use the ‘<code>touch</code>’ command.</p>
+
+<pre><code>$ touch config/wordpress.conf</code></pre>
+
+<p>This image shows the <b>wordpress.conf</b> file created inside the ‘<b>config</b>’ directory.</p>
+
+<img src="blogimages/16b4.png" alt="Blog Post Image">
+<p>Now we will write instructions in this <b>wordpress.conf</b> file using the vim editor. These instructions will tell the Apache web server on how to handle the WordPress website.</p>
+
+<p>So, first use the ‘<code>vim</code>’ command to enter the <b>wordpress.conf</b> file.</p>
+
+<p>Navigate to the location where this file is located using the ‘<code>cd</code>’ command.</p>
+
+<pre><code>$ vim wordpress.conf</code></pre>
+
+<img src="blogimages/17b4.png" alt="Blog Post Image">
+<p>Now you are in the <b>wordpress.conf</b> file. Click on the ‘<code>i</code>’ button to enable the ‘<i>insert</i>’ mode.</p>
+<img src="blogimages/18b4.png" alt="Blog Post Image">
+<p>Now write the instructions in this file.</p>
+
+<pre><code>Listen 8080
+
+<VirtualHost *:8080>
+    DocumentRoot "/var/www/wordpress"
+    ServerName www.example.org
+    # Other directives here
+</VirtualHost></code></pre>
+
+<p>Let us quickly understand these instructions.</p>
+
+<p><code>‘Listen 8080’</code> - This tells the web server to listen on a different port, 8080, instead of the usual port 80.</p>
+
+<p><code>&lt;VirtualHost *:8080&gt;</code> - This marks the start of a configuration block for a virtual host, which is a way to manage multiple websites on the same server. The <code>*</code> means the host can respond to requests from any IP address, and <code>:8080</code> specifies the port.</p>
+
+<p><code>DocumentRoot "/var/www/wordpress"</code> - This sets the folder where the website's files are located.</p>
+
+<p><code>ServerName www.example.org</code> - This is the domain name associated with the virtual host. When someone enters this domain in their browser, the web server knows to use this configuration.</p>
+
+<p><code>&lt;/VirtualHost&gt;</code> - This marks the end of the configuration block for the virtual host. It's like saying, "That's all for this host."</p>
+
+<p>In a nutshell I can say that, this code sets up a virtual host on port 8080, telling the web server to use files from the "<code>/var/www/wordpress</code>" folder when someone visits the domain "<code>www.example.org</code>" on that port.</p>
+
+<p>Now, exit the vim editor. Click on the ‘<code>esc</code>’ button to exit the ‘<i>insert</i>’ mode. Save the <b>wordpress.conf</b> file by typing ‘<code>:wq</code>’ key combination.</p>
+
+<p>This ‘<code>:wq</code>’ key combination will save the file and exit from the vim editor.</p>
+<img src="blogimages/19b4.png" alt="Blog Post Image">
+<p>Now we will install the WordPress program. To do this, we have to download the latest WordPress program on the Internet using the ‘<code>wget</code>’ command.</p>
+
+<p>So make sure you are in the ‘<b>environment</b>’ directory. If not, use the ‘<code>cd</code>’ command to navigate.</p>
+
+<p>To download the WordPress program from the internet, following is the command.</p>
+
+<pre><code>$ wget https://wordpress.org/latest.tar.gz</code></pre>
+
+<p>Here,</p>
+<ul>
+    <li><b>Wget</b> - Is the command-line tool that's used to download files from the web.</li>
+    <li><b>https://wordpress.org/latest.tar.gz</b> - This is the web address/URL of the WordPress file we want to download. It is the latest version of WordPress compressed into a file called "latest.tar.gz." It contains all the files needed to install WordPress.</li>
+</ul>
+
+<p>So, when we run this command, our Linux EC2 instance uses the ‘<code>wget</code>’ tool to reach out to the internet, find the WordPress file at that URL, and then download it to our Linux EC2 instance.</p>
+
+<img src="blogimages/20b4.png" alt="Blog Post Image">
+<p>The downloaded file is a compressed file, so we have to decompress/unzip the file using the following command.</p>
+
+<pre><code>$ tar xvf latest.tar.gz</code></pre>
+
+<p>Here,</p>
+<ul>
+    <li><b>tar</b> - This is a command used to work with archived files, often called "tarballs." Tarballs are files that bundle together multiple files and folders into one.</li>
+    <li><b>xvf</b> - These are options you're giving to the tar command.</li>
+    <ul>
+        <li><b>x:</b> Stands for "extract." This tells the tar command that we want to extract the contents from the archive.</li>
+        <li><b>v:</b> Stands for "verbose." This option makes the command show us the names of the files as they're being extracted.</li>
+        <li><b>f:</b> Stands for "file." This option specifies that we are providing the name of the file we want to extract, which is "latest.tar.gz" in this case.</li>
+    </ul>
+    <li><b>latest.tar.gz:</b> This is the name of the file we want to extract. It's the WordPress archive we downloaded earlier.</li>
+</ul>
+
+<p>So, when we run this command, we are telling our Linux EC2 instance to use the tar command to extract the contents of the "latest.tar.gz" file. It will take all the files and folders that were bundled together and lay them out in our current directory which is the ‘<b>environment</b>’ directory. This is the first step in setting up a WordPress installation after downloading its compressed file.</p>
+
+<p>Now we want a .php file in the ‘<b>wordpress</b>’ directory, so let create <b>wp-config-sample.php</b> file using ‘<code>touch</code>’ command.</p>
+
+<pre><code>$ touch wordpress/wp-config-sample.php</code></pre>
+
+<img src="blogimages/21b4.png" alt="Blog Post Image">
+<p>In this <b>wp-config-sample.php</b>, we will update the sample data with our database setup. We will put the database name, database user name, and database password in this config file.</p>
+
+<img src="blogimages/22b4.png" alt="Blog Post Image">
+<p>This is the script you need to add in the ‘<b>wp-config.php</b>’ file.</p>
+
+<pre><code>// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define( 'DB_NAME', 'wordpress_test' );
+
+/** MySQL database username */
+define( 'DB_USER', 'wordpress_user' );
+
+/** MySQL database password */
+define( 'DB_PASSWORD', 'YourSecurePassword' );
+
+/** MySQL hostname */
+define( 'DB_HOST', 'localhost' );
+
+/** Database Charset to use in creating database tables. */
+define( 'DB_CHARSET', 'utf8' );
+
+/** The Database Collate type. Don't change this if in doubt. */
+define( 'DB_COLLATE', '' );
+
+define('FORCE_SSL', true);
+
+if ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') $_SERVER['HTTPS'] = 'on';
+</code></pre>
+
+<p>Then save the file changes and exit the file using the key combination ‘<code>:wq</code>’.</p>
+
+<p>Let’s quickly see the meaning of the above script.</p>
+
+<p><b>a. Database Settings:</b></p>
+<p>These settings define the information needed to connect WordPress to a MySQL database.</p>
+<ul>
+    <li><b>DB_NAME:</b> This defines the name of the MySQL database that WordPress will use (e.g., 'wordpress_test').</li>
+    <li><b>DB_USER:</b> This specifies the MySQL database username (e.g., 'wordpress_user').</li>
+    <li><b>DB_PASSWORD:</b> This contains the password for the MySQL database user (e.g., 'YourSecurePassword').</li>
+    <li><b>DB_HOST:</b> This is the hostname or IP address of the MySQL database server (e.g., 'localhost').</li>
+    <li><b>DB_CHARSET:</b> This sets the character set for the database tables (e.g., 'utf8').</li>
+    <li><b>DB_COLLATE:</b> This defines the database collation type. It's generally left empty unless you have a specific reason to change it.</li>
+</ul>
+
+<p><b>b. Security Settings:</b></p>
+<p>These settings are related to security measures for the WordPress site.</p>
+<ul>
+    <li><b>FORCE_SSL:</b> When set to true, this enforces the usage of SSL (HTTPS) for all communication with the website.</li>
+</ul>
+
+<p><b>c. HTTP_X_FORWARDED_PROTO Check:</b></p>
+<p>This section checks if the HTTP_X_FORWARDED_PROTO header is set to 'https'. The HTTP_X_FORWARDED_PROTO header is often used to indicate the protocol used for the original request, especially when the website is behind a reverse proxy or load balancer.</p>
+
+<p>If the header is 'https', then the code sets the <code>$_SERVER['HTTPS']</code> variable to 'on', which is a way to indicate that the connection is secure via HTTPS.</p>
+
+<p>Overall, this configuration file ensures that WordPress connects to the specified MySQL database using the provided credentials, and it also enforces the usage of SSL (HTTPS) for secure communication. The last part with the HTTP_X_FORWARDED_PROTO check is used when the site is hosted behind a proxy or load balancer to correctly handle HTTPS redirection and ensure that the website knows it's being accessed over a secure connection.</p>
+
+<p>Now simply rename the ‘<b>wp-config-sample.php</b>’ to ‘<b>wp-config.php</b>’. We just want to get rid of the word ‘<i>sample</i>’ from the file name. Use the ‘<code>mv</code>’ command below.</p>
+
+<pre><code>$ mv wp-config-sample.php wp-config.php</code></pre>
+
+<img src="blogimages/23b4.png" alt="Blog Post Image">
+<p>So here we are done with step -2, which is installing and configuring the database.</p>
+
+<h2>C. Configure Apache web server</h2>
+
+<p>The next step is to configure the Apache web server.</p>
+
+<p>Let me first check if Apache web server is already installed or not on my Linux EC2 instance. I will type the following command.</p>
+
+<pre><code>$ httpd -v</code></pre>
+
+<p>Yes, it is installed.</p>
+
+<img src="blogimages/24b4.png" alt="Blog Post Image">
+<p>In case it is not installed, use the below command.</p>
+
+<pre><code>$ sudo yum install -y httpd</code></pre>
+
+<p>Now navigate to the <code>/etc/httpd/conf.d</code> directory, which is the location for Apache's virtual host configuration files. Apache's virtual host configuration files are files that define how the Apache HTTP server should handle multiple websites on a single physical server. These files contain instructions that allow the server to direct incoming web requests to the appropriate website's files and content, even though all these websites are hosted on the same server.</p>
+
+<p>In our case, we have just one website at this moment. So now we will link the <code>wordpress.conf</code> file with this <code>/etc/httpd/conf.d</code> file.</p>
+
+<p>Remember the <code>wordpress.conf</code> file has the instructions for the Apache web server. We will do this using the ‘<code>ln</code>’ command.</p>
+
+<pre><code>$ sudo ln -s /home/ec2-user/environment/config/wordpress.conf</code></pre>
+
+<p>This command is used to create a symbolic link, also known as a symlink, in a Linux system.</p>
+
+<p>Here,</p>
+<ul>
+    <li><b>sudo:</b> This is a command that gives us elevated privileges, allowing us to perform administrative tasks.</li>
+    <li><b>ln:</b> This is the command used to create links in Linux. It stands for "link."</li>
+    <li><b>-s:</b> This is an option for the ln command that specifies we want to create a symbolic link. A symbolic link is like a shortcut or reference to another file or directory.</li>
+    <li><b>/home/ec2-user/environment/config/wordpress.conf:</b> This is the path to the source file that we want to link to. It's the file we want to create a symbolic link for.</li>
+</ul>
+
+<p>Symbolic links are useful for creating references to files in different locations, allowing you to access the same content from multiple paths.</p>
+
+<p>Now let's go to the <code>/var/www</code> directory, which is the main folder for Apache servers. Then, we'll use the ln command to connect the <code>wordpress</code> directory you made before to where we are now (<code>/var/www</code>).</p>
+
+<pre><code>$ cd /var/www
+$ sudo ln -s /home/ec2-user/environment/wordpress</code></pre>
+
+<p>This command creates a symbolic link or we can say a shortcut in the current directory. This link points to the original "<code>wordpress</code>" directory you created in the <code>/home/ec2-user/environment/</code> directory. This way, Apache will serve the website's files from the <code>/var/www/wordpress</code> location, even though the actual content resides in the <code>/home/ec2-user/environment/wordpress</code> directory.</p>
+
+<p>Now we have to make the directory executable where the website and web server files are located. So we will use the following commands.</p>
+
+<pre><code>$ sudo chmod +x /home/ec2-user/</code></pre>
+
+<p>Here,</p>
+<ul>
+    <li><b>sudo:</b> This is a command used to run another command with elevated privileges, usually requiring administrator or superuser access.</li>
+    <li><b>chmod:</b> This is the command used to change the permissions of files and directories in Linux.</li>
+    <li><b>+x:</b> This part of the command specifies the change you want to make. In this case, +x means adding the "execute" permission.</li>
+    <li><b>/home/ec2-user/:</b> This is the path to the directory for which you want to change the permissions. It's the directory you're targeting.</li>
+</ul>
+
+<p>So, when we run <code>sudo chmod +x /home/ec2-user/</code>, we are telling the system to add the "execute" permission to the directory located at <code>/home/ec2-user/</code>. This permission change allows us to treat the directory as an executable, meaning we can navigate into it and access its contents as a directory that can be executed.</p>
+
+<p>Keep in mind that directories are usually given execute permission to allow you to enter them and access their contents. Files, on the other hand, are given execute permission to allow them to be run as programs or scripts.</p>
+
+<img src="blogimages/25b4.png" alt="Blog Post Image">
+<p>We have made all the necessary settings in the Apache web server. Let’s restart the web server, so that it gets updated with the latest settings. We will use the following command.</p>
+
+<pre><code>$ sudo service httpd restart</code></pre>
+
+<p>Here,</p>
+<ul>
+    <li><b>sudo:</b> This is a command that gives us elevated privileges, allowing us to perform administrative tasks.</li>
+    <li><b>service httpd restart:</b> This is the main command we are running. It's used to manage the operation of the Apache HTTP server:</li>
+    <ul>
+        <li><b>service:</b> This is a command used to manage system services, including starting, stopping, and restarting them.</li>
+        <li><b>httpd:</b> This is the name of the Apache HTTP server service. "httpd" stands for "HTTP Daemon," which is the background process that serves web content.</li>
+        <li><b>restart:</b> This part of the command specifies the action we want to take. In this case, we are instructing the system to restart the Apache HTTP server.</li>
+    </ul>
+</ul>
+
+<p>When we run <code>sudo service httpd restart</code>, we are telling the system to restart the Apache HTTP server using elevated privileges. This is useful when we have made changes to the server's configuration or files and want those changes to take effect without fully stopping and starting the server. Restarting the server helps apply new settings or configurations without interrupting the overall operation of the server.</p>
+
+<img src="blogimages/26b4.png" alt="Blog Post Image">
+<p>We can also check the status of the Apache web server with the following command.</p>
+
+<pre><code>$ sudo service httpd status</code></pre>
+
+<h2>Preview the website</h2>
+
+<p>Now we reach step-4 of this demonstration. In this final step we will preview the website’s content.</p>
+
+<p>Now go to the ‘wordpress’ directory.</p>
+
+<img src="blogimages/27b4.png" alt="Blog Post Image">
+<h2>Preview the website</h2>
+
+<p>Now we reach step-4 of this demonstration. In this final step we will preview the website’s content.</p>
+
+<p>Now go to the ‘wordpress’ directory.</p>
+
+<p>Locate the index.php file at this location and enter this file using the vim command.</p>
+
+<pre><code>$ vim index.php</code></pre>
+<img src="blogimages/28b4.png" alt="Blog Post Image">
+<p>To edit the file, click on ‘i’ button to enable the insert mode. Type the following HTML formatted text to this file as below.</p>
+
+<pre><code>Hello World!
+</code></pre>
+
+<p>Save and exit the file with the key combination ‘:wq’.</p>
+
+<p>Now In the Environment window which lies in the left side of the screen, choose the wordpress folder, and then choose Preview, Preview Running Application.</p>
+<img src="blogimages/29b4.png" alt="Blog Post Image">
+<p>We can see the web page displaying “Hello World!’</p>
+<img src="blogimages/30b4.png" alt="Blog Post Image">
+<h2>Conclusion:</h2>
+
+<p>So this is how we can use the Cloud9 environment and get the WordPress website host in the Linux EC2 instance.</p>
+
+<p>Try changing the contents of the index.php file and see if the changes are getting reflected in the main website.</p>
+
+<p>And here we are through the exciting journey to set up and utilize WordPress within the AWS Cloud9 environment. From setting up prerequisites to configuring databases, installing WordPress, and configuring the Apache web server, each step was meticulously explored. This tutorial not only enabled us to grasp the technicalities but also empowered us to harness the power of AWS Cloud9 and WordPress harmoniously.</p>
+
+
+      <!-- Add more content here -->
+
+      <p><i>Share this post:</i></p>
+      <div class="social-icons">
+      <!-- Add your social media links or icons here -->
+<div class="sharethis-inline-share-buttons"></div>
+    </div>
+
+      <div>
+        <a href="Blogs.html" class="read-more">Back</a>
+      </div>
+    </article>
+
+    <!-- Sidebar Section -->
+    <object type="text/html" data="sidebar.html" width="300" height="1000">
+
+      <!-- Add more sidebar content as needed -->
+
+    </div>
+  </div>
+
+  <footer>
+   &copy; Copyright 2023 Pravin Mishra
+  </footer>
+
+</body>
+</html>
+

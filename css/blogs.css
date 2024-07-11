@@ -1,0 +1,251 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.6;
+}
+
+/* Navigation Section Styles */
+nav {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: cyan;
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav a {
+  color: cyan;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px;
+  display: block;
+  position: relative;
+}
+
+.logo-container img {
+  max-height: 60px;
+  transition: transform 0.3s;
+}
+
+.logo-container:hover img {
+  transform: scale(1.1);
+}
+
+nav a {
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: black;
+  background-color: cyan;
+  animation: glow 1s infinite alternate;
+  font-weight: bold;
+}
+
+nav li:hover a {
+  color: black;
+  background-color: cyan;
+  font-weight: bold;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px 2px cyan;
+  }
+  100% {
+    box-shadow: 0 0 20px 5px cyan;
+  }
+}
+
+/* Header Styles */
+.blog-header {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Main Section Styles */
+.main-section {
+  width: 100%;
+  margin: 10px;
+}
+
+.blog-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Blog Card Styles */
+.blog-card {
+  width: 30%;
+  margin: 0 2% 20px 0;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.blog-card:hover {
+  background-color: #87CEEB;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+.blog-thumb {
+  width: auto;
+  height: 130px;
+  border: 3px solid #87CEEB;
+  border-radius: 10px;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+.blog-info h3 {
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.blog-info p {
+  color: #666;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+  transition: box-shadow 0.3s, transform 0.3s, background-color 0.3s;
+}
+
+.read-more:hover {
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+  transform: scale(1.05);
+  background-color: #45a049;
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.pagination a:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.pagination .active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Footer Section Styles */
+.footer-section {
+  background-color: black;
+  color: cyan;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: cyan;
+  font-size: 1em;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+  color: cyan;
+  font-weight: bold;
+}
+
+/* JavaScript for Glow Effects */
+function addGlowEffect(element) {
+  element.style.boxShadow = '0 0 20px rgba(0, 123, 255, 0.5)';
+}
+
+function removeGlowEffect(element) {
+  element.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+}
+
+function addGlowEffectButton(element) {
+  element.style.boxShadow = '0 0 10px rgba(0, 123, 255, 0.8)';
+}
+
+function removeGlowEffectButton(element) {
+  element.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+}
