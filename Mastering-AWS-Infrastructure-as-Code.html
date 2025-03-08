@@ -27,51 +27,18 @@
   <div class="main-container">
     <article>
     <h1>Mastering AWS Infrastructure as Code: The Ultimate Step-by-Step Tutorial</h1>
-<h2>Introduction:</h2>
+    
+    <p>Welcome to the first hands-on blog of our <b>"Mastering AWS DevOps"</b> series! As you dive into <b>Chapter 9</b> of the book, in this blog, we will look at the art of designing cloud architecture using code, opening up a world where creativity has no limits. In this wide blog, we will dive into the world of AWS Infrastructure as Code, exploring its importance, benefits, and step-by-step implementation with practical examples.</p>
 
-<section>
-    <h2>Overheard Conversation: Introduction to Infrastructure as Code (IaC)</h2>
-
-    <p><strong>John:</strong> Hey, have you ever had to set up a new computer or a smart gadget and wished there was an easier way to do it?</p>
-
-    <p><strong>Smith:</strong> Oh, totally! It can be such a hassle.</p>
-
-    <p><strong>John:</strong> Well, let’s say you could just write down instructions in plain English or some simple programming code, and your computer or gadget would magically set itself up, just the way you like it.</p>
-
-    <p><strong>Smith:</strong> Seriously? That could be a game-changing solution!</p>
-
-    <p><strong>John:</strong> That's what they call Infrastructure as Code, or IaC. It is like giving your gadget a mind of its own, but instead of teaching it tricks, will tell it how to set itself up.</p>
-
-    <p><strong>Smith:</strong> So, you're saying I could make my devices do what I want without a tech headache?</p>
-
-    <p><strong>John:</strong> Exactly! It's like having a tech-savvy friend who takes care of all the nitty-gritty stuff for you.</p>
-
-    <p><strong>Smith:</strong> That sounds like something I need in my life. Tell me more, buddy.</p>
-
-    <p><strong>John:</strong> Great! Let’s learn through this blog then.</p>
-</section>
-
-<section>
-    <h2>Designing Cloud Architecture with Infrastructure as Code (IaC)</h2>
-
-    <p>In this blog, we will look at the art of designing cloud architecture using code, opening up a world where creativity has no limits.</p>
-
-    <p>In this wide blog, we will dive into the world of AWS Infrastructure as Code, exploring its importance, benefits, and step-by-step implementation with practical examples.</p>
-
-    <p>In the modern cloud computing world, Infrastructure as Code (IaC) has become a critical practice for managing and provisioning virtual infrastructure in a scalable, efficient, and automated manner.</p>
-
-    <p>Amazon Web Services (AWS) offers a wide set of services and tools that enable developers and operations teams to implement IaC effectively.</p>
+    <p>In the modern cloud computing world, Infrastructure as Code (IaC) has become a critical practice for managing and provisioning virtual infrastructure in a scalable, efficient, and automated manner. Amazon Web Services (AWS) offers a wide set of services and tools that enable developers and operations teams to implement IaC effectively.</p>
 
     <p>So let’s understand the IaC concept.</p>
-</section>
+
+    <p>In this topic, we will try to <b>“understand Infrastructure as Code”</b> but before that, we will study “what is Infrastructure as Code?”.</p>
+
 
 <section>
-    <h2>1. Understanding Infrastructure as Code (IaC)</h2>
-
-    <p>In this topic, we will try to “understand Infrastructure as Code” but before that, we will study “what is Infrastructure as Code?”.</p>
-</section>
-<section>
-    <h3>1.1 What Is Infrastructure As Code (IaC)?</h3>
+    <h3>What Is Infrastructure As Code (IaC)?</h3>
 
     <p>Imagine you're building a super cool city in a video game. You need to place buildings, roads, parks, and all sorts of stuff to make the city work smoothly.</p>
 
@@ -81,55 +48,51 @@
 
     <p>That's where Infrastructure as Code comes in. Instead of manually setting up everything, you write down instructions in the form of code using any one of the programming languages. This code tells computers how to create and configure all the necessary parts of the IT infrastructure.</p>
 
-    <p>Instead of someone spending hours clicking buttons and typing commands, you will simply write the code using a programming language like YAML or JSON.</p>
+    <p>Instead of spending hours clicking buttons and typing commands, you simply write configuration files using formats like YAML or JSON.</p>
 
     <p>Now you will be thinking about what this YAML or JSON is exactly. I will explain what exactly YAML or JSON means in short. So, you will get a clear idea about this YAML or JSON.</p>
 
-    <p>Here's a simple explanation:</p>
 </section>
-<section>
-    <h4>YAML:</h4>
 
-    <p>YAML stands for “yet another markup language”.</p>
+<section>
+    
+    <p>Here is a simple explanation:</p>
+
+    <p><b>YAML: </b>YAML stands for <b>“yet another markup language”.</b></p>
 
     <p>The code writing with this language is like writing a to-do list in a clear, easy-to-read way.</p>
 
-    <p>The YAML format closely resembles how one would naturally document structured data on physical paper.</p>
-
-    <p>It is designed purposefully to be easier for humans to read.</p>
+    <p>The YAML format closely resembles how one would naturally document structured data on physical paper. It is designed purposefully to be easier for humans to read.</p>
+    
 </section>
 <section>
-    <h4>JSON:</h4>
+    
+    <p><b>JSON: </b>JSON stands for <b>“JavaScript Object Notation”.</b></p>
 
-    <p>JSON stands for “JavaScript Object Notation”.</p>
+    <p>It is a way to structure and represent data in a format that is easy for both humans and computers to understand. In JSON, data is organized into key-value pairs, where each key is associated with a value.</p>
 
-    <p>It is a way to structure and represent data in a format that is easy for both humans and computers to understand.</p>
-
-    <p>In JSON, data is organized into key-value pairs, where each key is associated with a value.</p>
-
-    <p>In short, use YAML for simplicity and readability, and JSON for complexity and compatibility code writing.</p>
-
-    <p>You will execute the code, and the computers set up everything exactly as you planned. It's way faster and much less likely to have mistakes.</p>
+    <p>In short, use YAML for simplicity and readability, and JSON for complexity and compatibility code writing. You will execute the code, and the computers set up everything exactly as you planned. It's way faster and much less likely to be mistaken.</p>
 
     <p>Plus, since everything is written in code, you can save it, share it, and even change it whenever you need to. Let's say the company needs to add more servers later. Instead of going through the whole setup process again, you just update your code to include the new servers, and the computer takes care of the rest.</p>
 
     <p>So, Infrastructure as Code is like giving computers the power to build and manage the servers, networks, and all that tech stuff we use every day while developing software. It's efficient, less error-prone, and makes life easier for engineers.</p>
+
 </section>
 <section>
     <h2>Understanding Infrastructure as Code (IaC)</h2>
 
     <p>Now that we understand IaC in these simple words, let's go ahead and define this concept.</p>
 
-    <p>Infrastructure as Code (IaC) is a way to build computer things in the cloud using words and instructions. Instead of setting up each thing manually, you write down how you want them to be in a special language. Then, tools understand these instructions and build your digital things exactly the way you described. It's like offering precise guidance to construct a complex structure but for computer elements in the cloud.</p>
+    <p>Infrastructure as Code (IaC) is a way of building and managing cloud infrastructure using descriptive code and instructions. Instead of setting up each thing manually, you write down how your infrastructure will be in a special language. Then, tools understand these instructions and build your application infrastructure exactly the way you described. It's like offering precise guidance to construct a complex structure but for computer elements in the cloud.</p>
 
     <p>Infrastructure as Code means creating and setting up IT infrastructure using code and automation. This makes it easy to do things the same way every time.</p>
 
-    <p>Infrastructure as Code (IaC) is a smart method for managing and setting up computer things using code and automation. Instead of doing things manually, it's like using a special language to control and arrange everything. This helps make things better, just like how software developers work on their projects.</p>
+    <p>Infrastructure as Code (IaC) is an efficient method for managing and setting up computer infrastructure using code and automation.  Instead of manual configurations, it uses a specialized language to control and organize everything. This approach streamlines the process, much like how software developers build and manage their applications.</p>
 
     <p>So, in this blog, we will start with the definition of Infrastructure of code, why it is important, and its benefits.</p>
 </section>
 <section>
-    <h3>1.2 Infrastructure as Code Defined:</h3>
+    <h3>Infrastructure as Code Defined:</h3>
 
     <p>At its core, IaC involves writing code to define, configure, and deploy infrastructure components. These components can include virtual machines, networks, storage, load balancers, databases, and more.</p>
 
@@ -138,131 +101,102 @@
     <p>We have discussed the definition of Infrastructure as a code. Now let’s understand what is the importance of IaC?</p>
 </section>
 <section>
-    <h2>2. Importance of IaC:</h2>
+    <h2>Importance of Infrastructure as Code (IaC):</h2>
 
-    <p>We will discuss the Importance of IaC through some points as below. They are shown below:</p>
+    <p>Infrastructure as Code (IaC) plays an important role in modern IT environments, offering numerous benefits. Here are the key reasons why IaC is important:</p>
+    <ol>
+    <p><b>1) Consistency and Reproducibility:</b> IaC has Consistency and Reproducibility. Traditional manual setups can lead to configuration drift, where different environments have slight differences in settings. IaC ensures that infrastructure configurations are identical each time they are deployed, reducing errors caused by inconsistency. With IaC, your computer systems are set up the same way every time, which reduces mistakes caused by differences.</p>
 
-    <h3>Consistency and Reproducibility:</h3>
+    <p><b>2) Version Control:</b> Think of Infrastructure as Code as a special notebook where you write down changes. It helps you remember who did what and when. This is like having a book that tracks the changes made in a story. In the same way, Infrastructure code can be stored in version control systems like Git. This allows teams to track changes, review history, and collaborate effectively, similar to how developers collaborate on software projects.</p>
 
-    <p>IaC has Consistency and Reproducibility. Traditional manual setups can lead to configuration drift, where different environments have slight differences in settings. IaC ensures that infrastructure configurations are identical each time they are deployed, reducing errors caused by inconsistency.</p>
+    <p><b>3) Efficiency:</b>Manual provisioning of infrastructure can be time-consuming and susceptible to errors. IaC automates the process, resulting in faster deployments and reduced operational overhead.</p>
+    
+    <p><b>4) Scalability:</b>When we need more copies of a document, we use a photocopy machine to produce the desired number of extra copies with ease. Similarly, with IaC, we can effortlessly create additional infrastructure resources by making changes to the configuration file, often referred to as code. By modifying this file, you can easily scale the number of instances, resources, or services up or down as needed.</p>
 
-    <p>With IaC, your computer systems are set up the same way every time, which reduces mistakes caused by differences.</p>
+    <p><b>5) Disaster Recovery:</b>Suppose a big sea wave came and destroyed the sand castle that you built. However, if you had a picture of the castle, it would be easy for you to build it exactly in the same way and in less time.  IaC works similarly in what’s called Disaster Recovery. If there's a problem, you can rebuild the IT infrastructure exactly as it was, using the configuration file.</p>
 
-    <h3>Version Control:</h3>
-
-    <p>Think of Infrastructure as Code as a special notebook where you write down changes. It helps you remember who did what and when. This is like having a book that tracks the changes made in a story.</p>
-
-    <p>In the same way, Infrastructure code can be stored in version control systems like Git. This allows teams to track changes, review history, and collaborate effectively, similar to how developers collaborate on software projects.</p>
-
-    <h3>Efficiency:</h3>
-
-    <p>Manual provisioning of infrastructure can be time-consuming and susceptible to errors. IaC automates the process, resulting in faster deployments and reduced operational overhead.</p>
-
-    <h3>Scalability:</h3>
-
-    <p>When we need more copies of any document, we use the photocopy machine to get the desired number of extra copies by simply using the machine. Similarly, with IaC, we can easily create more infrastructure resources by simply altering changes in the configuration file, which we also call code.</p>
-
-    <p>By modifying a configuration file, you can easily increase or decrease the number of instances, resources, or services as needed.</p>
-
-    <h3>Disaster Recovery:</h3>
-
-    <p>Suppose a big sea wave came and messed up the sand castle that you built. However, if you had a picture of the castle, it would be easy for you to build it exactly in the same way with less time IaC does something similar called Disaster Recovery.</p>
-
-    <p>If there's a problem, you can rebuild the IT infrastructure exactly as it was, using the configuration file.</p>
+    </ol>
 
     <p>Now you have got the importance of IaC using key points.</p>
 
     <p>Now we will discuss examples of IaC tools that help to set up various IT infrastructures.</p>
 </section>
 <section>
-    <h2>3. Examples of IaC Tools:</h2>
+    <h2>Examples of IaC Tools:</h2>
 
     <p>Well, here we got to know that by using the IaC concept, we can deploy IT infrastructure in less time and with consistency. However, are we going to sit and write the code in the configuration file every time? Certainly not!</p>
 
-    <p>We have a lot of tools to make this task more easier, efficient and manageable. These tools will bring in automation, consistency, speed, reproducibility, version control, scaling, testing, modularity, documentation and collaboration. These tools will simply make the process easier.</p>
+    <p>We have a lot of tools to make this task easier, efficient and manageable. These tools will bring in automation, consistency, speed, reproducibility, version control, scaling, testing, modularity, documentation and collaboration. These tools will simply make the process easier.</p>
 
-    <p>So, let’s see how tools like AWS CloudFormation, Terraform, and AWS CDK codes are used to do this task in an easy way.</p>
+    <p>So, let’s see how tools like AWS CloudFormation, Terraform, and AWS CDK codes are used to do this task easily.</p>
 
-    <p>Now we will discuss the theory of IaC example tools with practical examples. So, you will get a clear idea about IaC.</p>
+    <p>Next, we'll discuss various IaC tools with practical examples. This will give you a clear understanding of how IaC works in practice</p>
 </section>
 <section>
-    <h3>3.1 AWS CloudFormation:</h3>
+    <h3>AWS CloudFormation:</h3>
 
-    <p>Firstly, AWS CloudFormation is a service provided by Amazon Web Services (AWS). Also, AWS CloudFormation is one of the tools of IaC.</p>
+    <p>Firstly, AWS CloudFormation is a service provided by Amazon Web Services (AWS) and is a key tool for IaC. In this, we will discuss AWS CloudFormation concepts in detail.</p>
 
-    <p>In this, we will discuss AWS CloudFormation concepts in detail.</p>
-
-    <p>AWS CloudFormation allows you to define and manage your cloud infrastructure in a structured and automated way. Instead of setting the resources in the infrastructure one by one, it lets you describe your desired cloud resources and their configurations using a template, which is written in a specific format called JSON or YAML programming language.</p>
+    <p>AWS CloudFormation allows you to define and manage your cloud infrastructure in a structured and automated way. Instead of setting up the resources in AWS one by one, it lets you describe your desired cloud resources and their configurations using a template. This template is written in JSON or YAML.</p>
 
     <p>CloudFormation then takes this template and handles the provisioning and management of your resources, ensuring consistency, scalability, and ease of deployment across different environments.</p>
 
-    <p>In simpler terms, AWS CloudFormation helps you set up and control your cloud resources without having to manually do everything.</p>
+    <p>In simpler terms, AWS CloudFormation helps you set up and control your AWS cloud resources without everything manually.</p>
+
 </section>
-<img src="blogimages/1b11.png" alt="Blog Post Image">
+<img src="blogimages/Fig 1)AWS Service Catalog.png" alt="AWS Service Catalog">
 <section>
     <p>Amazon Web Services (AWS) CloudFormation is a powerful service that allows you to define, deploy, and manage AWS infrastructure resources using code templates. It serves as a fundamental part for implementing Infrastructure as Code (IaC) within the AWS environment.</p>
 
     <p>With CloudFormation, you can create, update, or delete resources in a consistent and controlled manner, making it an essential tool for managing complex infrastructures.</p>
 
-    <p>AWS CloudFormation is an indigenous AWS service that uses JSON or YAML templates to define and manage AWS resources.</p>
+    <p>AWS CloudFormation is a native  AWS service that uses JSON or YAML templates to define and manage AWS resources.</p>
 
     <p>Now, we will discuss more about all the key concepts of AWS CloudFormation one by one.</p>
-
-    <p>Here are some key concepts of AWS CloudFormation as given below:</p>
 
     <p>To understand key concepts of AWS CloudFormation easily we can refer to one image as shown below:</p>
 </section>
 
-<img src="blogimages/2b11.png" alt="Blog Post Image">
+<img src="blogimages/Fig 2) Template Structure.png" alt="Template Structure">
 <section>
-    <h5>Templates:</h5>
-    <p>CloudFormation templates are JSON or YAML files that describe the resources you want to create, their properties, and any dependencies between them. Templates can be versioned, stored in source control, and reused across different environments.</p>
-
-    <h5>Stacks:</h5>
-    <p>A stack is a collection of AWS resources created and managed as a single unit. You create a stack by providing a template and specifying a stack name. Stacks can be created, updated, and deleted as a whole, making it easier to manage and track changes to your infrastructure.</p>
-
-    <h5>Resources:</h5>
-    <p>Resources are the individual components that make up your infrastructure, such as Amazon EC2 instances, Amazon RDS databases, Amazon S3 buckets, etc. Resources are defined in your CloudFormation template.</p>
-
-    <h5>Parameters:</h5>
-    <p>Parameters are inputs that you can provide when creating or updating a stack. They allow you to customize the behavior of your CloudFormation template without modifying the template itself.</p>
-
-    <h5>Mappings:</h5>
-    <p>Mappings are sets of key-value pairs that can be used in templates to specify conditional values based on certain input parameters or conditions.</p>
-
-    <h5>Outputs:</h5>
-    <p>Outputs are values that CloudFormation exports from the stack after it's created or updated. These values can be used by other AWS services or resources.</p>
-
-    <h5>Change Sets:</h5>
-    <p>Before applying updates to a stack, CloudFormation allows you to review the proposed changes using a change set. A change set shows the differences between the current stack and the updated template, giving you a chance to review and approve changes before applying them.</p>
-
-    <h5>Nested Stacks:</h5>
-    <p>You can use nested stacks to break down complex templates into smaller, reusable components. Each nested stack is treated as a separate CloudFormation stack, allowing you to manage and update different parts of your infrastructure independently.</p>
-
-    <h5>Cross-Stack References:</h5>
-    <p>CloudFormation enables you to reference resources from other stacks using cross-stack references. This can be useful when you have resources in different stacks that need to interact with each other.</p>
-
-    <h5>Stack Policies:</h5>
-    <p>Stack policies allow you to control the permissions for updates to specific resources within a stack. This can help prevent accidental modifications to critical resources.</p>
-
-    <h5>Drift Detection:</h5>
-    <p>CloudFormation offers drift detection, which helps you identify and compare the actual resources in your stack with the expected template configuration. This can be useful for identifying unauthorized changes.</p>
+  <p>Here are some key concepts of AWS CloudFormation as given below:</p>
+    
+    <ol>
+    <p><b>1) Templates:</b>CloudFormation templates are JSON or YAML files that describe the resources you want to create, their properties, and any dependencies between them. Templates can be versioned, stored in source control, and reused across different environments.</p>
+    
+    
+    <p><b>2) Stacks:</b>CloudFormation templates are JSON or YAML files that describe the resources you want to create, their properties, and any dependencies between them. Templates can be versioned, stored in source control, and reused across different environments.</p>
+    
+    <p><b>3) Resources:</b>Resources are the individual components that make up your infrastructure, such as Amazon EC2 instances, Amazon RDS databases, Amazon S3 buckets, etc. Resources are defined in your CloudFormation template.</p>
+    
+    <p><b>4) Parameters:</b> Parameters are inputs that you can provide when creating or updating a stack. They allow you to customize the behaviour of your CloudFormation template without modifying the template itself.</p>
+    
+    <p><b>5) Mappings:</b>Mappings are sets of key-value pairs that can be used in templates to specify conditional values based on certain input parameters or conditions.</p>
+  
+    <p><b>6) Outputs:</b>Outputs are values that CloudFormation exports from the stack after it's created or updated. These values can be used by other AWS services or resources.</p>
+   
+    <p><b>7) Change Sets:</b>Before applying updates to a stack, CloudFormation allows you to review the proposed changes using a change set. A change set shows the differences between the current stack and the updated template, giving you a chance to review and approve changes before applying them.</p>
+    
+    <p><b>8) Nested Stacks:</b>You can use nested stacks to break down complex templates into smaller, reusable components. Each nested stack is treated as a separate CloudFormation stack, allowing you to manage and update different parts of your infrastructure independently.</p>
+    
+    <p><b>9) Cross-Stack References:</b>CloudFormation enables you to reference resources from other stacks using cross-stack references. This can be useful when you have resources in different stacks that need to interact with each other.</p>
+   
+    <p><b>10) Stack Policies:</b>Stack policies allow you to control the permissions for updates to specific resources within a stack. This can help prevent accidental modifications to critical resources.</p>
+    
+    <p><b>11) Drift Detection:</b>CloudFormation offers drift detection, which helps you identify and compare the actual resources in your stack with the expected template configuration. This can be useful for identifying unauthorized changes.</p>
+   </ol>
 </section>
 <section>
     <p>CloudFormation simplifies the process of managing and scaling your AWS infrastructure by automating resource provisioning and tracking changes over time. It's a powerful tool for infrastructure as code (IaC) practices, allowing you to maintain consistency, version control, and reproducibility in your cloud environment.</p>
 
-    <p>Till now we have discussed the introduction of AWS CloudFormation and the key concepts of AWS CloudFormation ( The one of IaC Tool).</p>
-
-    <p>Now we will discuss AWS CloudFormation concepts using practical examples. They are given below:</p>
+    <p>Now we will discuss AWS CloudFormation concepts using practical examples. Let's start one by one:</p>
 </section>
 <section>
-    <h3>3.1.2 Templates</h3>
+    <h3>Templates</h3>
     
-    <p>As we already discussed the theory about templates.</p>
-    
-    <p>Here's an example of a CloudFormation template that demonstrates the various components and steps involved.</p>
-    
-    <p>This template creates an Amazon S3 bucket and an Amazon DynamoDB table.</p>
+    <p>As we already discussed the theory about templates. Here's an example of a CloudFormation template that demonstrates the various components and steps involved.</p>
+       
+    <p>This template creates an Amazon S3 bucket and an Amazon DynamoDB table</p>
     
     <p>Remember that this is a simplified example for demonstration purposes, and actual templates can be much more complex.</p>
     
@@ -310,15 +244,14 @@ Outputs:
       Name:!Sub "${AWS::StackName}-DynamoDBTable"
     </code></pre>
 </section>
-```html
 <section>
-    <h3>Explanation of the above steps:</h3>
+    <p>Explanation of the above steps:</p>
     
     <p><strong>AWSTemplateFormatVersion:</strong> It specifies the CloudFormation template version. In this case, it's using the '2010-09-09' version.</p>
     
     <p><strong>Description:</strong> It provides a short description of the template's purpose.</p>
     
-    <p><strong>Parameters:</strong> It defines a parameter named "BucketName" that allows users to provide a name for the S3 bucket. The default value is set to "my-example-bucket."</p>
+    <p><strong>Parameters:</strong> It defines a parameter named "BucketName" that allows users to provide a name for the S3 bucket. The default value is set to <b>"my-example-bucket."</b></p>
     
     <p><strong>Resources:</strong> It describes the AWS resources to be created. It defines two resources:</p>
     
@@ -336,17 +269,17 @@ Outputs:
         <li><strong>TableOutput:</strong> It exports the name of the DynamoDB table in a similar manner.</li>
     </ul>
     
-    <p>In this example, users would provide the "BucketName" parameter value when creating the stack.</p>
+    <p>In this example, users would provide the <b>"BucketName"</b> parameter value when creating the stack.</p>
 </section>
 <section>
-    <h3>The outputs of the stack would be the names of the created S3 bucket and DynamoDB table, which can be referenced by other AWS resources within the same AWS account and region.</h3>
+    <p>The outputs of the stack would be the names of the created S3 bucket and DynamoDB table, which can be referenced by other AWS resources within the same AWS account and region.</p>
     
     <p>To deploy this template, you would use AWS CloudFormation Console, AWS CLI, or SDKs to create a stack using the template file. The result would be the creation of the specified S3 bucket and DynamoDB table.</p>
     
-    <p>Now we will discuss the 2nd key concept of CloudFormation i.e Stack.</p>
+    <p><b>Now we will discuss the 2nd key concept of CloudFormation i.e Stack.</b></p>
 </section>
 <section>
-    <h3>A fundamental concept in CloudFormation is the "stack." In AWS CloudFormation, a "stack" refers to a collection of AWS resources that you create, manage, and delete as a single unit. It's like packaging up all the parts of your application or infrastructure into one bunch.</h3>
+    <p>A fundamental concept in CloudFormation is the <b>"stack."</b> In AWS CloudFormation, a <b>"stack"</b> refers to a collection of AWS resources that you create, manage, and delete as a single unit. It's like packaging up all the parts of your application or infrastructure into one bunch.</p>
     
     <p>When you create a stack, you define the resources you want, like servers, databases, and networks, in a template. Then, CloudFormation takes care of provisioning and managing those resources for you.</p>
     
@@ -354,7 +287,7 @@ Outputs:
     
     <p>So let's walk through the process of creating a CloudFormation stack step-by-step.</p>
 </section>
-```html
+
 <section>
     <h3>Step 1: Writing a CloudFormation Template</h3>
     
@@ -362,7 +295,7 @@ Outputs:
     
     <p>Save the CloudFormation template from the previous example as a file named stack-template.yaml:</p>
     
-    <pre>
+    <pre><code>
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Example CloudFormation Template
 
@@ -404,13 +337,13 @@ Outputs:
     Value: !Ref MyDynamoDBTable
     Export:
       Name: !Sub "${AWS::StackName}-DynamoDBTable"
-    </pre>
+    </pre></code>
     
     <p>The above example is already explained in the Template creation. So, we are taking the above example as a reference for the stack creation. So, you will clearly understand the stack creation.</p>
 </section>
 Run the following command to create the CloudFormation stack:
 
-<img src="blogimages/3b11.png" alt="Blog Post Image">
+<img src="blogimages/Fig 3) Create stack.png" alt="Create stack">
 <p>Replace <code>my-stack</code> with a desired name for your stack and <code>my-bucket-name</code> with the desired S3 bucket name.</p>
 
 <p>Now let's discuss the above commands as below:</p>
@@ -432,11 +365,11 @@ Run the following command to create the CloudFormation stack:
 </ol>
 
 <p>So, in summary, this AWS CloudFormation command is creating a new stack named "my-stack" based on the template found in the "stack-template.yaml" file. It also sets the value of a parameter called "BucketName" to "my-bucket-name" during stack creation. This is a simplified example.</p>
-<p><strong>Step 5: Wait for Stack Creation</strong></p>
+<p><strong>Step 2: Wait for Stack Creation</strong></p>
 
 <p>To complete, you can use the following command to wait until the stack creation process completes:</p>
 
-<img src="blogimages/4b11.png" alt="Blog Post Image">
+<img src="blogimages/Fig 4) AWS Cloudfromation wait.png" alt="AWS Cloudfromation wait">
 <p>Now, let's break down this command:</p>
 
 <p><code>aws cloudformation wait stack-create-complete</code>:</p>
@@ -450,7 +383,7 @@ Run the following command to create the CloudFormation stack:
 <p>After you run this command, AWS CloudFormation will continuously check the status of your stack until it's created successfully. Once the stack creation is complete, the command will exit, and you can proceed with other tasks or operations knowing that your stack is ready for use.</p>
 
 <p>Remember to replace "my-stack" with the name of your specific CloudFormation stack. This command can be particularly useful when you're automating cloud infrastructure provisioning and want to ensure that subsequent steps in your automation process only run when the stack is fully operational.</p>
-<p>Step 6: Check Stack Outputs</p>
+<p><strong>Step 3: Check Stack Outputs</strong></p>
 
 <p>Once the stack creation step is complete, you can retrieve the stack outputs using this command:</p>
 
@@ -465,7 +398,7 @@ Run the following command to create the CloudFormation stack:
   <p>This part of the command is using the AWS Command Line Interface (CLI) to interact with the AWS CloudFormation service. Specifically, it uses the describe-stacks operation, which retrieves information about one or more stacks.</p>
 
   <li><code>--stack-name my-stack-name</code>:</li>
-  <p>Here, you specify the name of the stack you want to describe. Replace "my-stack-name" with the actual name of the CloudFormation stack you want to retrieve information about.</p>
+  <p>Here, you specify the name of the stack you want to describe. Replace <b>"my-stack-name"</b> with the actual name of the CloudFormation stack you want to retrieve information about.</p>
 
   <li><code>--query "Stacks[0].Outputs"</code>:</li>
   <p>This part of the command uses the --query option to filter and format the output. It's like telling AWS CLI to give you only specific information from the stack description.</p>
@@ -478,28 +411,28 @@ Run the following command to create the CloudFormation stack:
 <p>Output values typically contain information that's useful for other parts of your infrastructure or applications, such as endpoint URLs, resource IDs, or configuration details.</p>
 
 <p>Congratulations! You've created a CloudFormation stack using the AWS CLI. This process allows you to automate the creation and management of your AWS resources using infrastructure as code.</p>
-<p>Step 7: Monitoring and Handling Errors</p>
+<p><b>Step 4: Monitoring and Handling Errors</b></p>
 
 <p>CloudFormation provides real-time status updates during stack creation. You can monitor progress and view any errors that occur.</p>
 
 <p>If an error occurs, CloudFormation can automatically roll back the stack to its previous state, ensuring that you don't end up with a partially deployed environment.</p>
 
-<p>Now let us try to understand “Stack Creation” through one real example.</p>
+<p>Now let us try to understand <b>“Stack Creation”</b> through one real example.</p>
 
-<p>Example:</p>
+<p><b>Example:</b></p>
 
-<p>Launching a Web Application Stack.</p>
+<p><b>Launching a Web Application Stack.</b></p>
 
 <p>Let's consider an example where you're deploying a simple web application stack using CloudFormation:</p>
 
-<p>Scenario: Launching a Web Application Stack</p>
+<p><b>Scenario: Launching a Web Application Stack</b></p>
 
 <p>We want to build a simple web application. Instead of setting up each component manually, AWS CloudFormation allows you to define everything in code. Here is a small piece of what your CloudFormation template might look like:</p>
 
 <p>AWS CloudFormation Template:</p>
 
-<img src="blogimages/5b11.png" alt="Blog Post Image">
-<pre>
+<img src="blogimages/Fig 6) Resources and Databases.png" alt="Resources and Databases">
+
 <p>In this, you're creating an EC2 instance for the web server and an RDS database instance using just a few lines of code. You specify instance types, security settings, and even scripts to run when the case instances start.</p>
 
 <p>Let's break down each part of the code:</p>
@@ -522,9 +455,7 @@ Run the following command to create the CloudFormation stack:
 
 <code>UserData:</code>
 <p>This section provides user data, which is a script that runs when the instance is launched. In this case, it updates the package manager, installs the Apache web server starts it, and creates a basic HTML file.</p>
-</pre>
-```html
-<pre>
+
 <p><strong>Database:</strong></p>
 
 <code>Type: AWS::RDS::DBInstance:</code>
@@ -534,7 +465,7 @@ Run the following command to create the CloudFormation stack:
 <p>This parameter sets the database engine to MySQL.</p>
 
 <code>DBInstanceClass: db.t2.micro:</code>
-<p>This parameter sets the RDS instance type to "db.t2.micro," which is a small, general-purpose database instance.</p>
+<p>This parameter sets the RDS instance type to <b>"db.t2.micro,"</b> which is a small, general-purpose database instance.</p>
 
 <code>AllocatedStorage: 20:</code>
 <p>This parameter specifies the allocated storage in gigabytes for the RDS instance.</p>
@@ -554,14 +485,14 @@ Run the following command to create the CloudFormation stack:
 
 <p>Now you have a clear idea about stack creation in AWS CloudFormation.</p>
 
-<p>Now we will discuss the second IaC tool which is “terraform“.</p>
-</pre>
-<pre>
-<p><strong>3.2 Terraform:</strong></p>
+<p>Now we will discuss the second IaC tool which is <b>“terraform“.</b></p>
+
+
+<p><strong>Terraform:</strong></p>
 
 <p>Before we discuss Terraform as one of the IAC tools, we will discuss why we need Terraform. Why not other tools? What exactly does Terraform do? As given below:</p>
 
-<p><strong>3.2.1 Why do we need Terraform?</strong></p>
+<p><strong>Why do we need Terraform?</strong></p>
 
 <p>Let’s say you want to build and manage your IT infrastructure, like servers and databases, in the cloud. But different clouds have different rules and languages for building. Terraform is like a universal translator that lets you build and manage your infrastructure in different clouds using the same language.</p>
 
@@ -569,25 +500,24 @@ Run the following command to create the CloudFormation stack:
 
 <p>Terraform uses its own domain-specific language called HashiCorp Configuration Language (HCL). It's designed specifically for defining and managing infrastructure resources in a human-readable and declarative way. HCL is not a general-purpose programming language like Python or JavaScript, but it's designed to describe the configuration and relationships of the resources you want to create or manage with Terraform.</p>
 
-<p>The full name of the tool is "HashiCorp Terraform." HashiCorp is the company that created the Terraform tool.</p>
+<p>The full name of the tool is <b>"HashiCorp Terraform."</b> HashiCorp is the company that created the Terraform tool.</p>
 
 <p>So, you don't have to learn each cloud's rules, and you can easily switch between clouds if you want. It saves your time, reduces mistakes, and makes everything simpler!</p>
 
 <p>Now we will discuss Terraform in technical language. What exactly does Terraform do?</p>
-</pre>
-<pre>
-<p><strong>3.2.2 Introduction to Terraform:</strong></p>
+
+<p><strong>Introduction to Terraform:</strong></p>
 
 <p>Terraform is an open-source tool for building, changing, and versioning infrastructure safely and efficiently.</p>
 
 <p>Terraform is a powerful open-source tool designed to simplify and automate infrastructure provisioning across multiple cloud providers, including AWS. It enables you to define your infrastructure as code using a declarative language, making it easier to create, modify, and manage resources in a consistent and predictable manner.</p>
 
 <p>Till now we have discussed why we need the Terraform tool?, Introduction of Terraform. Now we discuss key concepts of Terraform</p>
-</pre>
 
-<img src="blogimages/6b11.png" alt="Blog Post Image">
-<pre>
-<p><strong>3.2.3 Key Concepts Of Terraform:</strong></p>
+
+<img src="blogimages/Fig 7) Terraform.png" alt="Terraform">
+
+<p><strong>Key Concepts Of Terraform:</strong></p>
 
 <p>Terraform introduces several key concepts that contribute to its effectiveness as an Infrastructure as a Code tool:</p>
 
@@ -630,9 +560,8 @@ Run the following command to create the CloudFormation stack:
 <p>Till now we covered what is Terraform?, the Definition Of Terraform, and the Key Concepts of Terraform.</p>
 
 <p>Now, we will discuss the concept of Terraform practically. Practical implementation of Terraform as discussed below:</p>
-</pre>
-<pre>
-<p><strong>3.2.4 Implementing Infrastructure with Terraform:</strong></p>
+
+<p><strong>Implementing Infrastructure with Terraform:</strong></p>
 
 <p>Implementing infrastructure with Terraform involves several steps:</p>
 
@@ -645,11 +574,11 @@ Run the following command to create the CloudFormation stack:
 <p>HCL is designed to be easy to read and write, striking a balance between being human-friendly and machine-friendly.</p>
 
 <p>Create a file named <code>main.tf</code> and define your infrastructure using HCL:</p>
-</pre>
+
 </html>
 
-<img src="blogimages/7b11.png" alt="Blog Post Image">
-<pre>
+<img src="blogimages/Fig 8) provider.png" alt="provider">
+
 <p>Configuration files contain resource definitions, variables, and other settings needed to describe your infrastructure.</p>
 
 <p>The code provided is written in HashiCorp Configuration Language (HCL), commonly used for writing infrastructure as code (IaC) configurations using Terraform.</p>
@@ -666,43 +595,42 @@ Run the following command to create the CloudFormation stack:
 
 <code>resource "aws_instance" "web_server" { ... }</code>:
 
-<p>This block defines an AWS EC2 instance resource named "web_server." It specifies the characteristics and configuration for creating an EC2 instance.</p>
+<p>This block defines an AWS EC2 instance resource named <b>"web_server."</b> It specifies the characteristics and configuration for creating an EC2 instance.</p>
 
 <p>Inside the resource block, the following attributes are defined:</p>
 
 <code>ami = "ami-0123456"</code>:
 
-<p>This line specifies the Amazon Machine Image (AMI) to use for the EC2 instance. An AMI is a pre-configured template for creating EC2 instances. In this case, "ami-0123456" is a placeholder; you would typically use a valid AMI ID from the AWS Marketplace or one you've created.</p>
+<p>This line specifies the Amazon Machine Image (AMI) to use for the EC2 instance. An AMI is a pre-configured template for creating EC2 instances. In this case, <b>"ami-0123456"</b> is a placeholder; you would typically use a valid AMI ID from the AWS Marketplace or one you've created.</p>
 
 <code>instance_type = "t2.micro"</code>:
 
-<p>This line specifies the instance type for the EC2 instance. The "t2.micro" instance type is a low-cost, general-purpose instance type with limited CPU and memory resources. You can choose different instance types based on your requirements.</p>
+<p>This line specifies the instance type for the EC2 instance. The <b>"t2.micro"</b> instance type is a low-cost, general-purpose instance type with limited CPU and memory resources. You can choose different instance types based on your requirements.</p>
 
 <code>tags = { Name = "Web Server" }</code>:
 
 <p>This line defines tags for the EC2 instance. Tags are key-value pairs used for organising and identifying resources in AWS.</p>
 
-<p>In this case, you have assigned a tag with the key "Name" and the value "Web Server" to help identify this EC2 instance in the AWS Management Console or through AWS CLI commands.</p>
+<p>In this case, you have assigned a tag with the key <b>"Name"</b> and the value <b>"Web Server"</b> to help identify this EC2 instance in the AWS Management Console or through AWS CLI commands.</p>
 
 <p>The provided code is a simplified example. In practice, you would typically have more comprehensive configurations and may use variables and modules for better organisation and reusability in your Terraform project. Additionally, you would need to initialize and apply the Terraform configuration to create the AWS resources defined in this code.</p>
-</pre>
-<pre>
-<p>Step 2: Initializing the Project</p>
+
+<p><strong>Step 2: Initializing the Project</strong></p>
 
 <p>In this step, Run the “terraform init” command to initialize your project. This downloads the necessary providers and sets up the backend configuration.</p>
 
 <p>In the same directory as your <code>main.tf</code> file, run:</p>
 
 <code>terraform init</code>
-</pre>
-<img src="blogimages/8b11.png" alt="Blog Post Image">
-<pre>
+
+<img src="blogimages/Fig 9) Terraform init.png" alt="Terraform init">
+
 <p>The <code>terraform init</code> command is an essential step when working with Terraform, an infrastructure as code (IaC) tool used for provisioning and managing infrastructure resources. This command initializes a new or existing Terraform project and ensures that the necessary plugins and modules are downloaded and set up correctly.</p>
 
 <p>Here's a breakdown of what the <code>terraform init</code> command does:</p>
 
 <ul>
-  <li><strong>Plugin Initialization:</strong> Initially, we understand “what are plugins?” in short. "Plugins" refers to software components or extensions that can be added to an existing program or application to provide additional functionality or features. Terraform uses providers and plugins to interact with various cloud providers and services. The <code>terraform init</code> command initializes and installs the required plugins for your specific project. These plugins are responsible for translating your infrastructure code into actions that interact with the target infrastructure.</li>
+  <li><strong>Plugin Initialization:</strong> Initially, we understand <b>“what are plugins?”</b> in short. "Plugins" refers to software components or extensions that can be added to an existing program or application to provide additional functionality or features. Terraform uses providers and plugins to interact with various cloud providers and services. The <code>terraform init</code> command initializes and installs the required plugins for your specific project. These plugins are responsible for translating your infrastructure code into actions that interact with the target infrastructure.</li>
 
   <li><strong>Module Installation:</strong> If your Terraform configuration references external modules (either from the Terraform Registry or custom modules), <code>terraform init</code> will download and install these modules. Modules are reusable pieces of infrastructure code that can be used to create and manage resources.</li>
 
@@ -716,25 +644,24 @@ Run the following command to create the CloudFormation stack:
 <p>After running <code>terraform init</code> command, your Terraform project is ready for further actions, such as planning (<code>terraform plan</code>) and applying (<code>terraform apply</code>) your infrastructure changes.</p>
 
 <p>Remember that you typically need to run <code>terraform init</code> only once for each Terraform configuration, unless you update your configuration or change your dependencies (like providers or modules).</p>
-</pre>
-<pre>
+
 <p><strong>Step 3: Previewing Changes</strong></p>
 
 <p>In this step, use the <code>terraform plan</code> command to preview the changes that Terraform will make to your infrastructure. It shows what resources will be created, modified, or destroyed.</p>
 
 <p>Generate a preview of the changes using:</p>
-</pre>
 
-<img src="blogimages/9b11.png" alt="Blog Post Image">
-<pre>
+
+<img src="blogimages/Fig 10) Terraform plan.png" alt="Terrafrom plan">
+
 <p><strong>Step 4: Applying Changes</strong></p>
 
 <p>Apply your configuration using <code>terraform apply</code>. Terraform will execute the plan and create, update, or delete resources accordingly.</p>
 
 <p>Apply the changes to create resources:</p>
-</pre>
 
-<img src="blogimages/10b11.png" alt="Blog Post Image">
+
+<img src="blogimages/Fig 11) Terraform apply.png" alt="Terrafrom Apply">
 <p>The <code>terraform apply</code> command in Terraform is used to execute the changes specified in your infrastructure code and bring your infrastructure into the desired state as defined in your configuration files.</p>
 
 <p>It's important to use <code>terraform apply</code> with caution, especially in production environments, as it directly impacts your infrastructure. Always review the plan generated by <code>terraform plan</code> before applying changes to ensure they align with your intentions. Additionally, consider implementing change control and testing procedures to minimize risks associated with infrastructure changes.</p>
@@ -749,12 +676,12 @@ Run the following command to create the CloudFormation stack:
 
 <p>Now we will discuss CDK (Cloud Development Kit) 3rd and last tool of IaC.</p>
 
-<img src="blogimages/11b11.png" alt="Blog Post Image">
-<p>At the heart of the AWS CDK are "constructs." Constructs are reusable building blocks that represent AWS resources or groups of resources. CDK provides a rich library of pre-built constructs that correspond to AWS services. These constructs can be customized and composed to create a more complex infrastructure.</p>
+<img src="blogimages/Fig 12) CDK Application.png" alt="CDK (Cloud Development Kit)">
+<p>At the heart of the AWS CDK are <b>"constructs."</b> Constructs are reusable building blocks that represent AWS resources or groups of resources. CDK provides a rich library of pre-built constructs that correspond to AWS services. These constructs can be customized and composed to create a more complex infrastructure.</p>
 
 <p>Now let’s get into some action and see how to create IT infrastructure using CDK.</p>
 
-<h4>3.3.3 Developing Infrastructure with CDK:</h4>
+<h4>Developing Infrastructure with CDK:</h4>
 
 <p>Developing infrastructure with AWS CDK involves a set of steps that are advantageous for your chosen programming language:</p>
 
@@ -765,7 +692,7 @@ Run the following command to create the CloudFormation stack:
 <p><strong>Step 1.1 Install CDK CLI:</strong></p>
 
 <p>Install the AWS CDK CLI globally using npm (Node.js package manager):</p>
-<img src="blogimages/12b11.png" alt="Blog Post Image">
+<img src="blogimages/Fig 13) npm install.png" alt="npm install">
 <p>The command <code>npm install -g aws-cdk</code> is used to globally install the AWS Cloud Development Kit (CDK) package using the Node Package Manager (npm).</p>
 
 <p>Let’s understand this command:</p>
@@ -785,7 +712,7 @@ Run the following command to create the CloudFormation stack:
 
 <p>In this step, create a new directory for your CDK project and navigate to it in your terminal:</p>
 
-<img src="blogimages/13b11.png" alt="Blog Post Image">
+<img src="blogimages/Fig 14) mkdir.png" alt="mkdir">
 <p><strong>Let's break down each command:</strong></p>
 
 <ol>
@@ -810,7 +737,7 @@ Run the following command to create the CloudFormation stack:
 
 <p>For example, if you are using TypeScript then:</p>
 
-<img src="blogimages/14b11.png" alt="Blog Post Image">
+<img src="blogimages/Fig 15) cdk init.png" alt="cdk init app">
 <p>The command <code>cdk init app --language=typescript</code> is used to initialize a new AWS Cloud Development Kit (CDK) application project in TypeScript.</p>
 
 <p>Let's break down each part of the command:</p>
@@ -843,22 +770,22 @@ Run the following command to create the CloudFormation stack:
 
 <p>Here's an example construct for creating an S3 bucket:</p>
 
-<img src="blogimages/15b11.png" alt="Blog Post Image">
+<img src="blogimages/Fig 16) import.png" alt="import">
 <p>Let's break down each part of the code:</p>
 
-<img src="blogimages/16b11.png" alt="Blog Post Image">
+<img src="blogimages/Fig 17) export class.png" alt="export class">
 <p>These lines import the necessary modules from the AWS CDK library.</p>
 
 <p><code>import * as cdk from 'aws-cdk-lib';</code> imports the CDK library.</p>
 
 <p><code>import * as s3 from 'aws-cdk-lib/aws-s3';</code> imports the module specifically related to Amazon S3.</p>
 
-<img src="blogimages/16b11.png" alt="Blog Post Image">
+<img src="blogimages/Fig 17) export class.png" alt="export class">
 <p>Above line defines a TypeScript class named <code>“CdkProjectStack”</code> that extends the <code>“cdk.Stack”</code> class.</p>
 
 <p>In CDK, a "stack" represents a set of AWS resources that are created, updated, or deleted together as a unit.</p>
 
-<img src="blogimages/17b11.png" alt="Blog Post Image">
+<img src="blogimages/Fig 18) Constructor.png" alt="Constructor">
 <p>This is the constructor method for the <code>CdkProjectStack</code> class. It takes three parameters:</p>
 
 <ul>
@@ -874,7 +801,7 @@ Run the following command to create the CloudFormation stack:
 
 <p><code>super(scope, id, props);</code>: This line calls the constructor of the parent class (<code>cdk.Stack</code>) and passes the provided parameters to it.</p>
 
-<img src="blogimages/18b11.png" alt="Blog Post Image">
+<img src="blogimages/Fig 19) Define the S3 bucket.png" alt="Define an S3 bucket">
 <p>These lines define an Amazon S3 bucket within the CDK stack.</p>
 
 <p><code>new s3.Bucket(this, 'MyS3Bucket', { ... });</code>:</p>
@@ -893,7 +820,7 @@ Run the following command to create the CloudFormation stack:
 
 <p>Run the CDK synthesis process to generate the CloudFormation template:</p>
 
-<img src="blogimages/19b11.png" alt="Blog Post Image">
+<img src="blogimages/Fig 20) cdk synth.png" alt="CDK synth">
 <p>The “<code>cdk synth</code>” command is used in the AWS Cloud Development Kit (CDK) to generate a CloudFormation template from your CDK application.</p>
 
 <p>Let's break down each part of the command:</p>
@@ -924,7 +851,7 @@ Run the following command to create the CloudFormation stack:
 
 <p>Deploy the infrastructure using the following command:</p>
 
-<img src="blogimages/20b11.png" alt="Blog Post Image">
+<img src="blogimages/Fig 21) cdk deploy.png" alt="CDK Deploy">
 <p>The <code>cdk deploy</code> command is used in the AWS Cloud Development Kit (CDK) to deploy your AWS infrastructure based on the definitions you've specified in your CDK application.</p>
 
 <p>Let's break down each part of the command:</p>
@@ -1004,14 +931,14 @@ Run the following command to create the CloudFormation stack:
   <p>Store your code in a version control system like Git. This keeps track of changes and allows you to collaborate with others safely.</p>
 
   <li><strong>Deploy:</strong></li>
-  <p>"Deploy" involves using a deployment tool or process to execute your code, typically infrastructure as code (IaC).</p>
+  <p><b>"Deploy"</b> involves using a deployment tool or process to execute your code, typically infrastructure as code (IaC).</p>
   <p>When you deploy your code, the tool interprets your instructions and takes action in your target environment, which could be cloud-based or on-premises. Depending on your code's configuration, it can create new resources, update existing ones to match your desired state, or delete resources that are no longer needed.</p>
 
   <li><strong>Automation:</strong></li>
   <p>With IaC, you can automate the entire process. If you need to make changes, you update the code and deploy it, and the tool takes care of the rest.</p>
 </ul>
 
-<p>As we have discussed when and how to use IaC?</p>
+<p><strong>As we have discussed when and how to use IaC?</strong></p>
 
 <p>Now, in any tool or concept, we need to adhere to best practices to achieve better results, reduce risks, and ensure continuous improvement. So let us discuss a few best practices to be followed while implementing the IaC concept.</p>
 <p><strong>5. Best Practices for AWS IaC</strong></p>

@@ -26,7 +26,7 @@
       <h1>Secure Your AWS Account</h1>
 
       <h2>Introduction</h2>
-      <p>Welcome to Chapter 3 of our "Mastering AWS DevOps" series. In this blog post, we will guide you through securing your AWS account, a crucial step to protect your cloud resources from unauthorized access and potential threats.</p>
+      <p>Welcome to Chapter 3 of our <b>"Mastering AWS DevOps"</b> series. In this blog post, we will guide you through securing your AWS account, a crucial step to protect your cloud resources from unauthorised access and potential threats.</p>
 
       <p>In this blog, you will learn:</p>
       <ul>
@@ -41,56 +41,89 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/{{VideoID}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
 
-      <h2>Step-by-Step Guide</h2>
-
-      <h3>1. Protecting Your AWS Account</h3>
-      <p>Your AWS account is like the gateway to your cloud resources. A strong password acts as the first line of defense against unauthorized access.</p>
-      <h3>2. Safeguarding Sensitive Data</h3>
-      <p>Within your AWS account, you might have valuable and sensitive data. A strong password ensures that only authorized individuals can access this data.</p>
-      <h3>3. Preventing Unauthorized Activities</h3>
-      <p>A strong password makes it challenging for malicious actors to perform unauthorized activities, protecting your AWS resources from potential threats.</p>
-      <h3>4. Reducing the Risk of Data Breaches</h3>
-      <p>Data breaches can be costly and damaging. Strong passwords significantly reduce the risk of such breaches, giving you peace of mind.</p>
-
-      <p>So, strong passwords are your first line of defense against cyber threats and attacks. They ensure that only authorized individuals have access to your AWS account and data. A strong password for your AWS account will safeguard all your cloud resources and information, maintaining the highest level of security.</p>
-
-      <h3>Hands On</h3>
-      <p>Let's see how we can provide strong passwords and enable Multi-Factor Authentication (MFA) for your AWS account.</p>
-
-      <h4>Creating a Strong Password</h4>
+      <h3>The importance of strong passwords and how to create them.</h3>
+      <p>So, let’s start with</p>
+      <ul>
+      <p><b>A. Protection Against Unauthorized Access:</b> A strong password makes it challenging for an unauthorized person to access an account and perform unauthorized activities. It protects your AWS account from potential threats. </p>
+      <p><b>B. Safeguarding Financial Information:</b> A strong password helps protect your bank details, credit or debit card details and online payment systems. </p>
+      <p><b>C. Maintaining Privacy:</b> Personal and professional privacy can be compromised if an attacker accesses your email, social media or cloud accounts. </p>
+      <p><b>D. Reducing the risk of data breaches:</b> Many organizations have security policies requiring strong password protection to protect their system and confidential data.</p>
+      </ul>
+      
+      <p>So, strong passwords are your first line of defence against cyber threats and attacks. They ensure that only authorized individuals have access to your AWS account and data. A strong password for your AWS account will safeguard all your cloud resources and information, maintaining the highest level of security.</p>
+      <h3>How to Create Strong Passwords:</h3>
+      <p>Creating strong passwords involves combining various elements to make them difficult to guess or crack. Let’s start,</p>
+      <h3>Creating a strong password</h3>
       <ul>
         <li>At least 12 characters long</li>
         <li>Mix of upper and lower case letters</li>
         <li>Includes numbers and special characters</li>
-      </ul>
+        </ul>
 
       <p>Example: <strong>P@ssw0rd123!</strong></p>
-
-      <h4>Enabling Multi-Factor Authentication (MFA)</h4>
-      <p>Multi-Factor Authentication (MFA) adds an extra layer of protection by requiring a second form of authentication in addition to your password. Here's how to set it up:</p>
-
-      <h5>Step 1: Sign in to the AWS Management Console</h5>
-      <img src="blogimages/aws-console-login.png" alt="AWS Console Login">
+      <h3>Enabling Multi-factor Authentication (MFA)</h3>
+      <p>Multi-factor authentication (MFA) adds an extra layer of protection by requiring a second form of authentication in addition to your password.</p>
       
-      <h5>Step 2: Navigate to the IAM Dashboard</h5>
+      <p>Here's how to set it up:</p>
 
-      <h5>Step 3: Select Your Account Name</h5>
-      <img src="blogimages/account-name.png" alt="Account Name">
+      <p><b>Step 1:</b>Sign in to the AWS Management Console.</p>
 
-      <h5>Step 4: Choose 'Security Credentials'</h5>
+      <p>Search on Google AWS Management console and the page will open. In the top right corner, there is a button to <b>Sign in to the console.</b> Click on this button. (Figure 1.1 AWS Management Console)</p>
+    
+      <img src="blogimages/Fig 1 AWS Management Console.png" alt="AWS Management Console">
 
-      <h5>Step 5: Click 'Activate MFA'</h5>
-      <img src="blogimages/activate-mfa.png" alt="Activate MFA">
+      <p><b>Step 2:</b> Sign in to the Root user page.</p>
 
-      <h5>Step 6: Configure MFA Device</h5>
-      <p>Follow the on-screen instructions to configure your virtual MFA device. You can use apps like Google Authenticator or Authy for this purpose.</p>
-      <img src="blogimages/configure-mfa.png" alt="Configure MFA">
+      <p>On this page, you have to select the root user toggle button and type the email ID in the Root user email address box. Click on the Next button and you have to give your password and successfully log in on the AWS management console page. (Figure 1.2 Root user login)</p>
 
-      <h5>Step 7: Scan QR Code</h5>
-      <p>Scan the provided QR code using your MFA app and enter the generated code to complete the setup.</p>
+      <img src="blogimages/Figure 1.14 Root user Sign in.png" alt="Root user login">
 
-      <h5>Step 8: Verify the Code</h5>
-      <p>Enter the code generated by your MFA app to verify and complete the setup.</p>
+      <p><b>Step 3:</b> After successful login, you are on the Console home page and all the AWS services are there. In the top right corner, your account ID and other options are available. You have to click on the <b>security credentials.</b> (Figure 1.3 Console home page)</p>
+      <img src="blogimages/Fig 2 Console home.png" alt="Console home page">
+
+      <p><b>Step 4:</b> When you click on the security credentials, you will be navigated to the AWS service, <b>IAM (Identity and access management)</b> dashboard. Here you can see the option <b>Assign MFA.</b> Click on the <b>Assign MFA</b> button. (Figure 1.4 IAM Dashboard)</p>
+      <img src="blogimages/Fig 3 IAM Dashboard.png" alt="IAM Dashboard">
+
+      <p><b>Step 5:</b> Now you can see the MFA device name, and give a suitable name here. After that, there are 3 options for MFA to set up in your account.</p>
+      
+      <ul>
+        <p><b>1. Passkey or security Key:</b> A passkey provides a password-less approach and a security key provides a physical secure authentication method.</p>
+        <p><b>2. Authenticator app:</b> You can download it on your smartphone.</p>
+        <p><b>3. Hardware TOTP token:</b> A hardware TOTP token is a physical device that generates a time-based one-time password for user authentication.</p>
+      </ul>
+
+      <p>Select the Authenticator app toggle button and click on the <b>Next</b> button.(Figure 1.5 Select MFA device)</p>
+      <img src="blogimages/Fig 4 Select MFA device.png" alt="Select MFA device"> 
+
+      <p><b>Step 6:</b> Here you will be on the Set-up device page. The Instructions are given to install the authenticator App on your mobile. (Figure 1.6 Set up device)</p>
+      <img src="blogimages/Fig 6 Set up device.png" alt="Set up device">
+
+      <p><b>Step 7:</b> Now you have to use your mobile to download the authenticator app, go to Google Play for Android users and App Store for iPhone users and search <b>Microsoft Authenticator app.</b> There are multiple authenticator apps available in the market, you can choose anyone. (Figure 1.7.1 Search Authenticator, 1.7.2 Google Authenticator, 1.7.3 Authenticator App 1.7.4 Microsoft Authenticator)</p>
+      <img src="blogimages/Ph 1 Search Authenticator.jpeg" alt="Search Authenticator">
+      <img src="blogimages/Ph 2 Google Authenticator.jpeg" alt="Google Authenticator">
+      <img src="blogimages/Ph 3 Authenticator App.jpeg" alt="Authenticator App">
+      <img src="blogimages/Ph 4 Microsoft Authenticator.jpeg" alt="Microsoft Authenticator"> 
+      
+      <p><b>Step 8:</b> When you start downloading the authenticator app, here you will get some privacy policy statements click on the <b>accept</b> button. (Figure 1.8 Privacy policy)</p>
+      <img src="blogimages/Ph 5 Private policy.jpeg" alt="Private policy">
+
+      <p><b>Step 9:</b> Here this app will take permission to access your data, and you can change it later through settings. Click on the <b>Continue</b> button. (Figure 1.9 Personal Data access permission)</p>
+      <img src="blogimages/Ph 6 Personal Data Access Permission.jpeg" alt="Personal Data Access Permission">
+
+      <p><b>Step 10:</b> On the next page of secure your digital life, here is the last option of scan a QR code. Click on the <b>scan or QR code.</b> (Figure 1.10 Secure your digital life)</p>
+      <img src="blogimages/Ph 7 Secure your digital life.jpeg" alt="Secure your digital life">
+
+      <p><b>Step 11:</b> You will get the scanner to scan the QR code given on the <b>setup device</b> page. Scan the QR code and you will get the MFA code for 30 seconds. (Figure 1.11 Scanner)</p>
+      <img src="blogimages/Ph 8 Scanner.jpeg" alt="Scanner">
+
+      <p><b>Step 12:</b> Fill in the MFA code in the first box which you are getting through the app and wait for 30 minutes then you will get another MFA code, fill in the next box. Click on the <b>Add MFA</b> button. (Figure 1.12 Set up device page)</p>
+      <img src="blogimages/Fig 7 Setup device page.png" alt="Setup device page">
+      
+      <p><b>Step 13:</b> When you click on the Add MFA button, you will get the message MFA device assigned on top of the screen. (Figure 1.13 MFA Confirmation)</p>
+      <img src="blogimages/Fig 8 MFA Confirmation.png" alt="MFA Confirmation">
+
+      <p><b>Step 14:</b> Now you can check on the <b>IAM (Identity and Access Management)</b> dashboard, It's mentioned there that the Root user has MFA. (Figure 1.14 IAM Dashboard for confirmation)</p>
+      <img src="blogimages/Fig 9 IAM Dashboard for confirmation.png" alt="IAM Dashboard for confirmation">
 
       <p>Congratulations! You've successfully configured and enabled a virtual MFA device for your AWS root user.</p>
 

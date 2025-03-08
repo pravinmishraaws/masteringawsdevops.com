@@ -13,7 +13,7 @@
 <!-- Navigation Section -->
   <nav>
     <div class="logo-container">
-            <a href=" https://masteringawsdevops.com"><img src="images/logo1.png" alt="Mastering AWS DevOps"></a>
+      <a href=" https://masteringawsdevops.com"><img src="images/logo1.png" alt="Mastering AWS DevOps"></a>
     </div>
    <ul class="nav-links">
 	<li><a href="index.html">Home</a></li>
@@ -32,56 +32,51 @@
   <img src="blogimages/1b3.png" alt="Blog Post Image" style="max-width: 50%; height: auto;">
 </div>
 
-<h2>Introduction:</h2>
+<p>Welcome to <strong>Chapter 13C</strong> of our <strong>"Mastering AWS DevOps"</strong> series! In this blog, we will explore essential Linux commands that every cloud engineer should know to efficiently manage cloud infrastructure. These commands not only streamline workflows but also provide the flexibility and control needed to optimize cloud operations. Let's dive into the tools that will enhance your cloud engineering journey!</p>
 
-<p>Hey there, all the Linux enthusiasts!</p>
+<p>Today, we're taking a fun-filled journey into the land of <strong>'sudo'</strong> – your ultimate helper for doing special stuff on your Linux computer. Then we will unlock the world of package managers and navigate through Linux's file permissions and ownership commands.</p>
 
-<p>Ready to uncover the secrets of the Linux command line?</p>
-
-<p>Today, we're taking a fun-filled journey into the land of '<code>sudo</code>' – your ultimate helper for doing special stuff on your Linux computer. Then we will unlock the world of package managers followed by navigating through the file permissions and ownership commands in Linux.</p>
-
-<p>No need to stress if it sounds a bit techy – will guide you through it all.</p>
+<p>There is no need to stress if it sounds a bit techy – will guide you through it all.</p>
 
 <p>Let's kick things off!</p>
 
+<strong>1. Sudo</strong>
 
-<h2>Sudo</h2>
+<p>In Linux, '<code>sudo</code>' stands for "<strong>superuser do</strong>," and it's your golden ticket to gain administrative powers without logging in as the almighty superuser, '<code>root</code>'.</p>
 
-<p>In Linux, '<code>sudo</code>' stands for "<i>superuser do</i>," and it's your golden ticket to gain administrative powers without logging in as the almighty superuser, '<code>root</code>'.</p>
+<p>With <b>great power comes great responsibility</b></p>
 
-<p>With <b>great power comes great responsibility</b>, absolutely!</p>
+<p>However, great power is not needed all the time while using the Linux environment.</p>
 
-<p>However, <i>great power</i> is not needed all the time while using the Linux environment.</p>
+<p>Let’s understand:</p>
 
-<p>Let’s understand this way.</p>
+<p>Consider that your Linux computer is a mighty kingdom, and you're the ruler of that kingdom.
 
-<p>Consider that your Linux computer is a mighty kingdom, and you're the ruler of that kingdom.</p>
+<p>Now, sometimes, you need to do really important stuff that only the main ruler can do. But you don't want to be the main ruler all the time because that could be risky. So, you have a special magic word called <code>"sudo."</code></p>
 
-<p>Now, sometimes, you need to do really important stuff that only the main ruler can do. But you don't want to be the main ruler all the time because that could be risky. So, you have a special magic word called "<i>sudo</i>."</p>
+<p>When you say <code>"sudo,"</code> it's like asking for permission to do something very powerful, almost like borrowing the main ruler's powers for a moment. It's like saying, <strong>"Hey, computer, can I do this important thing just for a little while?"</strong></p>
 
-<p>When you say "<i>sudo</i>," it's like asking for permission to do something very powerful, almost like borrowing the main ruler's powers for a moment. It's like saying, "Hey, computer, can I do this important thing just for a little while?"</p>
+<p>Now, the Linux computer is smart. It knows that not everyone should have these superpowers, so it might ask you for your secret password before letting you use <code>"sudo."</code></p>
 
-<p>Now, the Linux computer is smart. It knows that not everyone should have these superpowers, so it might ask you for your secret password before letting you use "<i>sudo</i>."</p>
+<p>Once you say <code>"sudo"</code> and give your secret password, the computer says, <strong>"Okay, you can use some of the main ruler's powers for this one task."</strong> You do your important thing, and then the computer goes back to normal.</p>
 
-<p>Once you say "<i>sudo</i>" and give your secret password, the computer says, "Okay, you can use some of the main ruler's powers for this one task." You do your important thing, and then the computer goes back to normal.</p>
-
-<p>So, "<i>sudo</i>" is like your special key to unlock powerful abilities, but you have to use it carefully. Just like you wouldn't give your secret superhero powers to anyone, you use "<i>sudo</i>" only when you need to do something really special on your computer. And that's how the magic of "<i>sudo</i>" works!</p>
+<p>So, <code>"sudo"</code> is like your special key to unlock powerful abilities, but you have to use it carefully. Just like you wouldn't give your secret superhero powers to anyone, you use <code>"sudo"</code> only when you need to do something really special on your computer. And that's how the magic of <code>"sudo"</code> works!</p>
 
 <p>So be cautious and use it wisely!</p>
-<h2>The Syntax of 'sudo'</h2>
 
-<p>Before we jump into the exciting examples, let's understand how to use '<code>sudo</code>' with its basic syntax.</p>
-
-<p><code>sudo [options] command</code></p>
+<p>The syntax of <b>“Sudo”</b></p>
+  
+<p><code>Syntax: sudo [options] command</code></p>
+  
 <p>Where,</p>
 <p><code>sudo</code>: The command itself.</p>
-<p><code>[options]</code>: These are extra settings you can use to modify how '<code>sudo</code>' behaves. We call it ‘flags’ also.</p>
+<p><code>[options]</code>: These are extra settings to modify how '<code>sudo</code>' behaves. We call it `flags` also</p>
 <p><code>command</code>: The actual command you want to run with superuser privileges.</p>
 
 <p>Here are some commonly used options with <code>sudo</code>:</p>
 <p><code>-u</code>: Executes the command as the specified user instead of the superuser (root).</p>
 <p>Example: <code>sudo -u john ls</code></p>
-<p>This command runs the <code>ls</code> command as the user "john" with elevated privileges. It allows the user "john" to perform actions that require administrative access.</p>
+<p>This command runs the <code>ls</code> command as the user <strong>"john"</strong> with elevated privileges. It allows the user <strong>"john"</strong> to perform actions that require administrative access.</p>
 
 <p><code>-s</code> or <code>--shell</code>: Runs a shell with root privileges.</p>
 <p>Example: <code>sudo -s</code></p>
@@ -95,23 +90,22 @@
 <p>Example: <code>sudo -l</code></p>
 <p>This command lists the commands or permissions that are available to the user. It helps the user understand what actions they can perform with elevated privileges.</p>
 
-<p><code>-k</code>: Forces the user to enter their password again before executing the command.</p>
+<p><code>-k</code>: Forces the user to re-enter their password before executing the command.</p>
 <p>Example: <code>sudo -k apt-get update</code></p>
 <p>This command forces the user to enter their password again before running the <code>apt-get update</code> command. It adds an extra layer of security to prevent unauthorized use of the <code>sudo</code> command.</p>
 
 <p><code>-v</code>: Updates the <code>sudo</code> timestamp, extending the password timeout period.</p>
 <p>Example: <code>sudo -v</code></p>
 <p>This command updates the <code>sudo</code> timestamp, extending the period of time before the user is required to enter their password again. It is useful when you need to keep the elevated privileges active for an extended period.</p>
-
 <p>Remember, '<code>sudo</code>' isn't just a word, it's a tool with immense power. Always double-check your commands before pressing Enter and only use '<code>sudo</code>' when necessary.</p>
 
+<h3>Now that you are the ruler of your Linux Kingdom</h3>
 
-<h2>Now that you are the ruler of your Linux Kingdom</h2>
-
-<p>So as the legend goes, every kingdom has a rule book. So every Linux environment has a rule book which is called ‘<code>sudoers</code>’ file.</p>
+<p>Every Linux environment has a rule book which is called ‘<code>sudoers</code>’ file.</p>
 
 <p>It's like a list of who's allowed to use <code>sudo</code> and what they're allowed to do. Only the computer king, in our case this king is called the root user, can edit this rule book. But wait, there's more! The king can also choose certain trustworthy knights, in our case these knights are the users, to help rule the kingdom. These knights are listed in the <code>sudoers</code> file, giving them the right to use <code>sudo</code>.</p>
-<h2>Great..I hope you are now able to relate to this explanation.</h2>
+
+<h3>Great..I hope you are now able to relate to this explanation.</h3>
 
 <p>Once you have decided which users should be included in the <code>sudoers</code> file with the respective permissions, now you will make the necessary changes in this file to reflect your decisions.</p>
 <p>Each entry in the <code>sudoers</code> file specifies who is allowed to use the super power and what they're allowed to do means which commands they are allowed to use.</p>
@@ -126,7 +120,7 @@
 
 <p>The format can be understood as follows.</p>
 <p><b>username:</b> This is where you write the name of the user you're granting <code>sudo</code> powers to</p>
-<p><b>ALL=(ALL:ALL):</b> This is the part that determines the scope of their powers. It's like saying, "They can use <code>sudo</code> anywhere, for anything."</p>
+<p><b>ALL=(ALL:ALL):</b> This is the part that determines the scope of their powers. It's like saying, <strong>"They can use sudo anywhere, for anything."</strong></p>
 <p><b>command:</b> The specific task they're allowed to perform using <code>sudo</code>.</p>
 
 <p>Let’s see this with an example</p>
@@ -140,153 +134,106 @@
 <code>alex ALL=(ALL:ALL) /usr/bin/apt-get</code>
 
 <p>"alex" is the username.</p>
-<p>The first "ALL" means Alex can use <code>sudo</code> on any computer.</p>
-<p>The second "ALL" means Alex can become any user on the computer.</p>
-<p>The third "ALL" means Alex can use <code>sudo</code> anytime.</p>
+<p>The first <strong>"ALL"</strong> means Alex can use <code>sudo</code> on any computer.</p>
+<p>The second <strong>"ALL"</strong> means Alex can become any user on the computer.</p>
+<p>The third <strong>"ALL"</strong> means Alex can use <code>sudo</code> anytime.</p>
 <p><code>"/usr/bin/apt-get"</code> is the specific command. Alex can only use <code>sudo</code> to run the <code>apt-get</code> command for installing software.</p>
 
 <p>So, this command says, "Hey, Alex, you have the power to use <code>sudo</code> anywhere, become anyone, and use it anytime, but only for installing software using '<code>apt-get</code>'."</p>
-<h2>Example 3:</h2>
+
+<p><b>Example 3:</b></p>
 <code>carol host1=(user1:user1) /bin/echo</code>
 
-<p>In this unique scenario, Carol has been granted sudo powers on a specific host (machine) called <code>host1</code>. Her superpower is further narrowed down to a specific user, <code>user1</code>, for both the source and destination users. Carol's sole command privilege is <code>/bin/echo</code>. This setup offers a finely tuned level of control, allowing Carol to use <code>sudo</code> only for the <code>echo</code> command on a specific host and user.</p>
+<p>In this unique scenario, Carol has been granted <code>sudo</code> powers on a specific host (machine) called <code>host1</code>. Her superpower is further narrowed down to a specific user, <code>user1</code>, for both the source and destination users. Carol's sole command privilege is <code>/bin/echo</code>. This setup offers a finely tuned level of control, allowing Carol to use <code>sudo</code> only for the <code>echo</code> command on a specific host and user.</p>
 
 <p>And that's how you shape <code>sudo</code> powers with the <code>sudoers</code> file! Whether it's granting universal access, focusing on specific commands, or exercising intricate control, the <code>sudoers</code> file empowers you to tailor superpowers according to your realm's needs.</p>
 
-<h2>Package management</h2>
+<h3>Package management</h3>
 
-<p>In Linux, package management refers to the process of installing, managing, and updating software packages on your computer.</p>
+<p>Package Management refers to the process of installing, updating, configuring and removing software packages on an operating system, typically with Linux, MacOS or other Unix-like environments. Package managers are tools or systems that automate and simplify these tasks by managing the dependencies and versions of software, ensuring the software runs correctly and consistently on the system.</p>
 
-<p>The two of the most popular package managers in Linux are YUM and APT.</p>
+<p><b>Key Concepts of Package Management:</b></p>
 
-<p>Before we dive into the details of these package managers, let me explain how exactly the whole package management thing works in Linux.</p>
+<p><b>1. Packages:</b></p>
 
-<p>Let’s use an example this way.</p>
+<p>A <b>package</b> is a bundle of software, containing the code, configuration files, metadata and dependencies needed to run the program</p>
 
-<p>Consider I am throwing a pizza party. I want to have all sorts of delicious pizzas with different toppings. Now, going to the market to buy all the ingredients for each pizza would be a hassle, right?</p>
-<p>Here's where package management comes to my rescue!</p>
+<p><b>2. Package Manager:</b></p>
 
-<p><b>Wishlist:</b></p>
-<p>I will first start with making a Pizza Wishlist. I will make a list of all the pizzas I want for my party – Margherita, Pepperoni, Veggie Supreme, and Hawaiian.</p>
+<p>A <b>package manager</b> is a software tool that automates the process of managing packages, including downloading, installing, configuring, and updating them.</p>
 
-<p><b>The Supermarket (Repository):</b></p>
-<p>Instead of going store to store, I have a special supermarket called a repository that has all the pizza ingredients. Each ingredient is like a software package.</p>
+<p><b>3. Package Repositories:</b></p>
 
-<p><b>My Shopping Assistant (Package Manager):</b></p>
-<p>I have a shopping assistant called package manager who knows exactly where to find each ingredient (package) in the supermarket (repository).</p>
+<p>A repository is a centralized location where packages are stored and can be downloaded from. Repositories are typically maintained by Linux distributions or third-party software vendors</p>
 
-<p><b>Fetching the Ingredients:</b></p>
-<p>Then I tell my shopping assistant (package manager) about my wishlist. It goes to the supermarket, grabs all the ingredients I need for each pizza, and brings them to my kitchen.</p>
+<p>The most popular package managers are <strong>APT (Advanced package tool)</strong> and <strong>YUM (Yellowdog Updater, Modified).</strong>  Package manager helps you find, download, install, and manage software programs (also called packages) that you want to use on your Linux system. Instead of searching the internet for each program and manually installing it, you can use the package manager to handle all the heavy lifting for you.</p>
 
-<p><b>Assembling the Pizzas (Dependencies):</b></p>
-<p>Now some pizzas need specific ingredients. For example, Veggie Supreme needs mushrooms, peppers, and olives. My shopping assistant makes sure to grab all the right ingredients for each pizza, just like how a package manager manages dependencies in software.</p>
+<p><b>For example</b>, if you want to install the popular text editor called <strong>Visual Studio Code - VSCode</strong> on your Linux system to write code. Instead of going to a website, downloading files, and figuring out dependencies, you will use a package manager.</p>
 
-<p><b>Cooking and Updates:</b></p>
-<p>I start cooking your pizzas (installing the software). And guess what? If I find out there's a better recipe for Margherita or new, fresher toppings, my shopping assistant can update those ingredients for me (software updates).</p>
+<p>Linux distributions, such as Ubuntu, Fedora, and Debian, have their own package management systems. The most used package managers are <b>apt</b> (used in Ubuntu and Debian-based distributions) and <b>yum</b> (used in Fedora and Red Hat-based distributions).</p>
 
-<p><b>Tidying Up (Removal):</b></p>
-<p>After the party, I might want to clear out some leftover ingredients. My shopping assistant can also help me get rid of those extras (uninstalling software).</p>
-<h2>So, Package management in Linux works just like my pizza party.</h2>
+<p>Now suppose you are using the Ubuntu Linux system, so you will use the <b>APT</b> package manager. Let’s see what the steps are to install the VSCode text editor.</p>
 
-<p>I have a wishlist of software I want (packages).</p>
-<p>My package manager fetches all the software from a special place (repository).</p>
-<p>It ensures everything I need for each software to work is there (dependencies).</p>
-<p>I can update software to get the latest and tastiest versions.</p>
-<p>And if I don't need something anymore, I can remove it to keep things neat.</p>
-
-<p>So the two most popular package managers are YUM and APT.</p>
-
-<p>Well, let me define the term ‘Package Manager’ at this juncture for you.</p>
-
-<p>Package manager helps you find, download, install, and manage software programs (also called packages) that you want to use on your Linux system. Instead of searching the internet for each program and manually installing it, you can use the package manager to handle all the heavy lifting for you.</p>
-
-<p>For example, if you want to install the popular text editor called Visual Studio Code - VSCode on your Linux system to write code. Instead of going to a website, downloading files, and figuring out dependencies, you will use a package manager.</p>
-
-<p>Linux distributions, such as Ubuntu, Fedora, and Debian, have their own package management systems. The most commonly used package managers are <code>apt</code> (used in Ubuntu and Debian-based distributions) and <code>yum</code> (used in Fedora and Red Hat-based distributions).</p>
-
-<p>Now suppose you are using the Ubuntu Linux system, so you will use the <code>APT</code> package manager. Let’s see what are the steps to install the VSCode text editor.</p>
-
-<p>You will start with opening the command line prompt and then type the following command.</p>
+<p>You will start by opening the command line prompt and then type the following command.</p>
 
 <code>$ sudo apt-get install code</code>
 
-<p>Here,</p>
-<p><code>sudo</code> gives you administrative privileges,</p>
-<p><code>apt-get</code> is the package manager command,</p>
-<p><code>install</code> is the action you want to perform,</p>
-<p><code>code</code> is the name of the package you want, in this case, VSCode.</p>
+<p>Here we understand step by step,</p>
 
-<p>The package manager connects to a repository - an online store of software that contains VSCode and all its required files.</p>
-<p>The package manager downloads VSCode and any other necessary files, making sure to also install any libraries or components that VSCode depends on.</p>
-<p>Once everything is downloaded and set up, you can now simply type <code>code</code> in your terminal to launch the Visual Studio Code text editor.</p>
-
-<p>Later on, when there's an update for VSCode, you can use the package manager to easily update it by using the following commands.</p>
-<code>$ sudo apt-get update</code>
-<p>This command updates the repository information.</p>
-
-<code>$ sudo apt-get upgrade code</code>
-<p>This command upgrades the VSCode package to the latest version available in the repository.</p>
-
-<p>In this way, the package manager simplifies the process of finding, installing, and updating software on your Linux system. It takes care of the technical details, ensuring that the software works properly and is integrated into your system seamlessly.</p>
-<p>I hope you are able to relate to the working of a package manager now.</p>
-
-<p>Let us also discuss YUM package manager with an example.</p>
-
-<p>YUM stands for Yellowdog Updater Modified is a package manager used primarily in Red Hat-based Linux distributions, like CentOS and Fedora. It helps you install, update, and manage software packages on your system.</p>
-<p>Suppose you are using a Fedora Linux system and you want to install a web server software called "Apache" so you can host a website. YUM will help you do that.</p>
-
-<p>Go to your command line terminal and type the following command.</p>
-
-<code>$ sudo yum install httpd</code>
-<p>Here,</p>
 <p><code>sudo</code> gives you administrative privileges.</p>
 <p><code>yum</code> is the package manager command.</p>
-<p><code>install</code> is the action you want to perform.</p>
+<p><code>yum</code> install is the action you want to perform.</p>
 <p><code>httpd</code> is the name of the package you want, in our case, it is the software for the Apache web server.</p>
 
-<p>Then YUM checks its repository for the package named "httpd."</p>
+<p>Then YUM checks its repository for the package named <b>“httpd”.</b></p>
+
 <p>YUM downloads the Apache package and any necessary files, such as configuration files and dependencies.</p>
+
 <p>YUM configures your Fedora Linux system to properly set up and integrate the Apache web server.</p>
+
 <p>Once the installation is complete, you will start the Apache web server using the following command.</p>
 
 <code>$ sudo systemctl start httpd</code>
-<p>The systemctl command is used to manage system services, and <code>start httpd</code> tells it to start the Apache service.</p>
+
+<p>The systemctl command is used to manage system services, and <b>start httpd</b> tells it to start the Apache service.</p>
 
 <p>You can also enable the Apache service to start automatically when your computer boots up:</p>
 
 <code>$ sudo systemctl enable httpd</code>
+
 <p>This ensures that the web server is always available.</p>
 
 <p>Now you can open a web browser and access your website using the server's IP address.</p>
+
 <p>So, isn’t it an easy way to get the software packages of your choice through this package management in Linux?</p>
 
 <p>Well, that's how package management is helpful. It helps us with,</p>
 
-<p>a. Easy Software Installation: Package managers make installing software as simple as typing a command. You don't need to hunt for files or worry about complex installation steps.</p>
+<p><strong>a. Easy Software Installation:</strong> Package managers make installing software as simple as typing a command. You don't need to hunt for files or worry about complex installation steps.</p>
 
-<p>b. Efficient Updates: Package managers keep your software up to date with just a few commands. You don't need to manually find updates and download them.</p>
+<p><strong>b. Efficient Updates:</strong> Package managers keep your software up to date with just a few commands. You don't need to manually find updates and download them.</p>
 
-<p>c. Dependency Management: Package managers automatically handle software dependencies, ensuring that all required components are installed correctly.</p>
+<p><strong>c. Dependency Management:</strong> Package managers automatically handle software dependencies, ensuring that all required components are installed correctly.</p>
 
-<p>d. Centralized Repository: They provide access to a central repository of software, which makes it easy to discover and install a wide range of applications.</p>
+<p><strong>d. Centralized Repository:</strong> They provide access to a central repository of software, which makes it easy to discover and install a wide range of applications.</p>
 
-<p>e. Security: Package managers ensure that software packages come from trusted sources, reducing the risk of malware or compromised software.</p>
+<p><strong>e. Security:</strong> Package managers ensure that software packages come from trusted sources, reducing the risk of malware or compromised software.</p>
 
-<p>f. Version Control: You can easily manage and switch between different versions of software if needed.</p>
+<p><strong>f. Version Control:</strong> You can easily manage and switch between different versions of software if needed.</p>
 
-<p>g. System Integration: Package managers integrate software into your system properly, maintaining compatibility and reducing conflicts.</p>
-<h2>File Permissions and Ownership</h2>
+<p><strong>g. System Integration:</strong> Package managers integrate software into your system properly, maintaining compatibility and reducing conflicts</p>
+
+<h3>Files Permissions and Ownership</h3>
 
 <p>As you read this blog, a huge amount of data and information is being made, agree?</p>
-<p>Millions of messages are exchanged every second, financial transactions are crisscrossing the borders, videos, images, buy and sell all happening constantly and continuously.</p>
-<p>The sheer magnitude of this ceaseless data creation is both breathtaking and humbling.</p>
 
-<p>In the middle of all this fascinating information, there's a quiet protector making sure data is secure.</p>
+<p>Millions of messages are exchanged every second, financial transactions are crisscrossing the borders, videos, images, buy and sell all happening constantly and continuously.</p>
+
 <p>And that’s where the concept of file permissions and ownership comes into play in Linux systems.</p>
 
 <p>File permissions and ownership in Linux work together to control who can do what with files and directories. For all the files and directories in your Linux system, file permissions are the locks that determine who can access and manipulate those files while ownership designates who the rightful owner of each file or directory is.</p>
 
-<p>File permissions set rules for three main actions: reading (viewing the content of a file), writing (making changes to a file), and executing (running a file as a program). These permissions can be granted separately for three types of users: the file's owner, members of the file's group, and everyone else.</p>
+<p><b>File permissions set rules for three main actions:</b> reading (viewing the content of a file), writing (making changes to a file), and executing (running a file as a program). These permissions can be granted separately for three types of users: the file's owner, members of the file's group, and everyone else.</p>
 
 <p>Ownership, on the other hand, assigns a specific user as the owner of a file or directory. This owner has special privileges, such as the ability to change permissions, modify the file's content, or even delete it. The owner can also delegate certain permissions to the group associated with the file. Groups allow multiple users to share access to files while still maintaining some level of control.</p>
 
@@ -297,30 +244,36 @@
 <p>The permissions are represented by a series of letters or symbols.</p>
 
 <p>Let’s use the command. Execute this command in your home directory.</p>
+
 <code>$ ls -l</code>
 
 <p>OUTPUT</p>
-<code>-rw-r--r-- 1 user group 4096 Jun 1 10:30 myfile.txt</code>
+
+<strong>-rw-r--r-- 1 user group 4096 Jun 1 10:30 myfile.txt</strong>
 
 <p>The first character indicates the file type ('-' for a regular file), if it is ‘d’..it means it is a directory. The next three characters ('rw-') represent the permissions for the owner, the next three ('r--') represent the permissions for the group, and the final three ('r--') represent the permissions for other users.</p>
 
-<p>What does a Owner mean here?</p>
-<p>A user is the owner of the file or directory. An "owner" refers to the user account that has primary control and authority over a file or directory. Every file in the system belongs to precisely one user-name, which is also called the file owner.</p>
+<h4>What does an Owner mean here?</h4>
 
-<p>What does a Group mean here?</p>
-<p>A group can contain multiple users. A "group" refers to a collection of user accounts that share certain permissions and access rights to files and directories. By grouping users together, Linux provides a way to manage access to resources more efficiently and securely. Users who belong to that group will have the same Linux group permissions to access the file. Every file is associated with one group name, which is called the group owner.</p>
+<p>A user is the owner of the file or directory. An <b>"owner"</b> refers to the user account that has primary control and authority over a file or directory. Every file in the system belongs to precisely one user-name, which is also called the file owner.</p> 
 
-<p>What does Other mean here?</p>
+<h4>What does a Group mean here?</h4>
+
+<p>A group can contain multiple users. A <b>"group"</b> refers to a collection of user accounts that share certain permissions and access rights to files and directories. By grouping users, Linux provides a way to manage access to resources more efficiently and securely. Users who belong to that group will have the same Linux group permissions to access the file. Every file is associated with one group name, which is called the group owner.</p>
+
+<h4>What does Other mean here?</h4>
+
 <p>Other ownership means that the user did not create the file and does not belong to a user group that could own the file. This category includes all users who are not the owner and not members of the group associated with the file. It encompasses all other users on the system who are not part of the specific file's owner or group.</p>
 
-<p><i>h. Uninstallation:</i> Removing software is clean and efficient with package managers, as they track installed files and configurations.</p>
+<p><strong>h. Uninstallation:</strong> Removing software is clean and efficient with package managers, as they track installed files and configurations.</p>
 
-<p><i>i. Consistency:</i> Package managers help maintain a consistent and organized system environment.</p>
+<p><strong>i. Consistency:</strong> Package managers help maintain a consistent and organized system environment.</p>
 
-<p><i>j. Time Savings:</i> They save you time by automating complex processes and reducing manual work.</p>
+<p><strong>j. Time Savings:</strong> They save you time by automating complex processes and reducing manual work.</p>
 
 <p>In essence, package managers make software management on Linux more convenient, secure, and efficient.</p>
-<h2>Linux File Permissions: Absolute and Symbolic Mode</h2>
+
+<h3>Linux File Permissions: Absolute and Symbolic Mode</h3>
 
 <p>Linux has two modes to configure permissions.</p>
 
@@ -329,122 +282,156 @@
   <li><b>Symbolic mode:</b> It is a combination of letters and symbols to add permissions or to remove any set of permissions.</li>
 </ol>
 
-<p>Now..in case you want to modify file permissions, you can use the <code>chmod</code> command followed by the permission code and the file or directory you want to change.</p>
+<p>Now..in case you want to modify file permissions, you can use the chmod command followed by the permission code and the file or directory you want to change.</p>
 
 <p>Let’s see how.</p>
 
-<p>The <code>chmod</code> command in Linux is used to change the permissions of files and directories. It allows you to modify the read, write, and execute permissions for the owner, group, and other users</p>
+<p>The <b>chmod</b> command in Linux is used to change the permissions of files and directories. It allows you to modify the read, write, and execute permissions for the owner, group, and other users.</p>
 
-<p><b>Let’s learn To change permissions using numeric mode or absolute mode.</b></p>
+<p><strong>Let’s learn To change permissions using numeric mode or absolute mode.</strong></p>
+
 <p>You can represent the permissions using numeric values. Each permission has a corresponding numeric value:</p>
 
 <ul>
-  <li>Read (<code>r</code>) = 4</li>
-  <li>Write (<code>w</code>) = 2</li>
-  <li>Execute (<code>x</code>) = 1</li>
-</ul>
+<li>Read (r) = 4</li>
+<li>Write (w) = 2</li>
+<li>Execute (x) = 1</li>
+  </ul>
 
-<p>To change the permissions of a file named "myfile.txt" to read and write for the owner, read-only for the group, and no access for others, you can use the following command:</p>
+<p>To change the permissions of a file named <b>"myfile.txt"</b> to read and write for the owner, read-only for the group, and no access for others, you can use the following command:</p>
 
-<code>chmod 640 myfile.txt</code>
+<p><strong>chmod 640 myfile.txt</strong></p>
 
-<p>Here, "6" represents the permission for the owner (4+2), "4" represents the permission for the group (read-only), and "0" represents no access for others.</p>
+<p>Here, <b>"6"</b> represents the permission for the owner (4+2), <b>"4"</b> represents the permission for the group (read-only), and <b>"0"</b> represents no access for others.</p>
 
-<p><b>Let’s learn to change permissions using symbolic mode.</b></p>
+<p><strong>Let’s learn to change permissions using symbolic mode.</strong></p>
+
 <p>Symbolic mode allows you to modify permissions using symbols and operators. The symbols used are:</p>
 
 <p>We will follow this format for symbolic mode.</p>
 
-<code>chmod [options] [permissions] filename</code>
+<p><strong>chmod [options] [permissions] filename</strong></p>
 
 <p>Here,</p>
-<p><code>chmod:</code> The command itself.</p>
-<p><code>[options]:</code> Optional flags that modify how the chmod command behaves.</p>
-<p><code>permissions:</code> Specifies the new permissions you want to apply to the file(s) or directory(ies). When we use the symbolic mode, this permission will consist of the following format.</p>
 
-<p>[who] [operator] [permissions]</p>
+<p><strong>chmod:</strong> The command itself.</p>
+
+<p><strong>[options]:</strong> Optional flags that modify how the chmod command behaves.</p>
+
+<p><strong>permissions:</strong> Specifies the new permissions you want to apply to the file(s) or directory(ies). When we use the symbolic mode, this permission will consist of the following format.</p>
+
+<p><strong>[who] [operator] [permissions]</strong></p>
 
 <p>Here,</p>
-<p>[who]: Represents the category of users you want to modify: <code>u</code> for owner, <code>g</code> for group, and <code>o</code> for others.</p>
-<p>[operator]: Specifies the action you want to perform: <code>+</code> to add permissions, <code>-</code> to remove permissions, or <code>=</code> to set permissions explicitly.</p>
-<p>[permissions]: Indicates the permissions you want to add, remove, or set using the symbols <code>r</code>, <code>w</code>, and <code>x</code>.</p>
+
+<p><strong>[who]:</strong> Represents the category of users you want to modify: <b>u</b> for owner, <b>g</b> for group, and <b>o</b> for others.</p>
+
+<p><strong>[operator]:</strong> Specifies the action you want to perform: <b>+</b> to add permissions, <b>-</b> to remove permissions, or <b>=</b> to set permissions explicitly.</p>
+
+<p><strong>[permissions]:</strong> Indicates the permissions you want to add, remove, or set using the symbols <b>r</b>, <b>w</b>, and <b>x</b>.
 
 <p>Let me write down a few examples.</p>
 
-<p><b>Example 1:</b> To give the owner write and execute permissions on a file.</p>
-<code>chmod u+wx filename</code>
+<p><strong>Example 1:</strong> To give the owner write and execute permissions on a file.</p>
 
-<p><b>Example 2:</b> To remove read and write permissions from the group for a directory.</p>
-<code>chmod g-rw directoryname</code>
+<p><strong>chmod u+wx filename</strong></p>
 
-<p><b>Example 3:</b> To set read and execute permissions for others on a script.</p>
-<code>chmod o=rx scriptname</code>
-<h2>Changing File Permissions with chmod</h2>
+<p><strong>Example 2:</strong> To remove read and write permissions from the group for a directory.</p>
 
-<p>Let's explore a few options that we can use with the <code>chmod</code> command.</p>
+<p><strong>chmod g-rw directoryname</strong></p>
 
-<p><b>Adding Permissions (+):</b></p>
-<p>You have a file called <code>mydata.txt</code>, and you want to allow everyone to read it.</p>
-<code>$ chmod +r mydata.txt</code>
-<p>You're telling Linux to add (+) read permission (r) for everyone to the file <code>mydata.txt</code>. Now, anyone can read the contents of the file.</p>
+<p><strong>Example 3:</strong> To set read and execute permissions for others on a script.</p>
 
-<p><b>Removing Permissions (-):</b></p>
-<p>Now, let's say you want to stop others from changing your <code>notes.txt</code> file.</p>
-<code>$ chmod go-w notes.txt</code>
-<p>So with this command, you can change the permissions of <code>notes.txt</code> to remove (-) write permission (w) for the group (g) and others (o). They can't change the notes anymore.</p>
+<p><strong>chmod o=rx scriptname</strong></p>
 
-<p><b>Setting Exact Permissions (=):</b></p>
-<p>Now, you want only you to be able to use a file named <code>game</code>.</p>
-<code>$ chmod u=x game</code>
-<p>So with this command, you can change the permissions of the <code>game</code> folder to set (=) execute permission (x) only for you (u means user/owner).</p>
+<p><strong>Changing File Permissions with chmod</strong></p>
 
-<p><b>Using Different Options (-c and -v):</b></p>
-<p>Now, you want to see what's happening as you change permissions for a folder named <code>photos</code>.</p>
-<code>$ chmod -cv 755 photos</code>
-<p>So with this command, you can change the permissions of <code>photos</code> and show (-c) a message for each change. Also, with (-v) option the command will tell you what it is doing. In this command, you are giving read, write, and execute permissions to the owner, and read and execute permissions to the group and others.</p>
+<p>Let's explore a few options that we can use with the <b>chmod</b> command.</p>
 
-<p>All right! So <code>chmod</code> is the first command we learned in this file permissions category.</p>
+<p><strong>Adding Permissions (+):</strong></p>
+
+<p>You have a file called <b>mydata.txt</b>, and you want to allow everyone to read it.</p>
+
+<p><strong>$ chmod +r mydata.txt</strong></p>
+
+<p>You're telling Linux to add (+) read permission (r) for everyone to the file <b>mydata.txt</b>. Now, anyone can read the contents of the file.</p>
+
+<p><strong>Removing Permissions (-):</strong></p>
+
+<p>Now, let's say you want to stop others from changing your <b>notes.txt</b> file.</p>
+
+<p><strong>$ chmod go-w notes.txt</strong></p>
+
+<p>So with this command, you can change the permissions of <b>notes.txt</b> to remove (-) write permission (w) for the group (g) and others (o). They can't change the notes anymore.</p>
+
+<p><strong>Setting Exact Permissions (=):</strong></p>
+
+<p>Now, you want only to be able to use a file named <b>game</b>.</p>
+
+<p><strong>$ chmod u=x game</strong></p>
+
+<p>So with this command, you can change the permissions of the <b>game</b> folder to set (=) execute permission (x) only for you (u means user/owner).</p>
+
+<p><strong>Using Different Options (-c and -v):</strong></p>
+
+<p>Now, you want to see what's happening as you change permissions for a folder named <b>photos</b>.</p>
+
+<p><strong>$ chmod -cv 755 photos</strong></p>
+
+<p>So with this command, you can change the permissions of <b>photos</b> and show (-c) a message for each change. Also, with (-v) option the command will tell you what it is doing. In this command, you are giving read, write, and execute permissions to the owner, and read and execute permissions to the group and others</p>
+
+<p>All right! So <b>chmod</b> is the first command we learned in this file permissions category.</p>
 
 <p>Our next command is <code>chown</code>.</p>
 
-<h2>Changing Ownership with chown</h2>
+<p><strong>Changing Ownership with chown</strong></p>
 
-<p>The <code>chown</code> command in Linux is used to change the ownership of files and directories. It allows you to assign a new owner and group to a file or directory.</p>
+<p>The <b>chown</b> command in Linux is used to change the ownership of files and directories. It allows you to assign a new owner and group to a file or directory.</p>
 
-<p>The syntax of <code>chown</code> command is.</p>
+<p>The syntax of <b>chown</b> command is.</p>
 
-<code>chown [options] new_owner:new_group file(s)</code>
+<p><code>chown [options] new_owner:new_group file(s)</code></p>
 
-<p><b>Let’s learn to change ownership of a file.</b></p>
+<p><strong>Let’s learn to change ownership of a file.</strong></p>
 
-<p>To change the owner of a file named "myfile.txt" to a user named "newuser," you can use the following command:</p>
+<p>To change the owner of a file named <b>"myfile.txt"</b> to a user named <b>"newuser,"</b> you can use the following command:</p>
+
 <code>$ chown newuser myfile.txt</code>
-<p>This command will change the owner of "myfile.txt" to "newuser," keeping the group ownership unchanged.</p>
 
-<p><b>Let’s learn to change ownership of a directory.</b></p>
+<p>This command will change the owner of <b>"myfile.txt"</b> to <b>"newuser,"</b> keeping the group ownership unchanged.</p>
 
-<p>To change the owner of a directory named "mydir" to a user named "newuser" and the group ownership to a group named "newgroup," you will use.</p>
+<p><strong>Let’s learn to change ownership of a directory.</strong></p>
+  
+<p>To change the owner of a directory named <b>"mydir"</b> to a user named <b>"newuser"</b> and the group ownership to a group named <b>"newgroup,"</b> you will use.</p>
+  
 <code>$ chown newuser:newgroup mydir</code>
-<p>This command will change both the owner and group ownership of "mydir."</p>
 
-<p><b>Let’s learn to change ownership recursively.</b></p>
+<p>This command will change both the owner and group ownership of <b>"mydir."</b></p>
 
-<p>You can use the <code>-R</code> option to change ownership recursively for directories and their contents. For example, to change the owner and group ownership of a directory named "mydir" and all files and subdirectories within it to a user named "newuser" and a group named "newgroup," you can use the following command:</p>
+<code>Let’s learn to change ownership recursively.</code>
+
+<p>You can use the <b>-R</b> option to change ownership recursively for directories and their contents. For example, to change the owner and group ownership of a directory named <b>"mydir"</b> and all files and subdirectories within it to a user named <b>"newuser"</b> and a group named <b>"newgroup,"</b> you can use the following command:</p>
+
 <code>$ chown -R newuser:newgroup mydir</code>
-<p>The <code>-R</code> option ensures that the ownership changes are applied recursively.</p>
 
-<p><b>Let’s learn to specify ownership using numeric values.</b></p>
+<p>The <b>-R</b> option ensures that the ownership changes are applied recursively.</p>
 
-<p>Instead of using usernames and group names, you can also specify ownership using numeric user and group IDs (UID and GID). For example, to change the owner and group ownership of a file named "myfile.txt" using their respective IDs, you can use the following command.</p>
+<code>Let’s learn to specify ownership using numeric values.</code>
+
+<p>Instead of using usernames and group names, you can also specify ownership using numeric user and group IDs (UID and GID). For example, to change the owner and group ownership of a file named <b>"myfile.txt"</b> using their respective IDs, you can use the following command.</p>
+
 <code>$ chown 1001:1002 myfile.txt</code>
-<p>This command will change the owner to the user with UID 1001 and the group ownership to the group with GID 1002.</p>
 
-<p>Remember, using the <code>chown</code> command is like a transfer of power. Just like giving someone a key to a room, you're letting them have control over files and folders. Use it wisely, and always double-check before you change ownership, especially for important files and system areas.</p>
-<h2>Changing Group Ownership with chgrp</h2>
+<p>This command will change the owner to the user with UID 1001 and the group ownership to the group with GID 1002</p>
 
-<p>The <code>chgrp</code> command in Linux is used to change the group ownership of files and directories. It allows you to assign a new group to a file or directory.</p>
+<p>Remember, using the <b>chown</b> command is like a transfer of power. Just like giving someone a key to a room, you're letting them have control over files and folders. Use it wisely, and always double-check before you change ownership, especially for important files and system areas.</p>
 
-<p>The syntax of <code>chgrp</code> command is,</p>
+<code>Changing Group Ownership with chgrp</code>
+
+<p>The <b>chgrp</b> command in Linux is used to change the group ownership of files and directories. It allows you to assign a new group to a file or directory.</p>
+
+<p>The syntax of chgrp command is,</p>
+
 <code>chgrp [options] new_group file(s)</code>
 
 <p>Here,</p>

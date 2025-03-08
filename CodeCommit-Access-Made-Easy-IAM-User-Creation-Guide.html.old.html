@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/blogstyles.css">
+<link rel="icon" href="f.png" type="image/x-icon">
+  <title>CodeCommit Access Made Easy: IAM User Creation Guide</title>
+ <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=653115d82ee074001200f239&product=inline-share-buttons&source=platform" async="async"></script>
+</head>
+<body>
+  <header>
+<!-- Navigation Section -->
+  <nav>
+    <div class="logo-container">
+        <a href=" https://masteringawsdevops.com"><img src="images/logo1.png" alt="Mastering AWS DevOps"></a>
+    </div>
+    <ul class="nav-links">
+	<li><a href="index.html">Home</a></li>
+  	<li><a href="Blogs.html">Book Hands-on</a></li>
+
+    </ul>
+  </nav>
+  </header>
+
+
+  <div class="main-container">
+    <article>
+    <h1>CodeCommit Access Made Easy: IAM User Creation Guide</h1>
+<h2>Introduction:</h2>
+
+<p>Here is a general discussion of the topic of creating an IAM user with CodeCommit permissions of a conversation between two people:</p>
+
+    <blockquote>
+        <p><strong>Sonali:</strong> Hey, have you ever heard about setting up IAM users with CodeCommit permissions on AWS?</p>
+
+        <p><strong>Saurabh:</strong> Yeah, I have heard about it, but I'm not entirely sure how it works. Can you tell me more about it?</p>
+
+        <p><strong>Sonali:</strong> Absolutely! It's a pretty important concept, especially if you are working with AWS and CodeCommit for source code management. Essentially, it is about creating specific user accounts with the right permissions to access and work with CodeCommit repositories.</p>
+
+        <p><strong>Saurabh:</strong> So, why can't we just use our main AWS account for that?</p>
+
+        <p><strong>Sonali:</strong> Great question! Using your main AWS account for everything might not be the best practice because it's like having a master key to your entire AWS kingdom. With IAM users, you can create individual keys for different team members or applications. This way, you follow the principle of least privilege, giving them access only to what they need and nothing more.</p>
+
+        <p><strong>Saurabh:</strong> That makes sense, so how do you actually go about creating an IAM user with CodeCommit permissions?</p>
+
+        <p><strong>Sonali:</strong> It involves a few steps, like creating the user, attaching policies that grant CodeCommit access, and configuring security credentials. You can do it all through the AWS Management Console.</p>
+
+        <p><strong>Saurabh:</strong> Sounds a bit technical. Is it difficult to set up?</p>
+
+        <p><strong>Sonali:</strong> It might seem that way, but it's not too complex once you get the hang of it. Plus, it is an important security measure, especially when you are collaborating with a team. You will want to ensure everyone has the right level of access without compromising security.</p>
+
+        <p><strong>Saurabh:</strong> Got it. It sounds like something we should definitely look into, especially as we scale up our development projects.</p>
+
+        <p><strong>Sonali:</strong> Absolutely, and it will give you more control and security over your CodeCommit repositories. I can walk you through the steps if you're interested.</p>
+
+        <p><strong>Saurabh:</strong> That would be fantastic! Let us dive into it.</p>
+    </blockquote>
+
+    <h2>1.1 Amazon Web Services (AWS)</h2>
+
+    <p>Amazon Web Services (AWS) provides a range of services to manage your source code repositories, and CodeCommit is one of the most popular Services among them. To effectively use CodeCommit, it's crucial to set up Identity and Access Management (IAM) users with the appropriate permissions.</p>
+
+    <p>In this comprehensive guide, we will walk you through the process of creating an IAM user with CodeCommit permissions, explaining each step in detail.</p>
+
+    <p>Before we walk through creating an IAM user with CodeCommit Permissions we will study the theory of IAM and CodeCommit Separately.</p>
+
+    <p>We will understand exactly IAM.</p>
+
+    <p>Certainly! Let's break down the concepts of AWS Identity and Access Management (IAM) in detailed terms explained in easy-to-understand language.</p>
+
+
+<h2>Understand IAM Concepts</h2>
+
+<ol>
+    <li>
+        <strong>IAM Users</strong>
+        <p>IAM Users are like individual accounts for people or applications that interact with your AWS resources. These users have unique names and are used to log in to AWS and access services. Think of them as individual keys that allow certain people or programs to access specific AWS services.</p>
+    </li>
+
+    <li>
+        <strong>IAM Groups</strong>
+        <p>IAM Groups are like collections of users that share the same permissions. Instead of assigning permissions to each user individually, you can put them in groups, and then assign permissions to the group. It’s like creating roles for different teams in a company.</p>
+    </li>
+
+    <li>
+        <strong>IAM Policies</strong>
+        <p>IAM Policies are like sets of rules that define what actions users or groups are allowed to perform on AWS resources. These rules specify which services can be accessed and what actions can be taken, such as read or write access. Think of them as the rulebook that guides what each user or group can do.</p>
+    </li>
+
+    <li>
+        <strong>IAM Roles</strong>
+        <p>IAM Roles are a bit like temporary passes. They grant permissions, but they’re not associated with specific users or groups. Roles are often used by applications or services that need to access AWS resources, like EC2 instances. It’s like giving a contractor a special pass to access certain areas in your building.</p>
+    </li>
+
+    <li>
+        <strong>IAM Access Key</strong>
+        <p>An Access Key is like a secret code that IAM users or roles use to interact with AWS programmatically (e.g., using the AWS Command Line Interface). These keys are made up of an Access Key ID and a Secret Access Key. Think of it as a password that only your computer understands.</p>
+    </li>
+
+    <li>
+        <strong>Multi-Factor Authentication (MFA)</strong>
+        <p>MFA adds an extra layer of security. It requires users to provide two pieces of information to access their accounts: something they know (like a password) and something they have (like a smartphone generating a temporary code). It’s like needing both your ID card and a fingerprint to enter a secure facility.</p>
+    </li>
+
+    <li>
+        <strong>Identity Federation</strong>
+        <p>Identity Federation is like connecting your AWS account with an external identity provider (IdP), such as Google or Facebook. Instead of creating separate IAM users, you can use your existing accounts from these providers to access AWS resources. It’s like using your Google account to log in to other websites.</p>
+    </li>
+
+    <li>
+        <strong>AWS Organizations</strong>
+        <p>AWS Organizations is a way to manage multiple AWS accounts. You can create a hierarchy of accounts, which makes it easier to apply policies and manage billing. It’s like having a parent account that controls what all the child accounts can do.</p>
+    </li>
+
+    <li>
+        <strong>Best Practices – Keeping Your Castle Secure</strong>
+        <ul>
+            <li><strong>9. A. Least Privilege Principle</strong>
+                <p>This is a critical concept in IAM. It means giving users or roles the minimum permissions they need to do their job, and nothing more. Imagine if you’re lending your car; you’d only give the keys, not your entire wallet.</p>
+            </li>
+            <li><strong>10. Audit Trail</strong>
+                <p>IAM creates logs that track who did what and when within your AWS account. This helps with security and compliance. Think of it as a detailed journal of everything that happens in your account.</p>
+            </li>
+        </ul>
+    </li>
+</ol>
+
+<p>In essence, IAM is like the guardian of your AWS kingdom, controlling who gets in, what they can do, and keeping a watchful eye on all activities. Understanding these concepts is crucial for maintaining security and efficiently managing your AWS resources.</p>
+
+<h3>We have studied the AWS IAM concepts.</h3>
+
+<p>Now, we will discuss the CodeCommit concept.</p>
+<h2>What is CodeCommit?</h2>
+
+<p>AWS CodeCommit is like a secure vault for your source code. It’s a fully managed source control service provided by Amazon Web Services (AWS) that helps you store, track changes to, and collaborate on your software projects.</p>
+
+<p>Here’s a more detailed explanation of what AWS CodeCommit is and what it offers:</p>
+
+<ol>
+    <li>
+        <strong>Source Control Repository:</strong>
+        <p>CodeCommit acts as a repository, like a digital library where you store all your source code and related files for a software project.</p>
+    </li>
+
+    <li>
+        <strong>Version Control:</strong>
+        <p>It provides version control capabilities, specifically using Git, a popular distributed version control system. Git helps you keep track of changes made to your code over time.</p>
+    </li>
+
+    <li>
+        <strong>Secure and Private:</strong>
+        <p>CodeCommit ensures the security and privacy of your code. It encrypts your code at rest and in transit, and it allows you to control access with fine-grained IAM (Identity and Access Management) permissions.</p>
+    </li>
+
+    <li>
+        <strong>Collaboration:</strong>
+        <p>CodeCommit supports collaboration among developers. Multiple team members can work on the same project, contribute code changes, and merge their work seamlessly.</p>
+    </li>
+
+    <li>
+        <strong>Branching:</strong>
+        <p>Just like Git, CodeCommit allows you to create branches. Branches are like separate lines of development where you can work on different features or bug fixes without affecting the main codebase.</p>
+    </li>
+
+    <li>
+        <strong>Commit History:</strong>
+        <p>CodeCommit maintains a detailed history of commits, showing who made changes, when they were made, and what was changed. This helps you track the evolution of your code.</p>
+    </li>
+
+    <li>
+        <strong>Pull Requests:</strong>
+        <p>You can use pull requests to invite your team to review and discuss your code changes before they are merged into the main codebase. This is a crucial part of the code review process.</p>
+    </li>
+
+    <li>
+        <strong>Integration:</strong>
+        <p>CodeCommit can be integrated with other AWS services and third-party tools, allowing you to automate your software development workflows. For example, you can set up AWS CodeBuild to automatically build and test your code when changes are pushed to CodeCommit.</p>
+    </li>
+
+    <li>
+        <strong>Scalable:</strong>
+        <p>CodeCommit can handle large code repositories and accommodate the needs of both small teams and large enterprises.</p>
+    </li>
+
+    <li>
+        <strong>Backup and Redundancy:</strong>
+        <p>Your code is backed up and replicated across multiple data centers, ensuring that it remains available and protected.</p>
+    </li>
+</ol>
+
+<p>In summary, AWS CodeCommit is like a secure, scalable, and fully managed source control service that enables you to store, version, and collaborate on your software projects.</p>
+
+<p>It’s an integral part of the AWS DevOps ecosystem, helping you manage your code and streamline your development processes while maintaining the highest levels of security and reliability.</p>
+<h2>Getting Started With Create an IAM User With AWS CodeCommit Permissions</h2>
+
+<p>Configuring an IAM (Identity and Access Management) user for CodeCommit involves setting up the necessary permissions and access credentials.</p>
+
+<p>Here, we will walk through the steps to configure an IAM user specifically for AWS CodeCommit using the AWS Management Console. This process will allow the user to interact with CodeCommit repositories.</p>
+
+<h3>Step 1: Sign In to the AWS Console</h3>
+
+<p>Open your preferred web browser and go to the official AWS website by entering the following URL in the address bar <a href="https://aws.amazon.com/" target="_blank">https://aws.amazon.com/</a>:</p>
+<img src="blogimages/1b6.png" alt="Blog Post Image">
+
+<p>On the AWS home page, locate and click on the “Sign In to the Console” button. This will take you to the AWS Management Console sign-in page.</p>
+<img src="blogimages/2b6.png" alt="Blog Post Image">
+
+<p>After completing these steps, you will be successfully signed in to the AWS Console, where you can begin managing your AWS resources, including setting up IAM users and configuring their permissions for AWS services like AWS CodeCommit.</p>
+
+<h3>Step 2: Access IAM Service</h3>
+
+<p>In this step, We will see the “Access to IAM service”.</p>
+<img src="blogimages/3b6.png" alt="Blog Post Image">
+
+
+<p>Once you are logged in, you will land on the AWS Dashboard. In the top search bar, type “IAM” and select “IAM” under “Services.”</p>
+
+<p><strong>IAM Dashboard:</strong></p>
+
+<p>Clicking on “IAM” from the Services menu takes you to the IAM dashboard. This dashboard is where you perform user management tasks, create and configure IAM users, set up groups, define roles, assign permissions, and establish security policies. It’s a critical component of maintaining the security and access control of your AWS resources.</p>
+
+<p>In summary, Step 2 is about accessing the IAM (Identity and Access Management) service within the AWS Management Console. IAM is essential for controlling and managing user access to AWS services and resources securely.</p>
+
+<p>This step is a foundational part of configuring IAM users and granting them permissions for services like AWS CodeCommit.</p>
+
+<h3>Step 3: Locate the IAM User</h3>
+
+<p>Certainly! Let’s explain Step 3, “Locate the IAM User,” as below:</p>
+
+<p>After accessing IAM services, now you will find the IAM user.</p>
+
+<p><strong>Click on ‘Users’:</strong></p>
+
+<p>Within the IAM Dashboard, there is a navigation pane on the left side. Clicking on ‘Users’ in this navigation pane takes you to the section where you can manage IAM users.</p>
+<img src="blogimages/4b6.png" alt="Blog Post Image">
+
+<p><strong>List of Existing “IAM Users”:</strong></p>
+
+<p>Upon clicking ‘Users,’ you are presented with a list of IAM User names. This list displays all the IAM Users that have been created in your AWS account, along with details such as user ARNs (Amazon Resource Names) and creation dates.</p>
+
+<p>Step 3 is about navigating to the IAM User Management section within the IAM Dashboard. It allows you to view and manage individual IAM Users, including creating new ones, configuring their security credentials, and defining their permissions for accessing AWS services and resources.</p>
+
+<h3>Step 4: Create or Select an IAM User</h3>
+
+<p>Let’s explain Step 4, “Create or Select an IAM User,” as below:</p>
+
+<ol>
+    <li><strong>If you are creating a new IAM user:</strong></li>
+    <p>Selecting this option allows you to create a new IAM User. When you create a new user, you:</p>
+<img src="blogimages/5b6.png" alt="Blog Post Image">
+    <ul>
+        <li>Specify a username for the user (e.g., “JohnDoe”).</li>
+<img src="blogimages/6b6.png" alt="Blog Post Image">
+        <li>Choose whether the user should have programmatic access (using AWS APIs and CLI) and/or AWS Management Console access (web-based access).</li>
+<img src="blogimages/7b6.png" alt="Blog Post Image">
+        <li>Generate security credentials for the user, including an access key and a secret access key for programmatic access, and an initial password for console access.</li>
+<img src="blogimages/8b6.png" alt="Blog Post Image">
+    </ul>
+    <p><strong>Username:</strong></p>
+    <p>The username is a unique identifier for an IAM User within your AWS account. It is used to distinguish one user from another. Each IAM User must have a distinct username.</p>
+    <p><strong>Type of Access:</strong></p>
+    <p>There are two types of access:</p>
+    <ul>
+        <li><strong>Programmatic Access:</strong> This option allows the IAM User to interact with AWS programmatically using AWS SDKs, APIs, and command-line tools. You will need to manage their access keys, which are used for authentication.</li>
+        <li><strong>AWS Management Console Access:</strong> Choosing this option permits the IAM User to log in to the AWS Management Console through a web browser. This is useful when users need a web-based interface for managing AWS resources.</li>
+    </ul>
+
+    <li><strong>If you are configuring an existing IAM user:</strong></li>
+    <p>This option is used when you want to work with an IAM User that you’ve already created in your AWS account. You can select from a list of existing users.</p>
+    <p>It’s like selecting a character in a video game that you’ve previously created and customized.</p>
+
+    <li><strong>Username:</strong></li>
+    <p>The username is a unique identifier for an IAM User within your AWS account. It is used to distinguish one user from another. Each IAM User must have a distinct username.</p>
+
+    <li><strong>Type of Access:</strong></li>
+    <p>There are two types of access:</p>
+    <ul>
+        <li><strong>Programmatic Access:</strong> This option allows the IAM User to interact with AWS programmatically using AWS SDKs, APIs, and command-line tools. You will need to manage their access keys, which are used for authentication.</li>
+        <li><strong>AWS Management Console Access:</strong> Choosing this option permits the IAM User to log in to the AWS Management Console through a web browser. This is useful when users need a web-based interface for managing AWS resources.</li>
+    </ul>
+</ol>
+
+<p>Step 4 involves creating or selecting IAM Users, which serve as identity entities with specific access capabilities within AWS. It also involves defining the access methods (programmatic or console) and setting up security credentials for these users, depending on their roles and requirements within your AWS environment.</p>
+
+<h3>Step 5: Attach Permissions</h3>
+
+<p>Let’s explore Step 5, “Attach Permissions,” in detail as below:</p>
+
+<p>In Step 4, you either created a new IAM User or selected an existing one. However, at that point, the IAM User didn’t have any specific permissions. It was merely an identity within your AWS account.</p>
+
+<p>In the “Set permissions” section, you have two options:</p>
+
+<ul>
+    <li><strong>Attach Permissions:</strong></li>
+    <p>Step 5, “Attach Permissions,” is the process of associating specific IAM permissions with the IAM User.</p>
+<img src="blogimages/9b6.png" alt="Blog Post Image">
+    <p><strong>Groups and Policies:</strong></p>
+    <p>Permissions can be managed by adding the IAM User to IAM Groups or attaching IAM policies directly to the user. IAM Groups act as containers for users with shared permissions. IAM policies are sets of permissions that can be fine-tuned to allow or deny access to AWS resources.</p>
+    <p>In this case, no group is required.</p>
+</ul>
+
+<h3>Step 6: Search for CodeCommit Policies</h3>
+
+<p>In this step, Let’s search for CodeCommit policies.</p>
+
+<p>In the “Search policies” search bar, type “AWSCodeCommit” to find policies related to CodeCommit.</p>
+<img src="blogimages/10b6.png" alt="Blog Post Image">
+
+<p>You should see policies like “AWSCodeCommit_FullAccess” (which grants full access) or “AWSCodeCommit_ReadOnly” (which grants read-only access).</p>
+
+<p>Select the appropriate policy based on your requirements. For this example, let’s choose “AWSCodeCommit_FullAccess.” as shown below:</p>
+<img src="blogimages/11b6.png" alt="Blog Post Image">
+
+<figure>
+    <img src="url_to_image" alt="Image not available">
+    <figcaption>Why are we selecting? “AWSCodeCommit_FullAccess “ because The “AWSCodeCommit_FullAccess” policy grants broad permissions to perform various actions in CodeCommit, which might be more access than some users or roles need.</figcaption>
+</figure>
+
+<h3>Step 7: Review and Add Permissions</h3>
+
+<p>After choosing “AWSCodeCommit_FullAccess”,  In this step we will do “Review and Add Permissions” as below:</p>
+
+<p>After adding or adjusting permissions, review your changes carefully to ensure they align with your organization’s security policies. Double-check that you have not granted excessive permissions.</p>
+
+<img src="blogimages/12b6.png" alt="Blog Post Image">
+<p>When you are satisfied, proceed to the next steps, typically by clicking “Next” or “Review.”</p>
+
+<p><strong>Save Changes:</strong> Once you have reviewed and confirmed the permissions, save your changes. Your IAM entity now has the updated permissions.</p>
+
+<h3>Step 8: Review User Details</h3>
+
+<p>In Step 8, “Review User Details,” you will want to carefully review and verify the details you’ve configured for an IAM (Identity and Access Management) user before creating the user. This step is important to ensure that the user’s settings are accurate and align with your organization’s requirements.</p>
+
+<p>Review the user details to ensure they are correct as shown below:</p>
+<img src="blogimages/13b6.png" alt="Blog Post Image">
+
+
+<figure>
+    <img src="url_to_image" alt="Image not available">
+</figure>
+
+<h3>Step 9: Complete the User Creation or Permission Assignment</h3>
+
+<p>Click “Download .csv” to download a CSV file containing the access key ID and secret access key. Store this file in a secure location. You won’t be able to retrieve the secret access key again.</p>
+<img src="blogimages/14b6.png" alt="Blog Post Image">
+
+
+<p>If you are creating a new IAM user, you will now see a confirmation message indicating that the user has been created successfully. Make sure to note down the user’s username and the console sign-in link for future reference.</p>
+
+<p>Now, you have successfully created the IAM user for CodeCommit As shown in the above image.</p>
+
+<h3>Step 13: Next Steps</h3>
+
+<p>After creating or configuring the IAM user for CodeCommit, you can proceed with the following steps:</p>
+
+<ol>
+    <li>Configure AWS CLI or SDKs on your local development environment using the access key ID and secret access key to interact with CodeCommit programmatically.</li>
+    <li>Grant the IAM user access to specific CodeCommit repositories by configuring repository-level permissions and adding the user to the repository’s IAM policies.</li>
+    <li>Begin using CodeCommit for version control by pushing, pulling, and managing your code repositories.</li>
+</ol>
+
+<p>Remember that IAM user permissions should be fine-tuned based on the principle of least privilege, ensuring that users only have access to the AWS resources they need. Regularly review and update permissions as necessary to maintain security and compliance.</p>
+
+<h3>Step 14: Granting Repository Access</h3>
+
+<p>In Step 14, “Granting Repository Access,” you are taking actions to grant specific users or groups access to your AWS CodeCommit repository. This step is essential to control who can view, clone, push changes, and perform other actions on your Git repositories hosted on AWS CodeCommit. Here’s how you can grant repository access:</p>
+
+<ol>
+    <li><strong>Select Your Repository:</strong> From the list of repositories on the CodeCommit dashboard, choose the repository to which you want to grant access. Click on the repository name to open its details.</li>
+<img src="blogimages/15b6.png" alt="Blog Post Image">
+    <li><strong>Access Control:</strong> Inside the repository details, look for an “Access control” or “Permissions” section, where you can configure who has access to the repository.</li>
+    <li><strong>Add Users or Groups:</strong> Typically, you have the option to add users or groups to the repository’s access control list. This could include IAM users, IAM groups, or even specific AWS accounts.</li>
+    <li><strong>Define Permissions:</strong> For each user or group you add, specify the permissions you want to grant them. AWS CodeCommit provides fine-grained access control, allowing you to grant read-only or read-write permissions, control access to specific branches, and more.
+        <ul>
+            <li><strong>Read-only access:</strong> Users with read-only access can clone the repository and view its contents but cannot make changes.</li>
+            <li><strong>Read-write access:</strong> Users with read-write access can clone the repository, view its contents, and make changes, including pushing changes back to the repository.</li>
+        </ul>
+    </li>
+    <li><strong>Access Levels:</strong> Depending on your requirements, you may set different access levels for different users or groups. For example, developers might get read-write access, while auditors may get read-only access.</li>
+    <li><strong>Review and Confirm:</strong> Before finalizing the permissions, review your choices to ensure you’re granting the appropriate access to the right users or groups.</li>
+    <li><strong>Save Changes:</strong> Once you’ve confirmed the permissions, save your changes. The access control settings are now in effect for the selected repository.</li>
+    <li><strong>Test Access:</strong> It’s a good practice to test the access you’ve granted to ensure that users or groups can perform the intended actions in the repository.</li>
+    <li><strong>Monitor and Revise:</strong> Regularly monitor and revise access control settings as needed. As project requirements change or team members come and go, you’ll want to adjust repository access accordingly.</li>
+</ol>
+
+<p>Remember that you can also use AWS Identity and Access Management (IAM) to control CodeCommit access at a broader level. IAM allows you to define policies that govern access to all repositories within your AWS account. This can be useful for setting up default permissions for all repositories and then refining access control at the repository level as necessary.</p>
+
+<p>Carefully managing repository access in AWS CodeCommit is crucial for ensuring the security and integrity of your source code while enabling collaboration among your development team.</p>
+
+<h3>Step 15: Repository Access Permissions</h3>
+
+<p>In this step, we will see the Repository Access Permissions in detail as below.</p>
+
+<p>In Step 15, “Repository Access Permissions,” you are configuring and fine-tuning the access permissions for users, groups, or AWS accounts that you’ve granted access to within your AWS CodeCommit repository. This step allows you to define who can do what within the repository with granular control over their actions.</p>
+
+<p>Here is how you can set and manage repository access permissions:</p>
+
+<ol>
+    <li>In the “Add permissions” dialogue, you will specify who can access and interact with the selected CodeCommit repository.</li>
+    <li><strong>Type:</strong> Choose “IAM users, roles, or groups” to define the identity or group to which you want to grant access.</li>
+    <li><strong>Name:</strong> Enter the IAM username, group name, or role name that you want to grant access to the repository. This identifies the AWS identity that will receive the permissions.</li>
+    <li><strong>Access level:</strong> Select the appropriate access level for the IAM entity you are granting access to.</li>
+    <li><strong>Access Levels:</strong> Depending on your requirements, you may set different access levels for different users or groups. For instance, developers might be given read-write access, while auditors or external collaborators may receive read-only access.</li>
+    <li><strong>Read:</strong> Opt for “Read” if you want to provide read-only access to the repository. Users with read access can clone the repository, view its contents, and fetch code, but they can’t make changes.</li>
+    <li><strong>ReadWrite:</strong> If you wish to grant full access to the repository, choose “ReadWrite.” Users with read-write access can not only view the code but also make edits, create branches, and push commits.</li>
+    <li><strong>Permission Overview:</strong> The permissions you add here establish an access control list (ACL) for the repository, specifying who can or cannot access it.
+        <ul>
+            <li>IAM users, groups, or roles added at this stage inherit the permissions defined by the chosen access level.</li>
+            <li>You can add multiple IAM entities to grant access to various users, groups, or roles, each with its own access permissions.</li>
+            <li>Beyond this, you can further fine-tune access control by configuring policies in your IAM settings to define more detailed permissions.</li>
+        </ul>
+    </li>
+    <li><strong>Save Permissions:</strong> After defining the IAM entities, access levels, and permissions, click “Add” to save these access permissions for the selected CodeCommit repository.</li>
+    <li><strong>Verification:</strong> Upon adding permissions, review the permissions summary to confirm their accurate configuration. You should see a list of IAM entities along with their associated access levels.</li>
+    <li><strong>Testing Access:</strong> To confirm that access permissions are functioning correctly, consider testing repository access using the IAM entities you’ve granted access to. This will ensure that users can interact with the repository according to their permissions.</li>
+    <li><strong>Regular Review:</strong> Periodically revisiting and updating repository access permissions is crucial to adapt to the evolving needs of your project and team. This practice ensures that security and compliance standards are maintained over time.</li>
+</ol>
+
+<p>By configuring these repository access permissions, you can effectively manage and control who has access to your AWS CodeCommit repository, providing the appropriate level of access to team members and collaborators while maintaining the security and integrity of your codebase.</p>
+
+<h3>Step 16: Configuring Git Credentials</h3>
+
+<p>In this step, we will configure git credentials.</p>
+
+<p>After setting up IAM user permissions, the next step is configuring Git credentials. This ensures that Git can authenticate and interact securely with AWS CodeCommit repositories.</p>
+
+<p>To interact with the CodeCommit repository from your local development environment, you will need to configure Git credentials.</p>
+
+<p>There are two common methods for configuring Git credentials: “HTTPS Git credentials and SSH keys.”</p>
+
+<p>You have two options for setting this up:</p>
+
+<ol>
+    <li><strong>Option 1: HTTPS Git Credentials:</strong></li>
+    <p>This option is more straightforward for beginners.</p>
+    <ol type="a">
+        <li>Open a terminal or command prompt on your local machine.</li>
+        <li>Run the following command, replacing ‘<IAM-Username>’ with the username of the IAM user:</li>
+    </ol>
+    <pre>
+git config –global credential.helper ‘!aws codecommit credential-helper $@’
+git config –global credential.UseHttpPath true
+    </pre>
+
+    <p>Certainly, let’s explain the two ‘git config’ commands in detail:</p>
+
+    <ol type="i">
+        <li><strong>git config –global credential.helper ‘!aws codecommit credential-helper $@’:</strong></li>
+        <ul>
+            <li><strong>‘git config’:</strong> This is the Git command used for configuring Git settings.</li>
+            <li><strong>‘–global’:</strong> The ‘–global’ flag specifies that the configuration should be applied globally to your user account. This means it will affect all Git repositories on your system.</li>
+            <li><strong>credential.helper:</strong> This is a Git configuration property used to specify a credential helper. A credential helper is a tool that Git uses to store and retrieve credentials, such as usernames and passwords, for various services.</li>
+            <li><strong>‘!aws codecommit credential-helper $@’:</strong> This is the actual credential helper configuration. Let’s break it down:
+                <ul>
+                    <li><strong>‘!aws codecommit credential-helper’</strong> is a utility provided by AWS for interacting with CodeCommit repositories. It’s used to manage authentication credentials for CodeCommit.</li>
+                    <li><strong>$@</strong> is a special shell variable that represents all the arguments passed to the command. In this context, it’s used to pass any additional parameters or arguments to the aws codecommit credential-helper utility.</li>
+                </ul>
+            </li>
+            <li><strong>Effect:</strong> When you run this command, you’re configuring Git to use the ‘aws codecommit credential-helper’ as a credential manager. This helper will securely store and retrieve your CodeCommit credentials, so you don’t have to enter your credentials manually every time you interact with a CodeCommit repository.</li>
+        </ul>
+        <li><strong>‘git config –global credential.UseHttpPath true’:</strong></li>
+        <ul>
+            <li><strong>‘git config’:</strong> This is the ‘Git’ command used for configuring Git settings.</li>
+            <li><strong>‘–global’:</strong> Just like in the previous command, the ‘–global’ flag specifies that the configuration should be applied globally to your user account.</li>
+            <li><strong>‘credential.UseHttpPath’:</strong> This is another Git configuration property. It’s used to enable or disable the use of the HTTP(S) URL path when identifying credentials for Git operations.</li>
+            <li><strong>‘true’:</strong> Setting this property to ‘true’ means that Git will consider the full HTTP(S) URL path when matching credentials. This is particularly useful when you have multiple repositories hosted on the same domain but with different credentials.</li>
+            <li><strong>Effect:</strong> When you run this command with true, you are telling Git to consider the full URL path when identifying credentials. This ensures that the correct credentials are used for each repository, even if they share the same domain.</li>
+        </ul>
+    </ol>
+    <p>In summary, these Git configuration commands are used to set up and configure Git to work seamlessly with AWS CodeCommit. They ensure that Git uses the ‘aws codecommit credential-helper’ to securely manage your CodeCommit credentials and that Git considers the full URL path when identifying credentials to avoid conflicts in case you have multiple repositories on the same domain. These configurations enhance the convenience and security of working with CodeCommit repositories.</p>
+
+    <li><strong>Option 2: SSH Keys:</strong></li>
+</ol>
+<h3>Option 2: SSH Keys:</h3>
+
+<p>This option involves generating SSH keys and associating them with your IAM user. It provides secure access to CodeCommit.</p>
+
+<ol type="a">
+    <li><strong>In the terminal or command prompt, generate an SSH key pair:</strong></li>
+    <p>Certainly! The <code>ssh-keygen</code> command is used to generate SSH (Secure Shell) key pairs for secure authentication and communication between your computer and remote servers. Let’s break down the ‘<code>ssh-keygen -t rsa -b 2048</code>’ command in detail:</p>
+
+    <ul>
+        <li><strong><code>ssh-keygen</code>:</strong> This is the main command for generating SSH key pairs. It is a part of the OpenSSH suite of tools, which provides secure remote access to servers and secure file copying between a local and a remote computer.</li>
+        <li><strong><code>-t rsa</code>:</strong> This is an option specifying the type of key to generate. In this case, it indicates that you want to generate an RSA (Rivest–Shamir–Adleman) key pair. RSA is a widely used asymmetric encryption algorithm for secure communication.</li>
+        <li><strong><code>-b 2048</code>:</strong> This is another option specifying the number of bits in the key. In this case, it specifies that you want to generate an RSA key with 2048 bits. The key’s bit length directly affects its security. Longer keys are more secure but may also require more computational resources to use.</li>
+    </ul>
+
+    <p><strong>How ‘ssh-keygen’ Works:</strong></p>
+
+    <p>When you run ‘<code>ssh-keygen -t rsa -b 2048</code>’, the following happens:</p>
+
+    <ul>
+        <li>‘<code>ssh-keygen</code>’ generates a new RSA key pair, which consists of two parts: a private key and a public key.</li>
+        <li>The private key is stored securely on your local computer. It should never be shared or exposed to others. It’s used for authentication when connecting to remote servers.</li>
+        <li>The public key is also generated and saved in a file. By default, it’s saved in ‘<code>~/.ssh/id_rsa.pub</code>’. This is the key you can share with remote servers, allowing them to verify your identity when you connect.</li>
+        <li>The key pair is protected with a passphrase. You’ll be prompted to enter a passphrase for additional security. The passphrase is like a password for your private key. It’s recommended to set a passphrase, but you can leave it empty if you prefer.</li>
+    </ul>
+
+    <p>In summary, ‘<code>ssh-keygen -t rsa -b 2048</code>’ is a command used to generate an RSA key pair for secure authentication and communication with remote servers. The private key is kept secure on your local machine, while the public key is shared with servers you want to access. This method enhances security and convenience when working with remote systems.</p>
+
+    <p>Follow the prompts to create the key pair.</p>
+
+    <li><strong>b. Add the generated SSH public key to the IAM user’s SSH keys:</strong></li>
+
+    <p>In the AWS Management Console, navigating to IAM means accessing the IAM service within the AWS Management Console.</p>
+    <ul>
+        <li>Select the IAM user you configured for CodeCommit.</li>
+        <li>In the “Security credentials” tab, under “SSH keys for AWS CodeCommit,” click “Upload SSH public key” and upload the public key file ( ‘<code>~/.ssh/id_rsa.pub</code>’ by default).</li>
+    </ul>
+</ol>
+
+<h3>Step 17: Clone the Repository</h3>
+
+<p>In this step, We will see steps to Clone a Repository.</p>
+
+<ol>
+    <li>To start working with your CodeCommit repository, you will need to clone it to your local machine.</li>
+    <ul>
+        <li>In the CodeCommit repository’s AWS Console, click the “Clone URL” button. This will provide you with the HTTPS or SSH clone URL.</li>
+        <li>In your terminal or command prompt, navigate to the directory where you want to store the repository.</li>
+        <li>Run the following command, replacing ‘ <Clone-URL> ’ with the URL you copied:</li>
+    </ul>
+</ol>
+
+<p><strong>Certainly, let’s explain the ‘<code>git clone &lt;Clone-URL&gt;</code>’ command in detail:</strong></p>
+
+<ul>
+    <li><strong>‘git’:</strong> This is the Git command-line tool, which is used for various Git operations, including cloning repositories.</li>
+    <li><strong>‘Clone’:</strong> The ‘clone’ command is used to create a copy or clone of a Git repository. It creates a local copy of a remote repository, allowing you to work on the project locally.</li>
+    <li><strong>‘<Clone-URL>’:</strong> This is a placeholder for the actual URL of the Git repository you want to clone. The URL specifies the location of the remote repository you want to copy. The URL can be in one of two formats:</li>
+</ul>
+
+<p><strong>How  ‘git clone’ Works:</strong></p>
+
+<p>When you run ‘<code>git clone &lt;Clone-URL&gt;</code>’, Git performs the following steps:</p>
+
+<ul>
+    <li>It contacts the remote repository specified by the ‘<Clone-URL>’ and retrieves all of its code and history.</li>
+    <li>Git creates a new directory on your local machine with the same name as the repository (the last part of the URL).</li>
+    <li>It copies all of the files and history from the remote repository into this new directory.</li>
+    <li>Git sets up a connection between the local repository and the remote repository so you can interact with it. This connection is called a “remote.”</li>
+    <li>The local repository is now a complete copy of the remote repository, and you can make changes, commits, and other Git operations locally. Any changes you make can later be pushed back to the remote repository to share with others.</li>
+</ul>
+
+<p>In summary, ‘<code>git clone &lt;Clone-URL&gt;</code>’ is the command you use to create a local copy of a Git repository from a remote location. It’s the first step in collaborating on a Git project, allowing you to work on the code and contribute changes.</p>
+
+<h3>Step 18: Push and Pull Code</h3>
+
+<p>You’re now ready to work with your CodeCommit repository locally. Make changes to your code, commit those changes, and then push them back to the CodeCommit repository using Git commands like ‘<code>git add</code>’, ‘<code>git commit</code>’, and ‘<code>git push</code>’.
+You can also pull the latest changes from the repository to keep your local copy up to date using ‘<code>git pull</code>’.</p>
+
+<p>Congratulations! You have successfully configured an IAM user for AWS CodeCommit, granted repository access, and set up Git credentials to interact with your CodeCommit repository from your local development environment. You are now ready to collaborate and manage your code with CodeCommit.</p>
+
+<h3>Conclusion</h3>
+
+<p>After studying IAM Theory and AWS CodeCommit Theory in short, Creating an IAM user with CodeCommit permissions is an essential step to managing your source code repositories on AWS securely. It’s a crucial step in ensuring that your projects run smoothly, your code remains safe, and your collaboration efforts thrive.</p>
+
+<p>By following the steps outlined in this guide, you can grant the right level of access to your developers while maintaining the highest standards of security. Remember to regularly review and update permissions to align with your project’s evolving needs.</p>
+
+<p>Explore more online AWS courses at:<br>
+<a href="https://university.pravinmishra.in">https://university.pravinmishra.in</a></p>
+
+      <!-- Add more content here -->
+
+      <p><i>Share this post:</i></p>
+      <div class="social-icons">
+      <div class="sharethis-inline-share-buttons"></div>
+    </div>
+
+      <div>
+	<a href="Blogs.html" class="read-more">Back</a>
+      </div>
+    </article>
+
+    <!-- Sidebar Section -->
+    <object type="text/html" data="sidebar.html" width="300" height="1000">
+
+      <!-- Add more sidebar content as needed -->
+
+    </div>
+  </div>
+
+  <footer>
+   &copy; Copyright 2023 Pravin Mishra
+  </footer>
+
+</body>
+</html>
+
